@@ -1,2 +1,4 @@
-# bkmnag-velocity
-Basekit Template Velocity
+Velocity
+====
+
+BaseKit's Velocity Template
