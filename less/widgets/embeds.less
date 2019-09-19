@@ -1,0 +1,86 @@
+// ----------------------------------------
+// Velocity: LESS > Widgets > Embeds
+// ----------------------------------------
+
+// -----------------------------
+// #Google Maps
+// -----------------------------
+
+.widget[data-name="map"] .map {
+	background-color: @color__body--background;
+	width: auto;
+	max-width: none;
+    line-height: 0;
+	font-size: 0;
+		
+	.responsivecolumns & {
+		border: none;
+	}
+	
+	&__embed-wrap {
+		background-color: @color__navigation--border;
+	}
+}
+
+// -----------------------------
+// #Soundcloud
+// -----------------------------
+
+// -----------------------------
+// #YouTube
+// -----------------------------
+
+.widget[data-name="youtube"] .youtube {
+	background-color: @color__body--background;
+	width: auto;
+	max-width: none;
+		
+	.responsivecolumns & {
+		border: none;
+	}
+	
+	&__embed-wrap {
+		background-color: @color__navigation--border;
+	}
+}
+
+// -----------------------------
+// #Disqus
+// -----------------------------
+
+// -----------------------------
+// #Embed
+// -----------------------------
+
+// Vimeo embed
+// This makes the video be full width.
+
+.embed-wrap--video iframe {
+	border: 0;
+}
+
+iframe[src*="vimeo"] {
+	width: 100%;
+}
+
+div.embed-content p {
+	max-width: @layout-max-width;
+	margin: 0 auto;
+	margin-bottom: 2em;
+}
+
+.widget .embed .embed-wrap {
+	background: none;
+	border: none;
+	padding: 0;
+	text-align: inherit;
+	color: inherit;
+}
+
+// -----------------------------
+// #LinkedIn Profile
+// -----------------------------
+
+// -----------------------------
+// #LinkedIn Company Profile
+// -----------------------------

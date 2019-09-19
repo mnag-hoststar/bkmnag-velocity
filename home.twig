@@ -1,0 +1,53 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<section class="template template__home">
+	{{widget('responsiveslideshow', 'slideshow', {
+	  'duration':'3',
+	  'transSpeed': '1000',
+	  'transType': 'fade',
+	  'showButtons': true,
+	  'showBullets': true,
+	  'allowPause': true,
+	  'allowLoop': true,
+	  'showTitle': true,
+	  'showDescription': true,
+	  'crop': true,
+	  'images':[
+		{
+		  'imageHeight':'3000',
+		  'imageWidth':'2000',
+		  'url': asset('images/feature-image--1.jpg'),
+		  'title':'Go beyond your limits.',
+		  'description': 'Travel to the ends of the earth.'
+		},
+		{
+		  'imageHeight':'3000',
+		  'imageWidth':'2000',
+		  'url': asset('images/feature-image--2.jpg'),
+		  'title':'Brave new paths.',
+		  'description': 'Enjoy the freedom of going anywhere.'
+		},
+		{
+		  'imageHeight':'3000',
+		  'imageWidth':'2000',
+		  'url': asset('images/feature-image--3.jpg'),
+		  'title':'Never lose your grip.',
+		  'description': 'Fearlessly traverse the ice and snow.'
+		}
+	  ]
+	})|raw}}
+	
+	{% include "includes/header.twig" %}
+</section>
+
+<section class="page page__home">
+    <div id="main-scroll" class="template__content">
+		{{widget('pagetitle', 'title', {})|raw}}
+		{{zone('main')|raw}}
+    </div>
+</section>
+
+{% include "includes/footer.twig" %}
+
+{% endblock %}

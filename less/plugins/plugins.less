@@ -1,0 +1,166 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins
+// ----------------------------------------
+
+// ------------------------------
+// #Tags and Categories
+// ------------------------------
+	
+.post-category,
+.post-tags {
+	padding: 0;
+}
+
+.category-title,
+.tags-title {
+	.paragraph;
+	display: block;
+	vertical-align: middle;
+	font-weight: bold;
+	line-height: 1em;
+}
+
+.category-title {
+	margin: 1em 0 0;
+	padding: 0.5em 0;
+}
+
+.tags-title {
+	margin: 0;
+	padding: 0;
+}
+
+.tag-list {
+	.clearfix();
+	
+	li {
+		float: left;
+		margin: 0;
+		padding: 0;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.tag-list,
+.tag-item,
+.dietary-list {
+	margin: 0 -0.4em;
+	line-height: 1em;
+}
+
+a.category-link,
+a.tag-link,
+.dietary-item,
+.ecombasket .icon--basket .ecombasket__item-count {
+	display: inline-block;
+	background: lighten(desaturate(@color__button--background, 100%), 10%);
+	margin: 0.4em;
+	padding: 0.4em 0.6em;
+	line-height: 1em;
+	letter-spacing: @font__button--letter-spacing;
+	font-family: @font__button--font-family;
+	font-size: @font__button--font-size;
+	font-weight:@font__button--font-weight;
+	color: @color__button--text;
+	.transition (all 0.25s ease-in-out);
+	
+	.make-font-a-little-smaller(@font__button--font-size);
+	.make-font-smaller(@font__button--font-size);
+	.make-font-a-lot-smaller(@font__button--font-size);
+	
+	&:hover {
+		background: desaturate(@color__button--background--hover, 100%);
+	}
+	
+	&:last-child {
+		margin-right: 0.4em;
+	}
+}
+
+// ------------------------------
+// #Paginatinon
+// ------------------------------
+
+// Styles for both the Blog Post List
+// and the Ecommerce Product List.
+
+.ecomproductslist,
+.blogpostlist {
+	.pagination-list {
+		.display-flex(flex);
+		max-width: @layout-max-width;
+		margin: 0 auto;
+		padding: 2em 0;
+	}
+
+	.pagination-item {
+		margin: 0;
+		padding: 0;
+	}
+
+	a.button--pagination {
+		.link-button;
+		padding: 0.5em 1em;
+		
+		&.icon--previous:before {
+			content: "\f053";
+		}
+		
+		&.icon--next:after {
+			content: "\f054";
+		}
+		
+		&:before {
+			margin: 0 0.5em 0 0;
+		}
+		
+		&:after {
+			margin: 0 0 0 0.5em;
+		}
+	}
+}
+
+// Styles only for the Blog Post List.
+
+.blogpostlist {
+	.post-pagination {
+		width: 90%;
+		max-width: @layout-max-width;
+		margin: 0 auto;
+		padding: 1px 5%;
+	}
+	
+	.pagination-list {
+		.justify-content(space-between);
+		.box-sizing(content-box);
+		margin: 0 auto;
+		max-width: 940px;
+	}
+
+	.control-text {
+		@media @mobile {
+			display: none;
+		}
+	}
+
+	a.button--pagination {
+		&:before {
+			font-size: 1em;
+			
+			@media @mobile {
+				margin: 0.1em -0.2em 0 -0.2em;
+			}
+		}
+		
+		&:after {
+			font-size: 1em;
+			
+			@media @mobile {
+				margin: 0.1em -0.3em 0 -0.1em;
+			}
+		}
+	}
+}

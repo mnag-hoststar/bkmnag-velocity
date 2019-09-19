@@ -1,0 +1,96 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Table
+// ----------------------------------------
+
+// ------------------------------
+// #Table
+// ------------------------------
+
+table {
+	.paragraph;
+	width: 100%;
+	border: none;
+	border-collapse: separate;
+	border-spacing: 0;
+	margin: 0 0 1em;
+		
+	@media @mobile {
+		display: block;
+		border-top: 1px solid @color__p--text;
+		border-bottom: 1px solid @color__p--text;
+	}
+}
+
+// Table Body and Table Row
+
+tbody,
+tr {
+	@media @mobile {
+		display: block;
+	}
+}
+
+// Table Cell
+
+td, th {
+	border: none;
+	background-color: transparent;
+	font-family: @font__p--font-family;
+	font-weight: @font__p--font-weight;
+	font-size: @font__p--font-size;
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+	
+	tr:first-child & {
+		border-top: 1px solid @color__p--text;
+	}
+		
+	@media @mobile {
+		display: block;
+	}
+}
+
+th {
+	padding: 0.5em;
+	border-bottom: 1px solid @color__p--text;
+	font-weight: 700;
+		
+	@media @mobile {
+		display: none;
+	}
+}
+
+td {
+	border-bottom: 1px solid @color-text--light;
+	padding: 1em 0.5em;
+	line-height: 1.5em;
+		
+	@media @mobile {
+		display: block;
+		border-bottom: 1px solid transparent;
+		padding: 0;
+		
+		&:first-child {
+			padding-top: 1em;
+		}
+		
+		&:last-child {
+			border-bottom: 1px solid @color-text--light;
+			padding-bottom: 1em;
+		}
+		
+		tr:last-child &:last-child {
+			border-bottom: 1px solid transparent;
+			padding-bottom: 0;
+		}
+	}
+}

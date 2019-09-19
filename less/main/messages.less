@@ -1,0 +1,227 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Messages
+// ----------------------------------------
+
+// ------------------------------
+// #Variables
+// ------------------------------
+
+@message-color--standard: #64676e;
+@message-color--error: #f6533d;
+@message-color--warning: #ffae00;
+@message-color--information: #51a5cf;
+@message-color--success: #8ec048;
+@message-color--not-found: #64676e;
+
+// ------------------------------
+// #General Messages
+// ------------------------------
+
+// Overall message styling
+
+.message {
+    position: relative;
+    padding: 1.3em;
+	padding-left: 3.5em;
+    margin: 1em auto;
+	min-height: 3em;
+    .clearfix();
+
+    // Message Heading, Paragraph
+
+    h3, p {
+        margin: 0;
+        padding: 0;
+    }
+	
+	h3 {
+		font-size: @font__h3--font-size;
+		line-height: @font__h3--line-height;
+		margin-top: 0;
+		margin-bottom: 0.5em;
+		color: #fff;
+	}
+	
+	p {
+		padding: 0;
+		font-family: @font__p--font-family;
+		line-height: @font__p--line-height;
+		font-size: @font__p--font-size;
+		color: #fff;
+		
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
+	
+		.make-line-height-a-little-smaller(@font__p--line-height);
+		.make-line-height-smaller(@font__p--line-height);
+		.make-line-height-a-lot-smaller(@font__p--line-height);
+	}
+
+    // Consequetive Paragraphs
+
+    p + p {
+        margin-top: 0.35em;
+    }
+
+    // Strong text
+
+    strong {
+        font-weight: bold;
+    }
+
+    // Icon
+
+    &:before {
+        font-family: 'FontAwesome', sans-serif;
+        display: block;
+        width: 2.5em;
+        position: absolute;
+		top: 0.9em;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+		font-size: 1.4em;
+		line-height: 1.4em;
+		.border-radius(50%);
+		color: #fff;
+    }
+}
+
+// Error
+
+.message--error {
+	background-color: @message-color--error;
+
+	&:before {
+		content: "\f12a";
+	}
+}
+
+// Warning
+
+.message--warning {
+	background-color: @message-color--warning;
+
+	&:before {
+		content: "\f071";
+	}
+}
+
+// Information
+
+.message--information {
+	background-color: @message-color--information;
+
+	&:before {
+		content: "\f129";
+	}
+}
+
+// Success
+
+.message--success {
+	background-color: @message-color--success;
+
+	&:before {
+		content: "\f00c";
+	}
+}
+
+// Not Found
+
+.message--not-found {
+	background-color: @message-color--not-found;
+
+	&:before {
+		content: "\f002";
+	}
+}
+
+// Message in Template's Footer
+
+.template__footer .message {
+    margin: 0;
+}
+
+// ------------------------------
+// #Form Messages
+// ------------------------------
+
+.overlay.success .message-box {
+    .message;
+    .message--success;
+}
+
+
+.overlay.fail .message-box {
+    .message;
+    .message--warning;
+}
+
+// ------------------------------
+// #Cookie Message
+// ------------------------------
+
+.bk-cookie-container {
+	border: none;
+	position: fixed;
+	top: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	max-width: none;
+	width: 100%;
+
+	@media @mobile {
+		left: 0;
+		width: 100%;
+	}
+	
+	p, a {
+		.paragraph;
+		color: #fff;
+		
+		&, &:hover {
+			color: #fff;
+		}
+	}
+	
+	p {
+		padding: 0.5em 1em;
+		hyphens: none;
+	}
+	
+	p a {
+		margin: 0 0.25em;
+		padding: 0 0.1em;
+		color: #fff;
+		white-space: nowrap;
+	}
+	
+	.bk-cookie-close-button {
+		display: inline-block;
+		position: static;
+		margin: 1em 1em 1.5em;
+		padding: 1em 2em;
+		.appearance(none);
+		background-color: @color__button--background;
+		font-family: @font__button--font-family;
+		font-size: @font__button--font-size;
+		font-weight: @font__button--font-weight;
+		line-height: @font__button--line-height;
+		letter-spacing: @font__button--letter-spacing;
+		color: @color__button--text;
+		text-transform: uppercase;
+		text-align: center;
+		.transition(all 0.25s ease-in-out);
+		
+		&:hover {
+			padding: 1em 2em;
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
+		}
+	}
+}

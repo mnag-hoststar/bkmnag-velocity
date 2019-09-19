@@ -1,0 +1,638 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Navigation
+// ----------------------------------------
+
+// ------------------------------
+// #Logo & Company Name
+// ------------------------------
+
+.widget[data-widget-type="companyname"],
+.widget[data-widget-type="logo"] {
+	
+	// If the header is smaller when scrolling down.
+	
+	.template__header--scrolled & {
+		padding: 0.5em 0;
+		
+		@media @tablet {
+			padding: 0;
+		}
+	}
+}
+
+.template__company {
+	.display-flex(flex);
+	.align-items(center, center);
+	margin-right: 1em;
+	padding: 0;
+	
+	@media @tablet {
+		margin-right: 50px;
+	}
+	
+	.widget {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0;
+	}
+}
+
+.logo {
+	padding-right: 10px;
+    font-size: 1em;
+	
+	@media @tablet {
+		margin-right: -50px;
+	}
+	
+	&__logo-image {
+		transition: inherit;
+		
+		// If the header is smaller when scrolling down.
+		
+		.template__header--scrolled & {
+			max-width: 40px;
+		}
+	}
+}
+
+a.companyname {
+    line-height: 0;
+
+	&__company-link {
+		display: block;
+		margin: 0;
+		font-family: @font__companyname--font-family;
+		font-size: @font__companyname--font-size;
+		font-weight: @font__companyname--font-weight;
+		line-height: @font__companyname--line-height;
+		letter-spacing: @font__companyname--letter-spacing;
+		color: @color__companyname--text;
+    	word-break: normal;
+		word-wrap: normal;
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		@media @tablet {
+			margin-left: 50px;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+		
+		// If the header is smaller when scrolling down.
+		
+		.template__header--scrolled & {
+			font-size: @font__companyname--font-size*0.8;
+			
+			.make-font-a-little-smaller(@font__companyname--font-size*0.8);
+			.make-font-smaller(@font__companyname--font-size*0.8);
+			.make-font-a-lot-smaller(@font__companyname--font-size*0.8);
+		}
+		
+		@media @tablet {
+			&, .template__header--scrolled & {
+				font-size: @font__companyname--font-size*0.8;
+				
+				.make-font-a-little-smaller(@font__companyname--font-size*0.8);
+				.make-font-smaller(@font__companyname--font-size*0.8);
+				.make-font-a-lot-smaller(@font__companyname--font-size*0.8);
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation
+// ------------------------------
+
+.template__navigation {
+	.flex-grow(2);
+	
+	@media @tablet {
+		position: relative;
+	}
+}
+
+.widget[data-widget-type="extendednavigation"],
+.widget__extendednavigation,
+.navigation-body {
+	height: 100%;
+}
+
+.widget[data-widget-type="extendednavigation"] {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	
+	@media @tablet {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	&.open {
+		@media @tablet {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
+	}
+}
+
+.extendednavigation {
+	@media @tablet {
+		position: absolute;
+		top: 50%;
+		right: 5px;
+		bottom: 0;
+		margin-top: -12px;
+	}
+}
+
+// ------------------------------
+// #Navigation Toggle Button
+// ------------------------------
+
+// Navigation Toggle Button
+// It only appears on tablet and mobile sizes.
+
+.navigation-toggle {
+	display: none;
+	
+	@media @tablet {
+		
+		// Displays as Icon's Middle Bar
+		
+		&, &:hover, &:focus {
+			z-index: 100;
+			cursor: pointer;
+			background: @color__navigation--text;
+			.transition(background 0s ease-in 0.1s);
+			background-clip: content-box;
+			height: 3px;
+			padding: 0;
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+			padding: 9px 0;
+    		min-height: 21px;
+    		height: 21px;
+			width: 28px;
+			font-size: 26px;
+			text-indent: 10000px;
+			border: none;
+			.box-shadow(none);
+
+			.make-font-a-little-smaller(@font__companyname--font-size);
+			.make-font-smaller(@font__companyname--font-size);
+			.make-font-a-lot-smaller(@font__companyname--font-size);
+		}
+
+		// Top and Bottom Navigation Item Bar
+
+		&:after,
+		&:before,
+		&:hover:after,
+		&:hover:before {
+			content: "";
+			height: 3px;
+			width: 28px;
+			position: absolute;
+			display: block;
+			background-color: @color__navigation--text;
+			margin: 0;
+
+			@media @mobile {
+				height: 2px;
+			}
+		}
+
+		// Top Bar
+		
+		&:before,
+		&:hover:before {
+			top: 0;
+			.transition(top 0.1s ease-in-out 0.05s, transform 0.05s ease-in-out 0s;);
+		}
+
+		// Bottom Bar
+		
+		&:after,
+		&:hover:after {
+			bottom: 0;
+			.transition(bottom 0.1s ease-in-out 0.05s, transform 0.05s ease-in-out 0s;);
+		}
+
+		&:hover {
+			&, &:before, &:after {
+				background-color: @color__navigation--text;
+				border: none;
+			}
+		}
+	}
+
+	// Toggle Button Open
+
+	.open & {
+		@media @tablet {
+			
+			// Middle bar
+			
+			.transition(background 0s ease-in 0s);
+			background-color: transparent;
+			
+			// Top Bar
+
+			&:before {
+				top: 9px;
+				.transform-rotate(45deg);
+		  		.transition(top 0.05s ease-in-out 0s, transform 0.1s ease-in-out 0.05s;);
+			}
+			
+			// Bottom Bar
+
+			&:after {
+				bottom: 9px;
+				.transform-rotate(-45deg);
+		  		.transition(top 0.05s ease-in-out 0s, transform 0.1s ease-in-out 0.05s;);
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation Body
+// ------------------------------
+
+// Dark overlay on tablet and mobile.
+
+.navigation-body {
+	.transition(opacity 0s);
+	
+	// This is only shown in Tablet and Mobile
+	
+	@media @tablet {
+		outline: 0;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		
+		// When Navigation is open
+
+		.open & {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: block;
+			opacity: 1;
+			width: auto;
+			overflow: auto;
+			height: auto;
+			height: 100vh;
+			background-color: fade(@color__header--background, 95%);
+			.transition(opacity 0.25s);
+		}
+	}
+}
+
+
+// ------------------------------
+// #Navigation List
+// ------------------------------
+
+.navigation-list {
+	.display-flex(flex);
+	.align-items(center, center);
+	.flex-wrap(wrap);
+	margin: 0;
+	padding: 0;
+    height: 100%;
+	
+	.align-left & {
+		.justify-content(flex-start, start);
+	}
+	.align-center & {
+		.justify-content(center, center);
+	}
+	.align-right & {
+		.justify-content(flex-end, end);
+	}
+	
+    @media @tablet {
+		display: block;
+		height: auto;
+		margin: 5em auto 2em;
+		text-align: center;
+	}
+}
+
+// ------------------------------
+// #Navigation Items
+// ------------------------------
+
+// Navigation Normal Item
+
+.navigation-item {
+	position: relative;
+	margin-bottom: 0 !important;
+	padding: 0;
+	
+    @media @tablet {
+		display: block;
+		padding: 0.5em 0;
+		text-align: center;
+		opacity: 0;
+		.transform-translate(0, 0.25em;);
+		.transition(transform 0.25s ease-in-out 0.25s, opacity 0.25s ease-in-out 0.25s;);
+
+		.open & {
+			opacity: 1;
+			.transform-translate(0, 0;);
+		}
+	}
+	
+	.item-name {
+		position: relative;
+		display: inline-block;
+		margin: 0.25em;
+		padding: 0.5em 1em;
+		font-family: @font__navigation--font-family;
+		font-size: @font__navigation--font-size;
+		font-weight: @font__navigation--font-weight;
+		line-height: @font__navigation--line-height;
+		letter-spacing: @font__navigation--letter-spacing;
+		color: @color__navigation--text;
+		.transition(all 0.25s ease-in-out 0s);
+		hyphens: none;
+		word-wrap: break-word;
+		display: block;
+	
+		.make-font-a-little-smaller(@font__navigation--font-size);
+		.make-font-smaller(@font__navigation--font-size);
+		.make-font-a-lot-smaller(@font__navigation--font-size);
+		
+		@media @tablet {
+			display: table;
+			margin: 0;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		
+		&:after {
+			content: "";
+			display: block;
+		}
+		
+		&:hover {
+			background-color: @color__navigation--text--hover;
+			color: @color__navigation--text;
+			
+			@media @tablet {
+				background-color: transparent;
+			}
+		
+			.template__home & {
+				background-color: fade(@color__header--background, 50%);
+			
+				@media @tablet {
+					background-color: transparent;
+				}
+			}
+		}
+		
+		&:active {
+			@media @tablet {
+				background-color: @color__navigation--text--hover;
+		
+				.template__home & {
+					@media @tablet {
+						background-color: @color__navigation--text--hover;
+					}
+				}
+			}
+		}
+	}
+
+	&.selected > .item-name {
+		border: 1px solid @color__navigation--border;
+		background-color: transparent;
+		color: @color__navigation--text;
+		
+		.template__home & {
+			background-color: transparent;
+			
+			@media @tablet {
+				border: 1px solid @color__navigation--border;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.selected:hover > .item-name,
+	&.selected:active > .item-name {
+		.box-shadow(none);
+	}
+}
+
+// Navigation Folder Item
+
+.navigation-item.folder {
+	overflow: hidden;
+
+	@media @tablet {
+		overflow: visible;
+	}
+	
+	// Folder Icon
+	
+	> .item-name {
+		padding-right: 2.25em;
+		
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0.25em;
+			bottom: 0;
+			margin-left: 0.25em;
+			width: 1.5em;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjYyODI5IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTkgMTMuMTVsNyA3IDctNyIvPjwvc3ZnPg==");
+			background-size: 1.5em;
+			background-position: 0 center;
+			background-repeat: no-repeat;
+			font-size: 1.2em;
+			text-align: right;
+			.transition(transform 0.25s ease-in-out);
+		}
+	}
+	
+	&.folder-open {
+		overflow: visible;
+		
+		> .item-name {
+			background-color: @color__navigation--text--hover;
+			color: @color__navigation--text;
+
+			@media @tablet {
+				background-color: transparent;
+			}
+
+			.template__home & {
+				background-color: fade(@color__header--background, 50%);
+
+				@media @tablet {
+					background-color: transparent;
+				}
+			}
+
+			&:after {
+				.transform-rotate(180deg);
+			}
+		}
+	}
+}
+
+// Navigation Folder Submenu
+
+.navigation-list--children {
+	.navigation-item.folder &,
+	.navigation-item.folder:hover &,
+	.navigation-item.folder:active & {
+		position: absolute;
+		right: 0;
+		left: auto;
+		opacity: 0;
+    	margin: 0.5em 0 0;
+		padding: 0;
+		width: auto;
+		height: auto;
+		background-color: @color__navigation-list--background;
+		border: 1px solid @color__navigation--border;
+		overflow: visible;
+		text-align: center;
+		.transform-translate(0, 0;);
+		.transition(transform 0.25s ease-in-out 0.25s, opacity 0.25s ease-in-out 0.25s;);
+
+		@media @tablet {
+			position: static;
+			margin: 0;
+			padding: 0;
+			height: 0;
+			background-color: fade(@color__navigation-list--background, 75%);
+			border-color: fade(@color__navigation--border, 25%);
+			border-left: none;
+			border-right: none;
+			.transition(all 0.25s ease-in-out 0s, opacity 0s ease-in-out 0s;);
+		}
+	}
+	
+	.navigation-item.folder.folder-open & {
+    	overflow: visible;
+		display: block;
+		height: auto;
+		opacity: 1;
+		.transform-translate(0, -0.25em;);
+
+		@media @tablet {
+			position: static;
+			margin: 0.5em 0;
+			padding: 0;
+			.transform-translate(0, 0;);
+			.transition(all 0.25s ease-in-out, opacity 0.25s ease-in-out;);
+		}
+	}
+}
+
+// Navigation Folder Submenu Single Item
+
+.navigation-item--child {
+	position: relative;
+	padding: 0.25em 0;
+	max-width: 300px;
+	.transition(all 0.25s ease-in-out 0s);
+	
+	&:after {
+		content: " ";
+		position: absolute;
+		bottom: 0;
+		left: 0.5em;
+		right: 0.5em;
+		border-bottom: 1px solid fade(@color__navigation--border, 25%);
+	}
+
+	@media @tablet {
+		padding: 0;
+		max-width: none;
+		
+		&:after {
+			content: none;
+		}
+	}
+	
+	&:hover {
+		background-color: @color__navigation--text--hover;
+
+		@media @tablet {
+			background-color: transparent;
+		}
+	}
+	
+	&:last-child {
+		&:after {
+			content: none;
+		}
+	}
+
+	.item-name {
+		color: @color__navigation--text;
+		padding: 0.5em 1.5em;
+
+		@media @tablet {
+			padding: 1em 1.5em;
+		}
+		
+		&:hover {
+			background-color: transparent;
+			color: @color__navigation--text;
+		}
+		
+		&:active {
+			@media @tablet {
+				background-color: @color__navigation--text--hover;
+			}
+		}
+		
+		.template__home & {
+			&, &:hover {
+				background-color: transparent;
+			}
+		
+			&:active {
+				background-color: @color__navigation--text--hover;
+			}
+		}
+	}
+
+	// Selected Folder Item
+
+	&.selected {
+		background-color: @color__navigation--text--hover;
+		
+		.item-name {
+			background-color: transparent;
+			color: @color__navigation--text;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<section class="template template__default">
+	{% include "includes/header.twig" %}
+</section>
+
+<section class="page page__default">
+    <div class="template__content">
+		{{widget('pagetitle', 'title', {})|raw}}
+		{{zone('main')|raw}}
+    </div>
+</section>
+
+{% include "includes/footer.twig" %}
+
+{% endblock %}

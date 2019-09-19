@@ -1,0 +1,209 @@
+// ----------------------------------------
+// Velocity: LESS > Widgets > Buttons
+// ----------------------------------------
+
+// -----------------------------
+// #Button
+// -----------------------------
+
+.button,
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link,
+a.ecomproduct__button {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 0 2em;
+	min-height: 50px;
+    .border-radius(0);
+	border: 1px solid @color__button--border;
+    background-color: @color__button--background;
+	font-family: @font__button--font-family;
+	font-size: @font__button--font-size;
+	font-weight: @font__button--font-weight;
+	line-height: @font__button--line-height;
+	letter-spacing: @font__button--letter-spacing;
+    color: @color__button--text;
+	text-transform: uppercase;
+	vertical-align: middle;
+	.transition (all 0.25s ease-in-out);
+	
+	.make-font-a-little-smaller(@font__button--font-size);
+	.make-font-smaller(@font__button--font-size);
+	.make-font-a-lot-smaller(@font__button--font-size);
+	
+	.make-line-height-a-little-smaller(@font__button--line-height);
+	.make-line-height-smaller(@font__button--line-height);
+	.make-line-height-a-lot-smaller(@font__button--line-height);
+	
+    &:hover,
+	&:focus,
+	&:active {
+        background-color: @color__button--background--hover;
+		border-color: @color__button--background--hover;
+    	color: @color__button--text--hover;
+    }
+}
+
+.button,
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link,
+.dropbox .button,
+.paypalbuynow .button {
+	&:before,
+	&:after {
+		margin: 0;
+		font-size: 1.5em;
+		font-weight: 400;
+	}
+	&:before {
+		margin-right: 0.5em;
+	}
+	&:after {
+		margin-left: 0.5em;
+	}
+}
+
+.link-button,
+.tweet .button,
+.clicktocall .phone-number-link {
+    display: table-cell;
+    vertical-align: middle;
+	height: 50px;
+	
+	&:before {
+		float: left;
+	}
+}
+
+// -----------------------------
+// #Tweet Button
+// -----------------------------
+
+.tweet .button {
+	&:before {
+		margin-right: 0.5em;
+	}
+}
+
+// -----------------------------
+// #Click to Call
+// -----------------------------
+
+.clicktocall .phone-number-link {
+	&:before {
+		margin-right: 0.5em;
+	}
+}
+
+// -----------------------------
+// #Dropbox
+// -----------------------------
+
+.dropbox {
+	display: table;
+
+	.button {
+		&:before {
+			display: inline;
+			margin-right: 0.5em;
+		}
+	}
+}
+
+.dropbox__button,
+.dropbox__label {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dropbox__label {
+	width: 100%;
+	padding-left: 1em;
+}
+
+// -----------------------------
+// #Facebook Like
+// -----------------------------
+
+
+// -----------------------------
+// #Paypal
+// -----------------------------
+
+.paypalbuynow {
+	.button {
+		&:before {
+			margin-right: 0.5em;
+		}
+	}
+}
+
+// -----------------------------
+// Icons
+// -----------------------------
+
+.icon:before {
+	margin: 0.5em 0.5em 0.5em 0;
+	width: auto;
+}
+
+
+// -----------------------------
+// #Social Icons
+// -----------------------------
+
+// The List of Social Icons
+
+.social-list {
+    margin: 0 -0.5em;
+}
+
+.social-item {
+	margin: 0.5em;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+
+	&:before {
+		content: "";
+	}
+}
+
+.social-item .social-link {
+	display: block;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: @color__button--background;
+	border: 1px solid @color__button--border;
+	color: @color__button--text;
+	.transition(all 0.5s ease);
+	
+	&:hover {
+		text-decoration: none;
+		background-color: @color__button--background--hover;
+		border-color: @color__button--background--hover;
+		color: @color__button--text--hover;
+		.transition(all 0.5s ease);
+	}
+
+	// Icon
+
+	&:before {
+		margin: 0 auto;
+		padding: 0;
+		font-size: 1.2em;
+		display: block;
+	}
+}
+
+// The name of the button is not displayed.
+
+.socialicons__social-name {
+	display: none;
+}

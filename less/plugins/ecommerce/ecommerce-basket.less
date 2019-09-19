@@ -1,0 +1,220 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins > Ecommerce > Basket
+// ----------------------------------------
+
+// ------------------------------
+// #Basket Icon
+// ------------------------------
+
+.widget[data-widget-type="ecombasket"] {
+    margin: 0 auto;
+	padding: 1em 0;
+    max-width: @layout-max-width;
+    width: 90%;
+		
+	@media @mobile {
+		padding: 1em 0 0;
+	}
+}
+
+.ecombasket {
+	text-align: right;
+	
+	.icon--basket {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		font-size: 0;
+		height: auto;
+		
+		&:before {
+			content: none;
+		}
+		
+		// Cart Count Number
+		.ecombasket__item-count {
+			z-index: 0;
+			position: relative;
+			
+			// Background
+			&:before {
+				content: "";
+				z-index: -1;
+				display: block;
+				position: absolute;
+				top: -0.5em;
+				left: -2.5em;
+				right: -0.5em;
+				bottom: -0.5em;
+			}
+		
+			// Cart Icon
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 100%;
+				margin: -0.5em 0.5em 0 0;
+				padding: 0;
+				width: 1.5em;
+				color: @color__p--text;
+				content: "\f07a";
+    			line-height: 1em;
+				font-family: 'FontAwesome', sans-serif;
+				font-size: 1em;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-align: center;
+			}
+
+			&:hover:after {
+				color: @color__p--text;
+			}
+		}
+	}
+}
+
+// -----------------------------
+// #Basket Content
+// -----------------------------
+
+.show-content {
+	.ecombasket {
+		.basket-body {
+			margin: 1em 0;
+			padding: 1px 140px;
+		
+			@media @desktop-wide {
+				padding: 1px 10%;
+			}
+		}
+		
+		// The whole list of the basket.
+		
+		.basket-list {
+			display: table;
+			width: 100%;
+			margin: 2em 0 1em;
+		}
+		
+		// A single item on the list.
+
+		.basket-item {
+			position: relative;
+			margin: 0;
+    		padding: 0;
+			border-bottom: 1px solid @color__ecomproductslist--background;
+
+			> * {
+				display: table-cell;
+				vertical-align: middle;
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+				
+			&:first-child {
+				border-top: 1px solid @color__ecomproductslist--background;
+			}
+		}
+		
+		// The item image.
+		
+		.basket-item-image {
+			padding-right: 1em;
+			
+			.image-link {
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+			}
+		}
+		
+		// Item details.
+		
+		.basket-item-details {
+			.paragraph;
+			width: 100%;
+			padding-right: 3em;
+			padding-bottom: 0;
+			text-align: left;
+		}
+		
+		.basket-item-name {
+    		display: block;
+			line-height: 1.5em;
+		}
+		
+		.item-quantity,
+		.basket-item-price {
+			padding: 0;
+		}
+		
+		.basket-item-price {
+			margin: 0;
+		}
+		
+		// Item remove button.
+		
+		.item-remove {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -1em;
+			width: 2em;
+			height: 2em;
+			min-height: inherit;
+			padding: 0 !important;
+			border: none;
+			font-size: 1em;
+			line-height: 2em;
+	
+			.make-font-a-little-smaller(@font__p--font-size);
+			.make-font-smaller(@font__p--font-size);
+			.make-font-a-lot-smaller(@font__p--font-size);
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: 0;
+				font-size: 1em;
+				line-height: 2em;
+    			width: 2em;
+				text-align: center;
+	
+				.make-font-a-little-smaller(@font__p--font-size);
+				.make-font-smaller(@font__p--font-size);
+				.make-font-a-lot-smaller(@font__p--font-size);
+			}
+		}
+		
+		.remove-text {
+			display: none;
+		}
+		
+		// Basket Footer.
+		
+		.basket-footer {
+			margin-top: 0;
+			padding-top: 0;
+			padding-bottom: 2em;
+			text-align: right;
+		}
+		
+		.basket-total {
+			.heading--3;
+			padding: 0.5em 0 1em;
+			color: @color__ecomproduct-price--text;
+
+			 @media @mobile {
+				padding-top: 0;
+				text-align: center;
+			}
+		}
+			
+		.view-basket {
+			.link-button;
+		}
+	}
+}

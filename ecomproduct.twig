@@ -1,0 +1,19 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<section class="template template__shop">
+	{% include "includes/header.twig" %}
+</section>
+
+<section class="page page__ecomproduct">
+    <div class="template__content">
+        <div class="container">
+			{{widget('ecombasket', 'shopbasket', {})|raw}}
+            {{zone('main')|raw}}
+        </div>
+    </div>
+</section>
+
+{% include "includes/footer.twig" %}
+
+{% endblock %}

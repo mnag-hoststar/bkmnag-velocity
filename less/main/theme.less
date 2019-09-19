@@ -1,0 +1,281 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Theme
+// ----------------------------------------
+
+// This contains all styles that are not widgets.
+
+// ------------------------------
+// #Site Styles
+// ------------------------------
+
+* {
+	.box-sizing(border-box);
+	margin: 0;
+	padding: 0;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+html, body {
+    background-color: @color__body--background;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
+	.animation(fadeIn 1s ease-in-out);
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+	
+	// iOS fix of VH unit
+    width: -webkit-calc(100% - 0px);
+}
+
+html {
+	height: 100%;
+	background-color: @color__footer--background;
+}
+
+body {
+	padding-top: 1px;
+	
+	> :first-child {
+		margin-top: -1px;
+	}
+}
+
+.widget__item {
+	padding: 0;
+}
+
+// HTML5 Semantic Elements
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+// ------------------------------
+// #Header
+// ------------------------------
+
+.template__header,
+.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+	.display-flex(flex);
+	width: 100%;
+	position: fixed;
+	top: 0;
+    left: 0;
+    right: 0;
+	background-color: @color__header--background;
+    z-index: 11000;
+	padding: 0.5em 1em;
+	border-bottom: 1px solid @color__header--border;
+    font-size: @font__navigation--font-size;
+	.transition(all 0.25s ease-in-out 0s);
+		
+	@media @tablet {
+		padding: 1em;
+	}
+	
+	.template__home .widget[data-widget-type="responsiveslideshow"] + & {
+		background-color: transparent;
+		border-bottom: none;
+	}
+	
+	&--scrolled {
+		background-color: @color__header--background;
+		padding: 0 1em;
+		
+		@media @tablet {
+			padding: 1em;
+		}
+	}
+}
+
+// ------------------------------
+// #Footer
+// ------------------------------
+
+.template__footer {
+    width: 100%;
+    background-color: @color__footer--background;
+	border-top: 1px solid @color__footer--border;
+    text-align: left;
+	margin: 2em 0 0;
+	padding: 1em 0 2em;
+	
+	.footer {
+		&--container {
+			max-width: @layout-max-width;
+			margin: 0 auto;
+			padding: 1px 0;
+			
+			@media @desktop {
+				width: 90%;
+				padding: 1px 5%;
+			}
+			
+			@media @mobile {
+				text-align: center;
+			}
+		}
+		
+		&--contact,
+		&--information {
+			.display-flex(flex);
+			.flex-wrap(wrap);
+			margin: 0 -1em;
+			
+			> * {
+				max-width: 50%;
+				padding: 0 1em 1em;
+				.flex(1);
+				
+				@media @tablet-horizontal { 
+					max-width: none;
+					padding: 0 1em 1em;
+				}
+			}
+		}
+		
+		&--contact {
+			> * {
+				@media @tablet-horizontal { 
+					width: 100%;
+					.flex(auto);
+				}
+			}
+			
+			form legend {
+				display: none;
+			}
+			
+			.social-list {
+				margin: 0 -0.25em;
+			}
+			
+			.social-item {
+				margin: 0.25em;
+				
+				.social-link {
+					background: lighten(desaturate(@color__button--background, 100%), 10%);
+					.border-radius(50%);
+					border-color: transparent;
+					color: @color__footer--background;
+	
+					&:hover {
+						background-color: desaturate(@color__button--background--hover, 100%);
+						border-color: transparent;
+					}
+				}
+			}
+		}
+		
+		&--information {
+			margin-top: 1em;
+			margin-bottom: 1em;
+			padding-top: 1em;
+			padding-bottom: 0.5em;
+			position: relative;
+			
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				left: 1em;
+				right: 1em;
+				border-top: 1px solid @color-text--light;
+			}
+			
+			&:before {
+				top: 0;
+			}
+			
+			&:after {
+				bottom: 0;
+			}
+			
+			> * {
+				@media @tablet-horizontal { 
+					width: 50%;
+					.flex(auto);
+				}
+				
+				@media @mobile { 
+					width: 100%;
+				}
+			}
+			
+			p {
+				padding-top: 0.3em;
+				padding-bottom: 0.3em;
+				hyphens: none;
+				line-height: @font__p--line-height * 0.75;
+				
+				a {
+					border: none;
+					
+					&:hover, &:active {
+						color: @color-highlight;
+					}
+				}
+			}
+		}
+	}
+}
+
+.gdpr-footer {
+    background-color: @color__footer--background;
+    padding: 10px 0;
+    
+    a[class] {
+		z-index: 0;
+		position: relative;
+		margin: -0.2em 1em -0.4em;
+		padding: 0.4em 0.4em 0.1em;
+		line-height: 0.8em;
+		border-bottom: none;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: @font__p--font-family;
+		font-size: @font__p--font-size;
+		font-weight: @font__p--font-weight;
+		line-height: @font__p--line-height;
+		letter-spacing: @font__p--letter-spacing;
+		color: @font__p--text;
+		.transition(all 0.2s ease-in-out);
+		
+		@media @tablet {
+			display: inline-block;
+			margin: 0.5em 0;
+			font-size: @font__p--font-size * 1.2;
+			line-height: @font__p--line-height * 1.2;
+		}
+		
+		&:hover, &:active {
+			text-decoration: none;
+			border-bottom: none;
+			color: @color-highlight;
+		}
+		
+		&:selected {
+			border-bottom: none;
+			color: @color-highlight;
+
+			&:hover, &:active {
+				text-decoration: none;
+				border-bottom: none;
+				color: @color-highlight;
+			}
+		}
+    }
+}

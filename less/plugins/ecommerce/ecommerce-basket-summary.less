@@ -1,0 +1,332 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins > Ecommerce > Basket Summary
+// ----------------------------------------
+
+// ------------------------------
+// #Table Styles
+// ------------------------------
+
+.summary-table {
+    border-collapse: separate;
+    width: 100%;
+    margin: 2em 0;
+	border: none;
+	border-top: 1px solid @color__p--text;
+	
+    // Table and Cells Reset
+
+    td, th, .cell {
+		border: none;
+        background: transparent;
+        padding: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+		
+    }
+	
+	&, .table-row, .cell, .summary-body {
+		@media @mobile {
+			display: block;
+		}
+	}
+	
+	.table-row {
+		border-bottom: none;
+		
+		.cell {
+			padding: 0.5em;
+			hyphens: none;
+				
+			@media @tablet {
+				padding: 0.5em;
+			}
+			
+			&:first-child,
+			.cell--image {
+				padding-left: 0;
+			}
+
+			&:nth-last-child(2),
+			.cell--price {
+				text-align: right;
+				
+				@media @mobile {
+					text-align: left;
+				}
+			}
+
+			&:last-child,
+			.cell--total {
+				padding-right: 0;
+				text-align: right;
+				
+				@media @mobile {
+					padding-right: 0.5em;
+					text-align: left;
+				}
+			}
+			
+			p {
+				padding: 0;
+			}
+		}
+		
+		
+
+		// Row Heading
+
+		&--heading {
+			@media @mobile {
+				display: none;
+			}
+			
+			.cell {
+				border-bottom: 1px solid @color__p--text;
+				color: @color__p--text;
+			}
+		}
+	}
+	
+	// Pseudo Label
+
+	.cell--quantity,
+	.cell--price,
+	.cell--total {
+		&:before {
+			display: none;
+			
+			@media @mobile {
+				position: static;
+				content: attr(data-title);
+				display: block;
+				font-size: 1em !important;
+				color: @color-text--faded;
+				margin: 0;
+			}
+		}
+	}
+	
+	.cell--quantity {
+		&:before {
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Image
+// ------------------------------
+
+.ecombasketsummary {
+	.table-row {
+		.cell--image {
+			width: 100px;
+
+			@media @mobile {
+				float: left;
+			}
+
+			.summary-item-link {
+				width: 100px;
+				height: 100px;
+				display: block;
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+
+				@media @mobile {
+					background-position: top;
+				}
+
+				// Image
+
+				.image {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Title
+// ------------------------------
+
+.ecombasketsummary {
+	.table-row {
+		.cell--title {
+			width: 50%;
+			padding-left: 0;
+			padding-right: 0;
+
+			@media @mobile {
+				margin-left: 110px;
+				padding: 0.5em;
+				width: auto;
+			}
+		}
+
+		// Item Link
+
+		.summary-item-link {
+			color: @color__p--text;
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Quantity
+// ------------------------------
+
+.ecombasketsummary {
+	.table-row {
+		.cell--quantity {
+			width: 10%;
+			min-width: 100px;
+
+			@media @mobile {
+				.clearfix();
+				width: auto;
+				margin-left: 110px;
+				position: relative;
+			}
+		}
+
+		.quantity-wrap {
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+			background-color: transparent;
+			min-width: 100px;
+
+			@media @mobile {
+				margin: 0 auto;
+				float: left;
+			}
+
+			@media @mobile-small {
+				height: 25px;
+				line-height: 25px;
+    			max-width: 75px;
+				min-width: 75px;
+			}
+
+			// Button Quantity
+
+			.button--quantity {
+				width: 30px;
+				height: 30px;
+				min-height: 30px;
+				line-height: 26px;
+				text-align: center;
+
+				@media @mobile {
+					line-height: 20px;
+				}
+
+				@media @mobile-small {
+					width: 25px;
+					height: 25px;
+					min-height: 25px;
+				}
+			}
+
+			// Quantity Field
+
+			.quantity-field {
+				color: @color__p--text;
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Price
+// ------------------------------
+
+.ecombasketsummary {
+	.table-row {
+		.cell--price {
+			padding: 1em;
+			text-align: right;
+
+			@media @mobile {
+				text-align: left;
+				margin-left: 110px;
+				padding: 0.5em;
+				width: auto;
+				float: left;
+				width: 30%;
+			}
+
+			@media @mobile-small {
+				margin-left: 0;
+				width: 110px;
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Total
+// ------------------------------
+
+.ecombasketsummary {
+	.table-row {
+		.cell--total {
+			text-align: right;
+
+			@media @mobile {
+				text-align: left;
+				margin-left: 60%;
+				padding: 0.5em;
+				width: auto;
+			}
+
+			@media @mobile-small {
+				margin-left: 110px;
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Order Total
+// ------------------------------
+
+.ecombasketsummary {
+    .table-row--order-total {
+        background-color: transparent;
+    }
+	
+    .cell--order-total {
+        text-align: right;
+		border-top: 1px solid @color__ecomproductslist--background;
+	}
+	
+	.order-total {
+         @media @mobile {
+            text-align: center;
+        }
+	}
+}
+
+// ------------------------------
+// #Button
+// ------------------------------
+
+.summary-form {
+    text-align: right;
+
+    @media @mobile {
+        text-align: center;
+    }
+}
+
+.ecombasketsummary{
+	.continue-shopping {
+		.button;
+		line-height: 46px;
+	}
+}

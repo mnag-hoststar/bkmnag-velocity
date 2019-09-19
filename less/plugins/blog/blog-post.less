@@ -1,0 +1,270 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins > Blog > Blog Post
+// ----------------------------------------
+
+// ------------------------------
+// #Article
+// ------------------------------
+
+.widget[data-name="blogpost"] {
+	padding: 0;
+
+	.blogpost {
+		width: auto;
+		max-width: none;
+	}
+}
+
+.blogpost__post-article {
+	position: relative;
+}
+
+// ------------------------------
+// #Image
+// ------------------------------
+
+.blogpost {
+	.post-image {
+		.paragraph;
+		position: relative;
+		background-color: @color__body--background;
+		margin: 4em auto -3px;
+		padding: 0;
+
+		.responsivecolumns & {
+			border: none;
+		}
+		
+		&:after {
+			content: "";
+			z-index: 2;
+			position: absolute;
+			top: -10px;
+			left: 0;
+			right: 0;
+			display: block;
+			margin: -2em auto 0;
+			width: 90%;
+			max-width: @layout-max-width;
+			height: 2em;
+
+			@media @mobile {
+				top: -6px;
+			}
+		}
+	}
+	
+	.image-link {
+		display: block;
+		opacity: 0.6;
+		padding-bottom: 900px;
+		background-position: center;
+		background-size: cover;
+
+		@media @desktop {
+			height: 60vw;
+			padding-bottom: 60%;
+		}
+
+		@media @tablet {
+			height: 80vw;
+			padding-bottom: 80%;
+		}
+		
+		// Using the background image instead.
+		
+		.image {
+			display: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Post Header, Content, and Footer
+// ------------------------------
+
+.blogpost__post-content,
+.blogpost__post-footer {
+	width: 90%;
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 1em 0;
+
+	> * {
+		padding: 0 5%;
+	}
+}
+
+.blogpost__post-content {
+	padding-bottom: 0;
+	background-color: @color__blogpost-article--background;
+}
+
+.blogpost__post-footer {
+	position: static;
+	z-index: 5;
+	margin-bottom: -4em;
+	text-align: center;
+	padding-top: 0;
+	
+	&:before,
+	&:after {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	&:before {
+		background: @color__body--background;
+	}
+}
+
+.blogpost__post-header {
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.blogpost__post-title {
+	.heading--1;
+	position: relative;
+	color: @color__blogpost-title--text;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: -320px;
+		left: 50%;
+		bottom: 100%;
+		margin-left: -1px;
+		width: 1px;
+		background-color: fade(@color__blogpost-title--text, 75%);
+
+		@media @desktop {
+			top: -20vw;
+		}
+	}
+}
+
+// ------------------------------
+// #Post Timestamp
+// ------------------------------
+
+.blogpost__post-footer {
+	.timestamp {
+		position: absolute;
+		top: 580px;
+		left: 0;
+		right: 0;
+		color: @color__blogpost-title--text;
+
+		@media @desktop {
+			top: 40vw;
+		}
+
+		@media @tablet {
+			top: 60vw;
+		}
+	}
+}
+
+// ------------------------------
+// #Post Attributes
+// ------------------------------
+
+.blogpost__post-attributes {
+	position: relative;
+	margin: 2em 0;
+	.clearfix();
+	
+	@media @mobile {
+		display: block;
+	}
+}
+
+.post-category,
+.post-tags {
+	display: block;
+	text-align: center;
+}
+
+
+.post-category {
+	margin-top: 3.5em;
+	padding-top: 1em;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: -3em;
+		left: 50%;
+		bottom: 100%;
+		margin-left: -1px;
+		width: 1px;
+		background-color: fade(@color__blogpost-title--text, 75%);
+	}
+}
+
+.post-tags {
+	margin-bottom: 5em;
+	padding-bottom: 1em;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		bottom: -3em;
+		margin-left: -1px;
+		width: 1px;
+		background-color: fade(@color__blogpost-title--text, 75%);
+	}
+}
+
+.category-title,
+.tags-title {
+	display: block;
+	position: relative;
+	vertical-align: middle;
+	margin: 1em 0 0;
+	padding: 0.5em 0;
+	font-weight: bold;
+	line-height: 1em;
+}
+
+.category-title {
+	margin-top: 0;
+}
+
+a.blogpost__category-link,
+a.blogpost__tag-link {
+    hyphens: none;
+}
+
+// ------------------------------
+// #Sharing Links
+// ------------------------------
+
+.blogpost__sharing-links {
+	.clearfix();
+}
+
+.blogpost__network-item {
+	display: inline-block;
+    margin: 0.5em 0.25em;
+	padding: 0;
+	
+	@media @tablet {
+		display: block;
+    	margin-bottom: 1em;
+	}
+}
+
+.blogpost__button {
+	&:before {
+		display: none;
+	}
+}

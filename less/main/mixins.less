@@ -1,0 +1,452 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Mixins
+// ----------------------------------------
+
+// ------------------------------
+// #Global Mixins
+// ------------------------------
+
+.box-sizing(@attribute) {
+	-webkit-box-sizing: @attribute;
+	-moz-box-sizing: @attribute;
+    -ms-box-sizing: @attribute;
+	-o-box-sizing: @attribute;
+	box-sizing: @attribute;
+}
+
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.appearance(@property) {
+	-webkit-appearance: @property;
+	-moz-appearance: @property;
+	appearance: @property;
+}
+
+.gradient(@origin, @origin@startColor, @endColor) {
+    background-color: @startColor;
+    background: -webkit-linear-gradient(@origin, @startColor, @endColor);
+    background: -moz-linear-gradient(@origin, @startColor, @endColor);
+    background: -ms-linear-gradient(@origin, @startColor, @endColor);
+    background: -o-linear-gradient(@origin, @startColor, @endColor);
+    background: linear-gradient(@origin, @startColor, @endColor);
+}
+
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+.ellipsis() {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.clearfix() {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+
+.focus {
+	&:focus {
+        outline: none;
+	}
+}
+
+// Font size change to make inline-block formatting work.
+
+.inline-block-font-hack() {
+	font-size: 0;
+	
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		font-size: 1em;
+	}
+}
+
+// ------------------------------
+// #Animations
+// ------------------------------
+
+.transition(@transition...) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+    -ms-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+.transition-property(@property...) {
+	-webkit-transition-property: @property;
+	-moz-transition-property: @property;
+    -ms-transition-property: @property;
+	-o-transition-property: @property;
+	transition-property: @property;
+}
+
+.transition-duration(@duration...) {
+	-webkit-transition-duration: @duration;
+	-moz-transition-duration: @duration;
+    -ms-transition-duration: @duration;
+	-o-transition-duration: @duration;
+	transition-duration: @duration;
+}
+
+.transition-delay(@delay...) {
+	-webkit-transition-delay: @delay;
+	-moz-transition-delay: @delay;
+    -ms-transition-delay: @delay;
+	-o-transition-delay: @delay;
+	transition-delay: @delay;
+}
+
+.transform(@rotate, @scale, @skew, @translate) {
+	-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+.transform-rotate(@deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+.transform-scale(@size...) {
+	-webkit-transform: scale(@size);
+	-moz-transform: scale(@size);
+	-ms-transform: scale(@size);
+	-o-transform: scale(@size);
+	transform: scale(@size);
+}
+
+.transform-scale-x(@size) {
+	-webkit-transform: scaleX(@size);
+	-moz-transform: scaleX(@size);
+	-ms-transform: scaleX(@size);
+	-o-transform: scaleX(@size);
+	transform: scaleX(@size);
+}
+
+.transform-skew(@deg) {
+	-webkit-transform: skew(@deg);
+	-moz-transform: skew(@deg);
+	-ms-transform: skew(@deg);
+	-o-transform: skew(@deg);
+	transform: skew(@deg);
+}
+
+.transform-translate(@distance...) {
+	-webkit-transform: translate(@distance);
+	-moz-transform: translate(@distance);
+	-ms-transform: translate(@distance);
+	-o-transform: translate(@distance);
+	transform: translate(@distance);
+}
+
+// 3D Animations
+
+.transform-translate3d(@distance) {
+	-webkit-transform: translate3d(@distance);
+	-moz-transform: translate3d(@distance);
+	-ms-transform: translate3d(@distance);
+	-o-transform: translate3d(@distance);
+	transform: translate3d(@distance);
+}
+
+.backface-visibility(@attribute) {
+	-webkit-backface-visibility: @attribute;
+	-moz-backface-visibility: @attribute;
+	backface-visibility: @attribute;
+}
+
+.perspective(@attribute) {
+	-webkit-perspective: @attribute;
+	-moz-perspective: @attribute;
+	perspective: @attribute;
+}
+
+
+// ------------------------------
+// #Font Mixins
+// ------------------------------
+
+// These two mixins only make the font smaller when its
+// over a certain size. Otherwise it will be too small
+// on mobile.
+
+.make-font-a-little-smaller(@font-size, @size-mobile: 0.95) when (@font-size >= 13px) {
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
+}
+
+.make-font-smaller(@font-size, @size-mobile: 0.9) when (@font-size >= 15px) {
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
+}
+
+.make-font-a-lot-smaller(@font-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
+	@media @tablet {
+		font-size: @font-size*@size-tablet;
+	}
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
+}
+
+.make-line-height-a-little-smaller(@line-height-size, @size-mobile: 0.95) when (@line-height-size >= 13px) {
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
+.make-line-height-smaller(@line-height-size, @size-mobile: 0.9) when (@line-height-size >= 15px) {
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
+.make-line-height-a-lot-smaller(@line-height-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@line-height-size >= 17px) {
+	@media @tablet {
+		line-height: @line-height-size*@size-tablet;
+	}
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
+// ------------------------------
+// #Theme Mixins
+// ------------------------------
+
+// Item margin size.
+// This is the margin between various items like
+// tweets, blog posts and shop items.
+
+.item--margin-size--border(@item--margin-size: 1%) {
+	margin: -@item--margin-size;
+}
+
+.item--margin-size--2cols(@item--margin-size: 1%) {
+	width: 100%/2-@item--margin-size*2;
+	margin: @item--margin-size;
+	
+    @media @mobile {
+		margin: @item--margin-size;
+    }
+	
+	&:last-child {
+		margin-bottom: @item--margin-size;
+	}
+}
+
+.item--margin-size--2to1-cols(@item--margin-size: 1%) {
+	width: 100%/2-@item--margin-size*2;
+	margin: @item--margin-size;
+	
+    @media @mobile {
+		width: 100%;
+		margin: @item--margin-size*2 @item--margin-size;
+    }
+	
+	&:last-child {
+		margin-bottom: @item--margin-size;
+	}
+}
+
+.item--margin-size--3to1-cols(@item--margin-size: 1%) {
+    width: 100%/3-@item--margin-size*2;
+	margin: @item--margin-size;
+	
+    @media @tablet-horizontal {
+		width: 100%/2-@item--margin-size*2;
+    }
+	
+    @media @mobile {
+		width: 100%;
+    }
+	
+	&:last-child {
+		margin-bottom: @item--margin-size;
+	}
+}
+
+// Mixing for global time-stamp styles.
+
+.timestamp-styles {
+    padding: 0;
+	height: 1.2em;
+	background: transparent; 
+	letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+
+
+// ------------------------------
+// #Flexbox LESS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// ------------------------------
+
+// Flexbox display
+// flex or inline-flex
+.display-flex(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+.flex(@columns: initial) {
+	-webkit-flex: @columns;
+	-moz-flex: @columns;
+	-ms-flex: @columns;
+	flex: @columns;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+	-webkit-flex-direction: @direction;
+	-moz-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+	flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+	-webkit-flex-wrap: @wrap;
+	-moz-flex-wrap: @wrap;
+	-ms-flex-wrap: @wrap;
+	flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+	-webkit-flex-flow: @flow;
+	-moz-flex-flow: @flow;
+	-ms-flex-flow: @flow;
+	flex-flow: @flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.flex-order(@order: 0) {
+	-webkit-order: @order;
+	-moz-order: @order;
+	-ms-order: @order;
+	-ms-flex-order: @order;
+	flex-order: @order;
+	order: @order;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+.flex-grow(@grow: 0) {
+	-webkit-flex-grow: @grow;
+	-moz-flex-grow: @grow;
+	-ms-flex-grow: @grow;
+	flex-grow: @grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+.flex-shrink(@shrink: 1) {
+	-webkit-flex-shrink: @shrink;
+	-moz-flex-shrink: @shrink;
+	-ms-flex-shrink: @shrink;
+	flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex items, initial main size of the flex item
+// <width>
+.flex-basis(@width: auto) {
+	-webkit-flex-basis: @width;
+	-moz-flex-basis: @width;
+	-ms-flex-basis: @width;
+	flex-basis: @width;
+	max-width:  @width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+// For -ms-flex-pack
+// start | end | center | stretch | justify | distribute
+.justify-content(@justify: flex-start, @ms-justify: start) {
+	-webkit-justify-content: @justify;
+	-moz-justify-content: @justify;
+	-ms-justify-content: @justify;
+	-ms-flex-pack: @ms-justify;
+	justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+// For -ms-flex-line-pack
+// start | end | center | stretch | justify | distribute
+.align-content(@align: stretch, @ms-align: stretch) {
+	-webkit-align-content: @align;
+	-moz-align-content: @align;
+	-ms-align-content: @align;
+	-ms-flex-line-pack: @align;
+	align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+// For -ms-flex-align
+// start | end | center | stretch | justify | distribute
+.align-items(@align: stretch, @ms-align: stretch) {
+	-webkit-align-items: @align;
+	-moz-align-items: @align;
+	-ms-align-items: @align;
+	-ms-flex-align: @align;
+	align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+// For -ms-flex-item-align
+// start | end | center | stretch | justify | distribute
+.align-self(@align: auto) {
+	-webkit-align-self: @align;
+	-moz-align-self: @align;
+	-ms-align-self: @align;
+	-ms-flex-item-align: @align;
+	align-self: @align;
+}

@@ -1,0 +1,133 @@
+// ----------------------------------------
+// Velocity: LESS > Widgets > Twitter Feed
+// ----------------------------------------
+
+// ------------------------------
+// #Twitter Widget Container
+// ------------------------------
+
+.widget[data-name="twitter"] {
+	.twitter-body-background--spacing();
+	.twitter-widget-background--spacing();
+}
+
+// ------------------------------
+// #Tweet List
+// ------------------------------
+
+.twitter__tweet-list {
+	.inline-block-font-hack();
+	.display-flex(flex);
+    .flex-wrap(wrap);
+    .align-items(stretch, stretch);
+	.item--margin-size--border();
+}
+
+// ------------------------------
+// #Tweet Item
+// ------------------------------
+
+.tweet-item {
+	.paragraph;
+	position: relative;
+	padding: 20px;
+	border: 1px solid @color-text--light;
+	text-align: center;
+	.item--margin-size--2to1-cols();
+	.clearfix();
+	
+    .responsivecolumns & {
+		width: 100%;
+    }
+}
+
+// ------------------------------
+// #Avatar
+// ------------------------------
+
+.twitter__avatar {
+	position: static;
+	margin: 0.5em auto 1em;
+	width: 72px;
+	text-align: center;
+}
+
+.twitter__avatar-image {
+	display: block;
+	width: @font__p--line-height*2;
+	height: @font__p--line-height*2;
+}
+
+// ------------------------------
+// #Account Link
+// ------------------------------
+
+a.twitter__account-link {
+    display: block;
+	padding: 0 0 1em;
+	hyphens: none;
+    overflow-wrap: break-word;
+	.paragraph;
+	line-height: 1.2em !important;
+	
+}
+
+// ------------------------------
+// #Content
+// ------------------------------
+
+.tweet-item {
+	width: 48%;
+	
+    @media @mobile {
+		width: auto;
+    }
+}
+
+.tweet-content {
+	padding: 0 0.5em 4em;
+    line-height: 1.5em;
+	letter-spacing: -0.025em;
+	
+	&, a {
+		.heading--4;
+		letter-spacing: -0.025em;
+		text-transform: none;
+		font-family: @font__h3--font-family;
+	}
+	
+	&:before {
+		content: "\201c";
+	}
+	
+	&:after {
+		content: "\201d";
+	}
+}
+
+// ------------------------------
+// #Tweet Metadata
+// ------------------------------
+
+.tweet-metadata {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	padding: 1em 1.5em;
+	line-height: 1.4em !important;
+	border-top: 1px solid @color-text--light;
+	
+	// Twitter link at the end.
+	
+	.twitter__timestamp {
+		display: block;
+		font-size: 0.8em;
+		.timestamp-styles;
+	}
+	
+	.via, a {
+		color: fade(@color__p--text, 50%);
+		line-height: 1em;
+	}
+}

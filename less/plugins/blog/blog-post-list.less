@@ -1,0 +1,227 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins > Blog > Blog Posts List
+// ----------------------------------------
+
+// ------------------------------
+// #All posts
+// ------------------------------
+
+.blogpostlist__post-items {
+	.inline-block-font-hack();
+	.display-flex(flex);
+    .flex-wrap(wrap);
+    .align-items(stretch, stretch);
+}
+
+// ------------------------------
+// #Single Article
+// ------------------------------
+
+.blogpostlist__post-article {
+	.display-flex(flex);
+    .flex-direction(column-reverse);
+    .align-content(center, center);
+	position: relative;
+	border: 1px solid @color__blogpostlist--background;
+	background-color: @color__blogpostlist-article--background;
+	margin: 0;
+	width: 100%/3;
+	min-height: @layout-max-width/3;
+	text-align: center;
+	.transition(all 0.25s ease-in-out);
+	.clearfix();
+	
+	&:last-child {
+		margin: 0;
+	}
+	
+	@media @desktop {
+		width: 100%/2;
+		min-height: 100%/2;
+		min-height: 100vw/2;
+	}
+	
+	@media @tablet {
+		width: 100%;
+		min-height: 100%/2;
+		min-height: 100vw/2;
+	}
+
+	.responsivecolumns & {
+		width: 100%;
+		min-height: 100%/2;
+		min-height: 100vw/2;
+	}
+}
+
+// ------------------------------
+// #Image
+// ------------------------------
+
+.blogpostlist__post-image {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: @color__blogpostlist-article--background;
+	
+    a.blogpostlist__image-link {
+		opacity: 0.6;
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+		.transition(all 0.25s ease-in-out);
+		
+		.blogpostlist__post-article:hover & {
+			.transition(all 2s ease-in-out);
+			.transform-scale(1.1);
+		}
+    }
+
+    // Using the background image instead.
+
+    .blogpostlist__image {
+        display: none;
+    }
+}
+
+// ------------------------------
+// #Content
+// ------------------------------
+
+.blogpostlist__post-content {
+	.paragraph;
+	position: relative;
+	margin: 0;
+	padding: 0 1.5em 2em;
+	.transition(all 0.25s ease-in-out);
+	
+	.blogpostlist__post-article:hover & {
+		padding-bottom: 2.5em;
+	}
+
+	@media @mobile {
+		padding: 0 1.5em 2em;
+		
+		.blogpostlist__post-article:hover & {
+			padding-bottom: 2.5em;
+		}
+	}
+
+	.responsivecolumns & {
+		padding: 0 1.5em 2em;
+		
+		.blogpostlist__post-article:hover & {
+			padding-bottom: 2.5em;
+		}
+	}
+}
+
+.blogpostlist__post-title {
+	.heading--3;
+}
+
+a.blogpostlist__title-link {
+	color: @color__blogpostlist-title--text;
+}
+
+// Post Excerpt
+	
+.blogpostlist__post-excerpt {
+	p {
+		display: none;
+	}
+}
+
+// Read more
+
+a.blogpostlist__read-more {
+	a;
+	padding: 0 !important;
+	color: @color__blogpostlist-title--text;
+	border: none;
+}
+
+// ------------------------------
+// #Footer
+// ------------------------------
+
+.blogpostlist__post-footer {
+	.paragraph;
+	.flex-grow(2);
+	position: relative;
+	padding: 2.5em 1.5em 2em;
+	color: @color__blogpostlist-title--text;
+	.transition(all 0.25s ease-in-out);
+	
+	.blogpostlist__post-article:hover & {
+		padding-top: 3em;
+	}
+	
+	@media @desktop {
+		padding: 2em 1.5em 2em;
+	
+		.blogpostlist__post-article:hover & {
+			padding-top: 2.5em;
+		}
+	}
+
+	.responsivecolumns & {
+		padding: 2em 1.5em 2em;
+	
+		.blogpostlist__post-article:hover & {
+			padding-top: 2.5em;
+		}
+	}
+	
+	// Line
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 4.5em;
+		left: 50%;
+		bottom: 0;
+		margin-left: -1px;
+		width: 1px;
+		background-color: fade(@color__blogpostlist-title--text, 75%);
+		.transition(all 0.25s ease-in-out);
+			
+		.blogpostlist__post-article:hover & {
+			top: 5em;
+		}
+		
+		@media @desktop {
+			top: 4em;
+			
+			.blogpostlist__post-article:hover & {
+				top: 4.5em;
+			}
+		}
+
+		.responsivecolumns & {
+			top: 4em;
+			
+			.blogpostlist__post-article:hover & {
+				top: 4.5em;
+			}
+		}
+	}
+
+	.timestamp {
+		margin: 0;
+		.timestamp-styles;
+	}
+}
+
+// ------------------------------
+// #Paginatinon
+// ------------------------------
+
+// For pagination, see less/plugins/plugins.less.

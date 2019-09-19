@@ -1,0 +1,47 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Variables
+// ----------------------------------------
+
+// ------------------------------
+// #Breakpoints
+// ------------------------------
+
+// Break point for smaller devices.
+@desktop-wide: ~"only screen and (max-width: 2000px)";
+@desktop: ~"only screen and (max-width: 1650px)";
+@tablet-horizontal: ~"only screen and (max-width: 1024px)";
+@tablet: ~"only screen and (max-width: 768px)";
+@mobile: ~"only screen and (max-width: 650px)";
+@mobile-small: ~"only screen and (max-width: 380px)";
+
+// When the colums in the layout break for smaller devices.
+@columns-tablet: ~"only screen and (max-width: 925px)";
+@columns-mobile: ~"only screen and (max-width: 650px)";
+
+// ------------------------------
+// #Layout
+// ------------------------------
+
+@layout-max-width: 1600px;
+@layout-width-desktop: 1200px;
+@layout-width-tablet: 90%;
+
+// Global Widget Spacing
+@value__widget--spacing--desktop: 70px;
+@value__widget--spacing--laptop:  60px;
+@value__widget--spacing--tablet:  40px;
+@value__widget--spacing--mobile:  30px;
+
+// ------------------------------
+// #Colors
+// ------------------------------
+
+@color-text--faded: fade(@color__p--text, 75%);
+@color-text--light: fade(@color__p--text, 50%);
+@color-text--lighter: fade(@color__p--text, 25%);
+@color-text--lightest: fade(@color__p--text, 5%);
+
+@color-highlight-darker: darken(@color__link--text, 5%);
+@color-highlight: @color__link--text;
+@color-highlight--light: lighten(@color__link--text, 5%);
+@color-highlight--lighter: lighten(@color__link--text, 20%);

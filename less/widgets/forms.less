@@ -1,0 +1,428 @@
+// ----------------------------------------
+// Velocity: LESS > Widgets > Forms
+// ----------------------------------------
+
+// ------------------------------
+// #Global Form Styles
+// ------------------------------
+
+.widget[data-name="signupform"],
+.widget[data-name="contactform"],
+.widget[data-name="advancedcontactform"] {
+	form {
+		margin-bottom: 2em;
+		.clearfix();
+
+		@media @tablet-horizontal {
+			max-width: 100%;
+		}
+		
+		.form-group {
+			margin-bottom: 1em;
+
+			&:last-of-type,
+			&.js-recaptcha {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Legend
+// ------------------------------
+
+.form .legend {
+	.heading--3;
+	margin-bottom: 0.5em;
+}
+
+// ------------------------------
+// #Label
+// ------------------------------
+
+.form label {
+	margin: 0 0 0.3em;
+	line-height: 1.5em;
+	color: @color__form-label--text;
+}
+
+// ------------------------------
+// #Text Inputs
+// ------------------------------
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.input--single-line,
+.input--search,
+textarea,
+select {
+	.paragraph;
+	height: 50px;
+}
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.input--single-line,
+.input--search,
+textarea {
+    padding: 0.4em 0.6em;
+    background-color: @color__form--background;
+    border: 1px solid fade(@color__form--border, 75%);
+	.transition(all 0.25s ease-in-out);
+    .border-radius(0);
+    .appearance(none);
+	
+	&:hover {
+    	border-color: @color__form--border;
+	}
+	
+	// Focus style for easier keyboard navigation
+	
+	&:focus {
+    	border-color: @color__form--border;
+		.box-shadow(none);
+	}
+}
+
+// ------------------------------
+// #Dropdowns
+// ------------------------------
+
+.select-wrap {
+    position: relative;
+    border: 1px solid fade(@color__form--border, 75%);
+	background-color: @color-text--lightest;
+	.transition(all 0.25s ease-in-out);
+
+    &:hover,
+	&:focus,
+	&:hover:focus {
+		border-color: @color__form--border;
+    }
+
+    @media @mobile {
+        max-width: 100%;
+    }
+
+    &:after {
+		content: "";
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin-left: 0;
+		width: 2.2em;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjYyODI5IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTkgMTMuMTVsNyA3IDctNyIvPjwvc3ZnPg==");
+		background-size: 2em;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-color: @color__button--background;
+		font-size: 1.2em;
+		text-align: right;
+		.transition(all 0.25s ease-in-out);
+    }
+	
+	&:hover:after {
+		background-color: @color__button--background--hover;
+	}
+}
+
+// Select
+
+.select {
+	z-index: 2;
+    position: relative;
+    display: block;
+	padding: 0.4em 3.2em 0.4em 0.6em;
+    width: 100%;
+	background-color: transparent;
+	border: none;
+    .border-radius(0);
+    .appearance(none);
+
+    @media @mobile {
+		padding: 0.4em 2.7em 0.4em 0.6em;
+    }
+
+    &:hover,
+	&:focus,
+	&:hover:focus {
+		background-color: transparent;
+    }
+	
+	option {
+		background-color: @color__body--background;
+	}
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+// ------------------------------
+// #Placeholders
+// ------------------------------
+
+::-webkit-input-placeholder {
+   color: @@color-text--light;
+}
+
+:-moz-placeholder {
+   color: @@color-text--light;
+}
+
+::-moz-placeholder {
+   color: @@color-text--light;
+}
+
+:-ms-input-placeholder {
+   color: @@color-text--light;
+}
+
+input:focus {
+    &::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    &:-moz-placeholder {
+        color: transparent;
+    }
+
+    &::-moz-placeholder {
+        color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+        color: transparent;
+    }
+}
+
+// ------------------------------
+// #Radio Buttons and Checkboxes
+// ------------------------------
+
+.widget .form {
+	.option-list,
+	[class*="form-group--terms"] {
+		margin-top: 0;
+		margin-left: 0;
+
+		.label--radio,
+		.label--checkbox,
+		label[for*="input--terms"],
+		label[for*="input--terms"] span a.form__link {
+			.paragraph;
+			padding: 0;
+			margin: 0.5em 0;
+			line-height: 1.5em;
+		}
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			.transition(all 0.25s ease-in-out);
+
+			&:hover + label:before,
+			&:checked + label:before,
+			&:focus + label:before,
+			&:focus:checked + label:before {
+				border: 1px solid @color__form--border;
+				.transition(all 0.25s ease-in-out);
+			}
+
+			&:checked + label:after {
+				opacity: 1;
+				.transition(all 0.25s ease-in-out);
+			}
+		}
+
+		.option-item--radio,
+		.option-item--checkbox,
+		&[class*="form-group"] {
+			position: relative;
+			width: 100%;
+			margin-bottom: 0;
+			padding: 0;
+
+			label {
+				position: relative;
+				cursor: pointer;
+				display: block;
+				margin-left: 1em * 2.5;
+				.transform-scale(1);
+				
+				&:before,
+				&:after {
+					content: " ";
+					cursor: pointer;
+					position: absolute;
+					top: 50%;
+				}
+
+				&:before {
+					left: -2.5em;
+					width: 1.5em;
+					height: 1.5em;
+					min-width: 1.5em;
+					max-height: 1.5em;
+					margin-top: -0.75em;
+					background-color: @color__form--background;
+					border: 1px solid fade(@color__form--border, 75%);
+					.border-radius(0);
+				}
+
+				&:after {
+					opacity: 0;
+					margin-top: -0.75em;
+					left: -2.5em;
+					height: 1.5em;
+    				width: 1.5em;
+					.transition(opacity 0.1s);
+					line-height: 1.5em;
+					color: @color__button--text;
+					background-color: @color__button--background;
+					.transform-scale(0.4);
+				}
+			}
+		}
+
+		.option-item--radio {
+			label {
+				&:before,
+				&:after {
+					.border-radius(1em);
+				}
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Error Messages
+// ------------------------------
+
+.form {
+    input.error {
+        border: none !important;
+    }
+    
+    textarea.error {
+        border: 1px solid @message-color--error !important;
+    }
+    
+    .form-group {
+        .error {
+            border-bottom: 1px solid @message-color--error !important;
+            
+            &:focus {
+				.box-shadow(none);
+            }
+        }
+    }
+}
+
+// ------------------------------
+// #Form Group Button
+// ------------------------------
+
+.form-group {
+	.button {
+		white-space: nowrap;
+		min-width: 320px;
+		float: right;
+
+		@media @mobile {
+			width: 100%;
+			min-width: auto;
+		}
+	
+		.responsivecolumns & {
+			width: 100%;
+			min-width: auto;
+		}
+	}
+}
+
+// ------------------------------
+// #Sign Up Form
+// ------------------------------
+
+.signupform {
+	.form-body {
+		display: table;
+		width: 100%;
+		margin-bottom: 1em;
+
+		@media @tablet-horizontal {
+			display: block;
+		}
+
+		.responsivecolumns & {
+			display: block;
+		}
+	}
+
+	.form-group {
+		display: table-cell;
+		vertical-align: middle;
+
+		@media @tablet {
+			display: block;
+		}
+
+		.responsivecolumns & {
+			display: block;
+		}
+		
+		&:first-child {
+			width: 100%;
+			padding-right: 0.5em;
+
+			@media @tablet {
+				display: block;
+				margin-bottom: 0.5em;
+				padding-right: 0;
+				width: 100%;
+				height: auto;
+			}
+
+			.responsivecolumns & {
+				display: block;
+				margin-bottom: 0.5em;
+				padding-right: 0;
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		.button {
+			white-space: nowrap;
+			min-width: 280px;
+
+			@media @mobile {
+				width: 100%;
+			}
+
+			.responsivecolumns & {
+				width: 100%;
+			}
+		}
+	}
+
+	label {
+		display: none;
+	}
+}

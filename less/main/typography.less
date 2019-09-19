@@ -1,0 +1,381 @@
+// ----------------------------------------
+// Velocity: LESS > Main > Typography
+// ----------------------------------------
+
+// ------------------------------
+// #General Typography
+// ------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0.5em 0;
+	
+	+ h2, + h3, + h4, + h5, + h6 {
+		padding-top: 0;
+	}
+	
+	.responsivecolumns & {
+		padding-top: 0;
+	}
+}
+
+// Break long words.
+h1, h2, h3, h4, h5, h6, p {
+	word-wrap: break-word;
+}
+
+p, a {
+	padding: 0;
+    hyphens: auto;
+}
+
+h1, .heading--1 {
+	font-family: @font__h1--font-family;
+	font-weight: @font__h1--font-weight;
+	font-size: @font__h1--font-size;
+	line-height: @font__h1--line-height;
+	letter-spacing: @font__h1--letter-spacing;
+	color: @color__h1--text;
+	
+	.make-font-a-little-smaller(@font__h1--font-size);
+	.make-font-smaller(@font__h1--font-size);
+	.make-font-a-lot-smaller(@font__h1--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h1--line-height);
+	.make-line-height-smaller(@font__h1--line-height);
+	.make-line-height-a-lot-smaller(@font__h1--line-height);
+	
+	@media @mobile {
+		margin: 0;
+	}
+	
+	.responsivecolumns & {
+    	margin: 0;
+	}
+	
+	&[style*="center"] {
+		&:after {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	
+	&[style*="right"] {
+		&:after {
+			margin-left: auto;
+			margin-right: 0;
+		}
+	}
+}
+
+h2, .heading--2 {
+	line-height: @font__h2--line-height;
+	letter-spacing: @font__h2--letter-spacing;
+	font-family: @font__h2--font-family;
+	font-weight: @font__h2--font-weight;
+	font-size: @font__h2--font-size;
+	color: @color__h2--text;
+	
+	.make-font-a-little-smaller(@font__h2--font-size);
+	.make-font-smaller(@font__h2--font-size);
+	.make-font-a-lot-smaller(@font__h2--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h2--line-height);
+	.make-line-height-smaller(@font__h2--line-height);
+	.make-line-height-a-lot-smaller(@font__h2--line-height);
+}
+
+h3, .heading--3 {
+	line-height: @font__h3--line-height;
+	letter-spacing: @font__h3--letter-spacing;
+	font-family: @font__h3--font-family;
+	font-size: @font__h3--font-size;
+	font-weight: @font__h3--font-weight;
+	color: @color__h3--text;
+	
+	.make-font-a-little-smaller(@font__h3--font-size);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h3--line-height);
+	.make-line-height-smaller(@font__h3--line-height);
+	.make-line-height-a-lot-smaller(@font__h3--line-height);
+}
+
+h4, .heading--4 {
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__h4--font-size);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height);
+	.make-line-height-smaller(@font__h4--line-height);
+	.make-line-height-a-lot-smaller(@font__h4--line-height);
+}
+
+h5, .heading--5 {
+	line-height: @font__p--line-height*0.9;
+	letter-spacing: @font__p--letter-spacing*0.9;
+	font-family: @font__p--font-family;
+	font-weight: 700;
+	font-size: @font__p--font-size;
+	color: @color__h4--text;
+	text-transform: uppercase;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+}
+
+h6, .heading--6 {
+	padding-bottom: 0.2em;
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	font-family: @font__p--font-family;
+	font-weight: 700;
+	font-size: @font__p--font-size;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+}
+
+p, .paragraph, ul, ol, li {
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	font-family: @font__p--font-family;
+	font-weight: @font__p--font-weight;
+	font-size: @font__p--font-size;
+	color: @color__p--text;
+	padding: 0 0 1em;
+	word-wrap: break-word;
+	hyphens: auto;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+}
+
+// ------------------------------
+// #Bold, Italic, Underlined
+// ------------------------------
+
+b, strong {
+	font-weight: 700;
+}
+
+u {
+	text-decoration: none;
+	border-bottom: 1px solid @color-text--light;
+}
+
+// ------------------------------
+// #Label
+// ------------------------------
+
+label, .label-text {
+	font-size: 1em;
+	color: @color-text--faded;
+}
+
+// ------------------------------
+// #Span
+// ------------------------------
+
+span {
+	background-color: transparent;
+}
+
+// ------------------------------
+// #Link
+// ------------------------------
+
+a,
+a.vglnk {
+	z-index: 0;
+	position: relative;
+	display: inline;
+	margin: -0.2em -0.1em -0.4em;
+	padding: 0.2em 0.1em 0;
+	line-height: 0.8em;
+	color: @color__p--text;
+	overflow: visible;
+	height: auto;
+	text-decoration: none;
+	border-bottom: 2px solid @color-highlight;
+	.transition(all 0.25s ease-in-out 0s);
+
+    &:hover, &:active, &:visited {
+		text-decoration: none;
+		border-bottom: 5px solid @color-highlight;
+    }
+}
+
+a[class] {
+	margin: 0;
+	padding: 0;
+	position: static;
+	
+    &, &:hover {
+		border-bottom: none;
+		background-color: transparent;
+    }
+	
+	&:after {
+		content: none;
+	}
+}
+
+// ------------------------------
+// #Small
+// ------------------------------
+
+small {
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Preformatted Text and Code
+// ------------------------------
+
+pre, code {
+	.paragraph;
+	display: block;
+	margin: 1em 0;
+	padding: 1em 1.5em;
+	border: none;
+	.border-radius(0);
+	background-color: transparent;
+	border: 1px solid @color-text--light;
+	overflow: auto;
+	font-family: monospace;
+}
+
+code {
+	border-left: 2px solid @color-highlight;
+}
+
+// ------------------------------
+// #Unordered and Ordered List
+// ------------------------------
+
+ul, ol {
+	padding: 0;
+	margin: 0.5em 0 0.5em 2.2em;
+	
+	li {
+		position: relative;
+		list-style: none;
+		margin: 0 0 0.5em 0;
+		padding: 0;
+	}
+}
+
+.content ul {
+	li {
+		&:before {
+			position: absolute;
+			margin-left: -2em;
+			content: "\2014";
+			color: @color-text--light;
+		}
+	}
+}
+
+ol {
+	counter-reset: section;
+
+	li {
+		// Custom Numbers
+		&:before {
+			content: counter(section) ".";
+			counter-increment: section;
+			float: left;
+			margin-left: -2em;
+			padding: 0 0.4em 0 0;
+			color: @color__h1--text;
+		}
+	}
+}
+
+// ------------------------------
+// #Block Quote
+// ------------------------------
+
+blockquote {
+	position: relative;
+	margin: 2em 0;
+	text-align: center;
+	padding: 0.5em 1em;
+	border: 1px solid @color-text--light;
+	line-height: @font__h3--line-height;
+	letter-spacing: @font__h3--letter-spacing;
+	font-family: @font__h3--font-family;
+	font-size: @font__h3--font-size;
+	font-weight: @font__h3--font-weight;
+	color: @color__h3--text;
+	
+	.make-font-a-little-smaller(@font__h3--font-size);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h3--line-height);
+	.make-line-height-smaller(@font__h3--line-height);
+	.make-line-height-a-lot-smaller(@font__h3--line-height);
+	
+	@media @tablet {
+		margin: 1em 0;
+		width: auto;
+	}
+	
+	&:before,
+	&:after {
+		content: none;
+		display: none;
+	}
+	
+	.responsivecolumns & {
+		margin: 1em 0;
+		width: auto;
+		max-width: none;
+	}
+	
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		padding-right: 0;
+    	padding-left: 0;
+	}
+}
+
+// ------------------------------
+// #Highlighted Text
+// ------------------------------
+
+::-moz-selection {
+    background: @color-highlight--light;
+}
+
+::selection {
+    background: @color-highlight--light;
+}

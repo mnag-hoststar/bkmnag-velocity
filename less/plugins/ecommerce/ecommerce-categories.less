@@ -1,0 +1,89 @@
+// ----------------------------------------
+// Velocity: LESS > Plugins > Ecommerce > Categories
+// ----------------------------------------
+
+// ------------------------------
+// #List
+// ------------------------------
+
+.ecomcategorieslist__category-list {
+    .display-flex(flex);
+    .flex-direction();
+    .flex-wrap(wrap);
+    .justify-content();
+    .align-content();
+    .align-items();
+    margin: 0 -0.5%;
+	padding-bottom: 2em;
+	
+    @media @tablet {
+    	margin: 0 -1%;
+	}
+	
+    @media @mobile {
+    	margin: 0;
+	}
+}
+
+// ------------------------------
+// #Item
+// ------------------------------
+
+.ecomcategorieslist__category-item {
+	.paragraph;
+	margin: 0 0.5% 1%;
+	padding: 0;
+    list-style: none;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+    @media @tablet {
+        width: 48%;
+        margin: 0 1% 2%;
+    }
+	
+   @media @mobile {
+        margin: 0 0 0.5em;
+        height: auto;
+        width: 100%;
+    }
+	
+	.responsivecolumns & {
+		display: block;
+		margin: 0 0 2% 0;
+		width: 100%;
+	}
+	
+    // Link
+
+    a.category-link {
+		position: relative;
+        display: block;
+		margin: 0;
+
+		@media @tablet {
+			padding-right: 2.5em;
+    		hyphens: none;
+		}
+    }
+	
+    // Item Count
+
+    .item-count {
+        opacity: 0.5;
+		
+		@media @tablet {
+			display: block;
+			position: absolute;
+			top: 0.4em;
+			right: 0.5em;
+		}
+    }
+}
+
