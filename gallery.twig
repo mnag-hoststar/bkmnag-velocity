@@ -1,67 +1,57 @@
 {% extends "layout.twig" %}
-
 {% block content %}
-<div class="container">
-	<header class="bk-header">
-		<div class="clearfix">
-			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-			{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-		</div>
-		{{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
-	</header>
 
-	<div class="main container clearfix">
-        {{zone('main')|raw}}
-        {{widget('content', 'home-gallery-text', {
-            content: '<p>These are our newest foods. From sweet to savory, 
-            you can be sure to find the most scrumptious meal for you. We offer 
-            fresh bread, straight from your local bakery. The ingredients for 
-            our salads and cereals come from local farmers. We do everything to 
-            make sure you have the healthiest products to get you started early 
-            and be productive.</p>'
-        })|raw}}
-	
-		{{widget('gallery', 'home-gallery', {
-    		'showTitle': true,
-    		'showDescription': true,
-    		'images':[
-    		{
+<section class="template template__gallery">
+	{% include "includes/header.twig" %}
+</section>
+
+<section class="page page__gallery">
+	<div class="template__content">
+		{{widget('pagetitle', 'title', {})|raw}}
+		{{zone('main')|raw}}
+		{{widget('content', 'page__gallery-text', {
+			content: '<p>These are our newest foods. From sweet to savory, 
+			you can be sure to find the most scrumptious meal for you. We offer 
+			fresh bread, straight from your local bakery. The ingredients for 
+			our salads and cereals come from local farmers. We do everything to 
+			make sure you have the healthiest products to get you started early 
+			and be productive.</p>'
+		})|raw}}
+
+		{{widget('gallery', 'page__gallery-main', {
+			'showTitle': true,
+			'showDescription': true,
+			'images':[
+			{
 				'url':asset('/images/gallery/gallery-image--1.jpg'),
 				'title':'Win the race.',
 				'description': 'Our race cars will make your heart beat faster.'
-    		},
-    		{
+			},
+			{
 				'url':asset('/images/gallery/gallery-image--2.jpg'),
 				'title':'A light in the dark.',
 				'description': 'Our dashboards show you all you need to know without the clutter or distraction.'
-    		},
-    		{
+			},
+			{
 				'url':asset('/images/gallery/gallery-image--3.jpg'),
 				'title':'Everything for the outdoors.',
 				'description': 'We bring you safely to the farthest edges of the earth.'
-    		},
-    		{
+			},
+			{
 				'url':asset('/images/gallery/gallery-image--4.jpg'),
 				'title':'No matter the distance.',
 				'description': 'Feel confident no matter how far you need to go.'
-    		},
-    		{
+			},
+			{
 				'url':asset('/images/gallery/gallery-image--5.jpg'),
 				'title':'Comfortable leather interior.',
 				'description': 'No matter the weather, you will always feel at home.'
-    		}
-    	  ]
-    	})|raw}}
-    </div>
+			}
+		  ]
+		})|raw}}
+	</div>
+</section>
 
-	<footer class="bk-footer">
-		<div class="footerleft">
-			{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
-		</div>
-		<div class="footerright">
-			{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
-		</div>
-	</footer>
-</div>
+{% include "includes/footer.twig" %}
 
 {% endblock %}
