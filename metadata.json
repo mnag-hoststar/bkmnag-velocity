@@ -237,7 +237,6 @@
 			"color__blogpostlist--background": "@color-swatch4",
 			"color__blogpostlist-article--background": "@color-swatch5",
             "color__blogpostlist-title--text": "@color-swatch1",
-			"color__ecomproductslist-label--text": "@color-swatch1",
             "color__blogpostlist-title--background": "@color__link--text",
             "color__blogpost--background": "@color__navigation--border",
             "color__blogpost-article--background": "@color__container--background",
