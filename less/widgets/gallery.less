@@ -6,9 +6,11 @@
 // #Whole Gallery
 // ------------------------------
 
-.widget[data-name="gallery"] {
-	margin: 0 -3px;
-	padding: 5em 0;
+.widget[data-name="gallery"],
+.widget[data-widget-type="gallery"] {
+	.gallery {
+		overflow: hidden;
+	}
 }
 
 .gallery-list {
@@ -16,12 +18,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	.inline-block-font-hack();
-	margin: 0 -4px;
-	max-width: @layout-max-width;
-	
-	@media @desktop {
-		margin: 0 4px;
-	}
+	margin: -4px;
 }
 
 // ------------------------------
@@ -29,10 +26,11 @@
 // ------------------------------
 
 .gallery__gallery-item {
+	.flex-grow(1);
 	position: relative;
 	overflow: hidden;
 	margin: 0;
-	background-color: @color__body--background;
+	background-color: transparent;
 	padding-bottom: 100%/4;
 	width: 100%/4;
 	border: 4px solid transparent;
@@ -154,7 +152,6 @@
 // ------------------------------
 
 .gallery__gallery-item {
-	
 	.gallery__figure {
 		&:hover {
 			& > .gallery__caption {
@@ -207,6 +204,7 @@
 			.paragraph;
 			margin: 1.5em;
 			padding: 0;
+			color: inherit;
 			overflow: hidden;
 			background-color: transparent;
 		}

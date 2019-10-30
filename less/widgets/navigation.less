@@ -6,20 +6,6 @@
 // #Logo & Company Name
 // ------------------------------
 
-.widget[data-widget-type="companyname"],
-.widget[data-widget-type="logo"] {
-	
-	// If the header is smaller when scrolling down.
-	
-	.template__header--scrolled & {
-		padding: 0.5em 0;
-		
-		@media @tablet {
-			padding: 0;
-		}
-	}
-}
-
 .template__company {
 	.display-flex(flex);
 	.align-items(center, center);
@@ -38,7 +24,7 @@
 }
 
 .logo {
-	padding-right: 10px;
+	padding-right: 1em;
     font-size: 1em;
 	
 	@media @tablet {
@@ -60,23 +46,23 @@ a.companyname {
     line-height: 0;
 
 	&__company-link {
-		display: block;
+		display: inline-block;
 		margin: 0;
 		font-family: @font__companyname--font-family;
 		font-size: @font__companyname--font-size;
 		font-weight: @font__companyname--font-weight;
-		line-height: @font__companyname--line-height;
+		line-height: 1.2em;
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
-    	word-break: normal;
-		word-wrap: normal;
-
-		.make-font-a-little-smaller(@font__companyname--font-size);
-		.make-font-smaller(@font__companyname--font-size);
-		.make-font-a-lot-smaller(@font__companyname--font-size);
+    	word-break: break-word;
+		
+		.make-font-a-little-smaller(@font__companyname--font-size*0.6);
+		.make-font-smaller(@font__companyname--font-size*0.6);
+		.make-font-a-lot-smaller(@font__companyname--font-size*0.6);
 
 		@media @tablet {
 			margin-left: 50px;
+			line-height: 1em;
 		}
 
 		&:hover {
@@ -87,15 +73,17 @@ a.companyname {
 		
 		.template__header--scrolled & {
 			font-size: @font__companyname--font-size*0.8;
+			line-height: 1.2em;
 			
-			.make-font-a-little-smaller(@font__companyname--font-size*0.8);
-			.make-font-smaller(@font__companyname--font-size*0.8);
-			.make-font-a-lot-smaller(@font__companyname--font-size*0.8);
+			.make-font-a-little-smaller(@font__companyname--font-size*0.6);
+			.make-font-smaller(@font__companyname--font-size*0.6);
+			.make-font-a-lot-smaller(@font__companyname--font-size*0.6);
 		}
 		
 		@media @tablet {
 			&, .template__header--scrolled & {
 				font-size: @font__companyname--font-size*0.8;
+				line-height: 1em;
 				
 				.make-font-a-little-smaller(@font__companyname--font-size*0.8);
 				.make-font-smaller(@font__companyname--font-size*0.8);
@@ -111,9 +99,11 @@ a.companyname {
 
 .template__navigation {
 	.flex-grow(2);
+	padding-left: 2em;
 	
 	@media @tablet {
 		position: relative;
+		padding-left: 0;
 	}
 }
 
@@ -167,12 +157,16 @@ a.companyname {
 .navigation-toggle {
 	display: none;
 	
+	span {
+		font-size: 0;
+	}
+	
 	@media @tablet {
 		
 		// Displays as Icon's Middle Bar
 		
 		&, &:hover, &:focus {
-			z-index: 100;
+			z-index: 1000;
 			cursor: pointer;
 			background: @color__navigation--text;
 			.transition(background 0s ease-in 0.1s);
@@ -395,49 +389,17 @@ a.companyname {
 			display: block;
 		}
 		
-		&:hover {
-			background-color: @color__navigation--text--hover;
-			color: @color__navigation--text;
-			
-			@media @tablet {
-				background-color: transparent;
-			}
-		
-			.template__home & {
-				background-color: fade(@color__header--background, 50%);
-			
-				@media @tablet {
-					background-color: transparent;
-				}
-			}
-		}
-		
+		&:hover,
 		&:active {
-			@media @tablet {
-				background-color: @color__navigation--text--hover;
-		
-				.template__home & {
-					@media @tablet {
-						background-color: @color__navigation--text--hover;
-					}
-				}
-			}
+			background-color: @color__navigation-item--background--hover;
+			color: @color__navigation--text;
 		}
 	}
 
 	&.selected > .item-name {
 		border: 1px solid @color__navigation--border;
-		background-color: transparent;
+		background-color: @color__navigation-item--background;
 		color: @color__navigation--text;
-		
-		.template__home & {
-			background-color: transparent;
-			
-			@media @tablet {
-				border: 1px solid @color__navigation--border;
-				background-color: transparent;
-			}
-		}
 	}
 
 	&.selected:hover > .item-name,
@@ -482,7 +444,7 @@ a.companyname {
 		overflow: visible;
 		
 		> .item-name {
-			background-color: @color__navigation--text--hover;
+			background-color: @color__navigation-item--background;
 			color: @color__navigation--text;
 
 			@media @tablet {
@@ -507,6 +469,8 @@ a.companyname {
 // Navigation Folder Submenu
 
 .navigation-list--children {
+	background-color: transparent;
+	
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
 	.navigation-item.folder:active & {
@@ -582,7 +546,7 @@ a.companyname {
 	}
 	
 	&:hover {
-		background-color: @color__navigation--text--hover;
+		background-color: @color__navigation-item--background--hover;
 
 		@media @tablet {
 			background-color: transparent;
@@ -610,7 +574,7 @@ a.companyname {
 		
 		&:active {
 			@media @tablet {
-				background-color: @color__navigation--text--hover;
+				background-color: @color__navigation-item--background--hover;
 			}
 		}
 		
@@ -620,7 +584,7 @@ a.companyname {
 			}
 		
 			&:active {
-				background-color: @color__navigation--text--hover;
+				background-color: @color__navigation-item--background--hover;
 			}
 		}
 	}
@@ -628,9 +592,10 @@ a.companyname {
 	// Selected Folder Item
 
 	&.selected {
-		background-color: @color__navigation--text--hover;
+		background-color: @color__navigation-item--background--hover;
 		
 		.item-name {
+			border: none;
 			background-color: transparent;
 			color: @color__navigation--text;
 		}

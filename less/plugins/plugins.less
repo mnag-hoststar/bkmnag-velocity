@@ -14,6 +14,7 @@
 .category-title,
 .tags-title {
 	.paragraph;
+	color: inherit;
 	display: block;
 	vertical-align: middle;
 	font-weight: bold;
@@ -47,7 +48,7 @@
 .tag-list,
 .tag-item,
 .dietary-list {
-	margin: 0 -0.4em;
+	margin: 0;
 	line-height: 1em;
 }
 
@@ -60,7 +61,7 @@ a.tag-link,
 	margin: 0.4em;
 	padding: 0.4em 0.6em;
 	line-height: 1em;
-	letter-spacing: @font__button--letter-spacing;
+	letter-spacing: 1px;
 	font-family: @font__button--font-family;
 	font-size: @font__button--font-size;
 	font-weight:@font__button--font-weight;
@@ -73,10 +74,6 @@ a.tag-link,
 	
 	&:hover {
 		background: desaturate(@color__button--background--hover, 100%);
-	}
-	
-	&:last-child {
-		margin-right: 0.4em;
 	}
 }
 
@@ -98,7 +95,7 @@ a.tag-link,
 
 	.pagination-item {
 		margin: 0;
-		padding: 0;
+		padding: 2em 0;
 	}
 
 	a.button--pagination {
@@ -130,14 +127,15 @@ a.tag-link,
 		width: 90%;
 		max-width: @layout-max-width;
 		margin: 0 auto;
-		padding: 1px 5%;
+		padding: 0;
 	}
 	
 	.pagination-list {
 		.justify-content(space-between);
 		.box-sizing(content-box);
 		margin: 0 auto;
-		max-width: 940px;
+		padding: 0;
+		max-width: 980px;
 	}
 
 	.control-text {

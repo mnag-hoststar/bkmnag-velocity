@@ -16,25 +16,24 @@ section.template {
 	@media @mobile {
 		min-height: @font__companyname--font-size+40px;
 	}
+	
+	&.template__home {
+		margin-top: 0 !important;
+	}
 }
 
 .template__content {
 	position: relative;
-	padding-top: 2em;
-	padding-bottom: 2em;
+	overflow: hidden;
 }
 
 .template__content,
 .template__content section {
 	> .widget {
-		width: 90%;
-		max-width: @layout-max-width;
-		margin: 0 auto;
-		padding: 1px 5%;
+		.widget-styles;
 		
-		> * {
-			margin: 0 auto;
-			max-width: 940px;
+		&[data-name="content"] {
+			.widget-content-styles;
 		}
 	}
 	
@@ -75,24 +74,25 @@ section.template {
 .template__content >,
 .template__content section > {
 	.widget[data-name="gallery"],
+	.widget[data-widget-type="gallery"],
 	.widget[data-name="responsiveslideshow"],
 	.widget[data-name="map"],
 	.widget[data-name="youtube"],
 	.widget[data-name="blogpostlist"],
 	.widget[data-name="blogpost"],
 	.widget[data-name="line"] {
-		padding-left: 0;
-		padding-right: 0;
+		padding: 0;
 		width: auto;
 		
 		> * {
 			max-width: none;
+			padding: 0;
+			background: transparent;
 		}
 		
 		&:before, &:after {
 			content: "";
 			display: block;
-			height: 2em;
 		}
 		
 		&:first-child {
@@ -110,6 +110,7 @@ section.template {
 	
 	.responsivecolumns {
 		.widget[data-name="gallery"],
+		.widget[data-widget-type="gallery"],
 		.widget[data-name="responsiveslideshow"],
 		.widget[data-name="map"],
 		.widget[data-name="youtube"],
@@ -124,6 +125,22 @@ section.template {
 }
 
 // -----------------------------
+// #Responsive Columns
+// -----------------------------
+
+.responsivecolumns {
+	.columns-three-left, 
+	.columns-three-middle, 
+	.columns-three-right,
+	.columns-four-first, 
+	.columns-four-second, 
+	.columns-four-third, 
+	.columns-four-fourth {
+		margin-top: 1em;
+	}
+}
+
+// -----------------------------
 // #Line Widget
 // -----------------------------
 
@@ -134,19 +151,20 @@ section.template {
 			padding-bottom: 2em;
 		}
 	}
+
+	hr,
+	.line {
+		line-height: 0;
+		font-size: 0;
+	}
+
+	hr,
+	hr.line__rule {
+		height: 1px;
+		border: none;
+		background-color: @color__p--text;
+	}
 }
-
-.line {
-    line-height: 0;
-	font-size: 0;
-}
-
-hr.line__rule {
-	height: 1px;
-	background-color: @color__p--text;
-}
-
-
 
 // -----------------------------
 // #Widget Animations

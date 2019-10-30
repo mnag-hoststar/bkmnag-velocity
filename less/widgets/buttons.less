@@ -7,14 +7,16 @@
 // -----------------------------
 
 .button,
+a.button,
 .link-button,
+a.link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
 a.ecomproduct__button {
     cursor: pointer;
     position: relative;
     display: inline-block;
-    padding: 0 2em;
+    padding: 0.7em 2em;
 	min-height: 50px;
     .border-radius(0);
 	border: 1px solid @color__button--border;
@@ -22,20 +24,28 @@ a.ecomproduct__button {
 	font-family: @font__button--font-family;
 	font-size: @font__button--font-size;
 	font-weight: @font__button--font-weight;
-	line-height: @font__button--line-height;
+	line-height: 1.2em;
 	letter-spacing: @font__button--letter-spacing;
     color: @color__button--text;
 	text-transform: uppercase;
 	vertical-align: middle;
 	.transition (all 0.25s ease-in-out);
+	text-align: center;
 	
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
 	
-	.make-line-height-a-little-smaller(@font__button--line-height);
-	.make-line-height-smaller(@font__button--line-height);
-	.make-line-height-a-lot-smaller(@font__button--line-height);
+
+    @media @tablet {
+		line-height: 1.5em;
+    }
+
+    @media @mobile {
+		line-height: 1.8em;
+		width: 100%;
+		min-width: auto;
+    }
 	
     &:hover,
 	&:focus,
@@ -44,10 +54,23 @@ a.ecomproduct__button {
 		border-color: @color__button--background--hover;
     	color: @color__button--text--hover;
     }
+	
+	.responsivecolumns .columns-three-left &,
+	.responsivecolumns .columns-three-middle &,
+	.responsivecolumns .columns-three-right &,
+	.responsivecolumns .columns-four-first &,
+	.responsivecolumns .columns-four-second &,
+	.responsivecolumns .columns-four-third &,
+	.responsivecolumns .columns-four-fourth & {
+		width: 100%;
+		min-width: auto;
+	}
 }
 
 .button,
+a.button,
 .link-button,
+a.link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
 .dropbox .button,
@@ -102,9 +125,8 @@ a.ecomproduct__button {
 // #Dropbox
 // -----------------------------
 
-.dropbox {
-	display: table;
-
+.dropbox,
+[data-name="filedownload"] {
 	.button {
 		&:before {
 			display: inline;
@@ -114,14 +136,38 @@ a.ecomproduct__button {
 }
 
 .dropbox__button,
-.dropbox__label {
-	display: table-cell;
+.button.icon--filedownload,
+.dropbox__label,
+.file-name__label {
 	vertical-align: middle;
 }
 
-.dropbox__label {
+.dropbox__label,
+.file-name__label {
+	.paragraph;
 	width: 100%;
-	padding-left: 1em;
+	padding-left: 0.5em;
+	padding-bottom: 0;
+
+    @media @mobile {
+		display: inline-block;
+		padding-left: 0;
+		padding-top: 0.25em;
+		padding-bottom: 1em;
+    }
+	
+	.responsivecolumns .columns-three-left &,
+	.responsivecolumns .columns-three-middle &,
+	.responsivecolumns .columns-three-right &,
+	.responsivecolumns .columns-four-first &,
+	.responsivecolumns .columns-four-second &,
+	.responsivecolumns .columns-four-third &,
+	.responsivecolumns .columns-four-fourth & {
+		display: inline-block;
+		padding-left: 0;
+		padding-top: 0.25em;
+		padding-bottom: 1em;
+	}
 }
 
 // -----------------------------

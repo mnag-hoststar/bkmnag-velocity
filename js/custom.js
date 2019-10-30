@@ -6,15 +6,15 @@
 
 function parallaxFade() {
 	scrollPos = $(this).scrollTop();
-	$('.responsiveslideshow__image').css({
+	$('.template__home .responsiveslideshow__image').css({
 		'top': (scrollPos/4)+"px",
 		'bottom': (scrollPos/4)+"px"
 	});
-	$('.responsiveslideshow__image-title').css({
+	$('.template__home .responsiveslideshow__image-title').css({
 		'top': (scrollPos/4)+"px",
 		'opacity': 1-(scrollPos/500)
 	});
-	$('.responsiveslideshow__image-description').css({
+	$('.template__home .responsiveslideshow__image-description').css({
 		'top': (scrollPos/4)+"px",
 		'opacity': 1-(scrollPos/500)
 	});
@@ -30,14 +30,14 @@ $(document).ready(function(){
 $(document).ready(function() {
 
     $('.product-item').each(function() {
-        var href = $(this).find("a").attr("href");
+        var href = $(this).find('a').attr('href');
         if(href) {
-            $(this).addClass("clickable");
+            $(this).addClass('clickable');
         }
     });
 
     $('.product-item').click(function() {
-        var href = $(this).find("a").attr("href");
+        var href = $(this).find('a').attr('href');
         if(href) {
             window.location = href;
         }
@@ -45,8 +45,7 @@ $(document).ready(function() {
 
     // Adds variation class when there is only one product image
 
-    if($(".ecomproduct__product-gallery").length == 0)
-    {
+    if($(".ecomproduct__product-gallery").length == 0) {
        $("body").addClass("product-one-image");
     }
 
@@ -54,35 +53,42 @@ $(document).ready(function() {
 	
     $('.product-gallery').each(function() {
       var max = 5;
-      if ($(this).find("li.gallery-item").length > max) {
-        $(this).addClass("hiding");
+      if ($(this).find('li.gallery-item').length > max) {
+        $(this).addClass('hiding');
 
         $(this)
-            .find('li.gallery-item:gt('+max+')')
-            .hide()
-            .end()
-            .append(
-                $('<li class="ecom-view-more" id="ecomscroll" href="#">&gt;</li>').click( function(){
-                $(this).siblings(':hidden').show().end();
-            })
-            );
+		.find('li.gallery-item:gt('+max+')')
+		.hide()
+		.end()
+		.append(
+			$('<li class="ecom-view-more" id="ecomscroll" href="#">&gt;</li>').click( function(){
+				$(this).siblings(':hidden').show().end();
+			})
+		);
       }
     });
 
-    // Ecom Gallery Scrolling
+    // Ecom Products Gallery Scrolling
 
     $('#ecomscroll').click(function(e) {
         e.preventDefault();
         var id = e.target.id;
-        if(id == 'ecomscroll')
-        {
+        if(id == 'ecomscroll') {
             $('ul.product-gallery li:first').appendTo('ul.product-gallery');
         }
-            else
-        {
+		else {
             $('ul.product-gallery li:last').prependTo('ul.product-gallery');
         }
     });
+	
+	// Ecom Product Gallery
+	
+	$('.product-gallery .image-button').each(function() {
+		var productGalleryImage = $(this).find('.image').attr('src');
+		$(this).css('background-image', 'url("'+productGalleryImage+'")');
+		$(this).find('.image').css('opacity', '0');
+    });
+	
 	
 	// Adds classes for elements influenced by wow.js
 	
@@ -94,4 +100,5 @@ $(document).ready(function() {
 	$('.widget[data-name="blogpostlist"] .post-article').addClass('wow fadeInUp');
 	$('.widget[data-name="ecomproductslist"] li.product-item').addClass('wow fadeInUp');
 	$('.widget[data-name="ecomfeaturedproducts"] li.product-item').addClass('wow fadeInUp');
+	$('ul.product-gallery li.gallery-item').addClass('wow fadeInUp');
 });

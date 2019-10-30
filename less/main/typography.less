@@ -217,7 +217,7 @@ a.vglnk {
 	margin: -0.2em -0.1em -0.4em;
 	padding: 0.2em 0.1em 0;
 	line-height: 0.8em;
-	color: @color__p--text;
+	color: inherit;
 	overflow: visible;
 	height: auto;
 	text-decoration: none;
@@ -296,7 +296,7 @@ ul, ol {
 			position: absolute;
 			margin-left: -2em;
 			content: "\2014";
-			color: @color-text--light;
+			color: @color-text--faded;
 		}
 	}
 }
@@ -312,7 +312,7 @@ ol {
 			float: left;
 			margin-left: -2em;
 			padding: 0 0.4em 0 0;
-			color: @color__h1--text;
+			color: @color-text--faded;
 		}
 	}
 }
@@ -373,9 +373,9 @@ blockquote {
 // ------------------------------
 
 ::-moz-selection {
-    background: @color-highlight--light;
+    background: @color-text--lightest;
 }
 
 ::selection {
-    background: @color-highlight--light;
+    background: @color-text--lightest;
 }

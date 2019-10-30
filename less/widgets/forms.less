@@ -34,7 +34,7 @@
 
 .form .legend {
 	.heading--3;
-	margin-bottom: 0.5em;
+	margin-bottom: none;
 }
 
 // ------------------------------
@@ -155,7 +155,7 @@ textarea {
     }
 	
 	option {
-		background-color: @color__body--background;
+		background-color: @color__container--background;
 	}
 }
 
@@ -219,6 +219,8 @@ input:focus {
 			padding: 0;
 			margin: 0.5em 0;
 			line-height: 1.5em;
+			text-align: left;
+			color: inherit;
 		}
 
 		input[type="radio"],
@@ -305,6 +307,19 @@ input:focus {
 				&:after {
 					.border-radius(1em);
 				}
+			}
+		}
+		
+		&[class*="form-group"] {
+			margin-bottom: 20px;
+		}
+		
+		label[for*="input--terms"] span a.form__link {
+			text-decoration: none;
+			border-bottom: 2px solid @color-highlight;
+
+			&:hover, &:active, &:visited {
+				border-bottom: 5px solid @color-highlight;
 			}
 		}
 	}
@@ -399,9 +414,13 @@ input:focus {
 				height: auto;
 			}
 
+			@media @mobile {
+				margin-bottom: 1em;
+			}
+
 			.responsivecolumns & {
 				display: block;
-				margin-bottom: 0.5em;
+				margin-bottom: 1em;
 				padding-right: 0;
 				width: 100%;
 				height: auto;
@@ -413,11 +432,27 @@ input:focus {
 			min-width: 280px;
 
 			@media @mobile {
-				width: 100%;
+				min-width: 100%;
 			}
 
 			.responsivecolumns & {
-				width: 100%;
+				min-width: 100%;
+			}
+			
+			.template__footer & {
+				min-width: 200px;
+
+				@media @tablet-horizontal {
+					min-width: 280px;
+				}
+
+				@media @mobile {
+					min-width: 100%;
+				}
+
+				.responsivecolumns & {
+					min-width: 100%;
+				}
 			}
 		}
 	}

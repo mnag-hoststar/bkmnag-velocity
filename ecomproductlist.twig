@@ -9,7 +9,9 @@
     <div class="template__content">
         <div class="container">
 			{{widget('ecombasket', 'shopbasket', {})|raw}}
+			{{widget('pagetitle', 'title', {})|raw}}
             {{zone('main')|raw}}
+			{{widget('space', 'pagespace', {'height': '20'})|raw}}
         </div>
     </div>
 </section>

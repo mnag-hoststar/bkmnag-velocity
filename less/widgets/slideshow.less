@@ -6,9 +6,20 @@
 // #Slideshow
 // ------------------------------
 
+.widget[data-widget-type="responsiveslideshow"] {
+	z-index: 50;
+	
+	.template__home & {
+		.widget-overlay .widget__list {
+			position: absolute;
+			top: 50%;
+		}
+	}
+}
+
 .responsiveslideshow {
 	position: relative;
-	background-color: @color__body--background;
+	background-color: transparent;
 	overflow: hidden;
 	max-height: 100vh;
 		
@@ -57,12 +68,27 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background-color: transparent;
 			background-size: cover;
 			background-position: center;
 			height: 100%;
 			width: 100%;
 			min-height: 0;
+			
+			&:after {
+				z-index: 20;
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-size: cover;
+				background-position: center;
+				background-color: @color__slideshow-caption--background;
+				height: 100%;
+				width: 100%;
+				min-height: 0;
+			}
 		}
 	}
 
@@ -76,6 +102,7 @@
 // ------------------------------
 
 .responsiveslideshow .caption {
+	z-index: 21;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -83,12 +110,28 @@
 	right: 0;
 	bottom: 0;
 	margin: 0;
-	padding: 4.5em 0 2em;
+	padding: 6em 0 2em;
 	background-color: @color__slideshow-caption--background;
 	.transition(all 0.25s ease-in-out);
+	
+	.template__home & {
+		padding: 4.5em 0 2em;
+	}
+
+	@media @tablet {
+		padding: 4em 0 2em;
+		
+		.template__home & {
+			padding: 4.5em 0 2em;
+		}
+	}
 
 	@media @mobile {
-		padding: 4em 0 1em;
+		padding: 2em 0 1em;
+	
+		.template__home & {
+			padding: 4em 0 1em;
+		}
 	}
 	
 	.columns-four-first &,
@@ -117,7 +160,7 @@
 
 .responsiveslideshow__image-title {
 	position: relative;
-	padding: 1em 0 0;
+	padding: 0;
 	hyphens: none;
 	word-wrap: break-word;
 	
@@ -130,6 +173,14 @@
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__slideshow-title--text;
 	left: -0.08em;
+	
+	.template__home & {
+		padding: 1em 0 0;
+	}
+	
+	.current & {
+		.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0s forwards);
+	}
 	
 	@media @desktop-wide {
 		font-size: @font__h1--font-size*1.5;
@@ -156,10 +207,6 @@
 		font-size: @font__h1--font-size * 0.8;
 		line-height: @font__h1--line-height * 0.8;
     }
-	
-	.current & {
-		.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0s forwards);
-	}
 }
 
 .responsiveslideshow__image-description {
@@ -176,7 +223,7 @@
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__slideshow-description--text;
 	
-	@media @desktop {
+	@media @desktop-wide {
 		font-size: @font__h4--font-size;
 		font-size: unit(@font__h4--font-size*0.08, vw);
 		line-height: @font__h4--line-height;
@@ -216,8 +263,8 @@
 // ------------------------------
 
 .slide-navigation {
+	z-index: 22;
 	opacity: 0;
-	z-index: 2;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -352,7 +399,7 @@
 // ------------------------------
 
 .responsiveslideshow__slide-pagination {
-	z-index: 3;
+	z-index: 23;
 	position: absolute;
 	bottom: 0;
 	width: 100%;

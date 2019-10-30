@@ -7,17 +7,10 @@
 
 <section class="page page__gallery">
 	<div class="template__content">
-		{{widget('pagetitle', 'title', {})|raw}}
 		{{zone('main')|raw}}
-		{{widget('content', 'page__gallery-text', {
-			content: '<p>These are our newest foods. From sweet to savory, 
-			you can be sure to find the most scrumptious meal for you. We offer 
-			fresh bread, straight from your local bakery. The ingredients for 
-			our salads and cereals come from local farmers. We do everything to 
-			make sure you have the healthiest products to get you started early 
-			and be productive.</p>'
+		{{widget('content', 'page__gallery-text-above', {
+			content: '<p>Here are some impressions of our newest models.</p>'
 		})|raw}}
-
 		{{widget('gallery', 'page__gallery-main', {
 			'showTitle': true,
 			'showDescription': true,
@@ -49,6 +42,7 @@
 			}
 		  ]
 		})|raw}}
+		{{widget('space', 'pagespace', {'height': '20'})|raw}}
 	</div>
 </section>
 

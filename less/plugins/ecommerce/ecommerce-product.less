@@ -9,7 +9,7 @@
 .template__content >,
 .template__content section > {
 	.widget[data-name="ecomproduct"] {
-		padding: 2em 0;
+		padding: 0.5em 0;
 		width: auto;
 		max-width: none;
 		background-color: @color__ecomproductslist--background;
@@ -51,6 +51,10 @@
 // ------------------------------
 
 .ecomproduct__product-image {
+	margin-bottom: 10px;
+	padding: 0;
+	max-width: none;
+	
     &.no-image {
         display: none;
     }
@@ -62,36 +66,14 @@
 		width: auto;
 		margin: 0;
 		padding: 0;
-		background-size: cover;
-		background-position: center;
-		max-height: 800px;
-		max-height: 100vw;
+		background-size: contain;
+		background-position: center bottom;
+		height: 450px;
 		max-width: @layout-max-width;
 		.box-sizing(content-box);
-		background-color: @color__ecomproduct-images--background;
-		margin-right: 4px;
-		
-		&:hover, &:active {
-			background-color: @color__ecomproduct-images--background;
-		}
-
-		@media @tablet-horizontal {
-			margin: 5%;
-			max-height: 700px;
-			height: 700px;
-			height: 100vw;
-		}
-		
-		@media @tablet {
-			max-height: 600px;
-			height: 600px;
-			height: 100vw;
-		}
 		
 		@media @mobile {
-			max-height: 500px;
-			height: 500px;
-			height: 100vw;
+			height: 250px;
 		}
 	}
 	
@@ -107,50 +89,152 @@
 // ------------------------------
 
 .product-gallery {
+	.display-flex(flex);
+	.flex-wrap(wrap);
 	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 980px;
+	font-size: 0;
+		
+	@media @mobile {
+		margin: 0 -4px;
+	}
 
     // Gallery Item
 
     .gallery-item {
-        position: relative;
-		display: inline-block;
-        background-color: @color__ecomproduct-images--background;
-		width: 80px;
-		height: 80px;
-		margin: 4px;
+		.flex-grow(1);
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		background-color: transparent;
+		padding-bottom: 100%/4;
+		height: auto;
+		width: 100%/4;
+		border: 4px solid transparent;
+		line-height: 100%/4;
+		
+		&:first-child {
+			display: none;
+		}
 
-        @media @tablet-horizontal {
-            width: 60px;
-            height: 60px;
-        }
+		@media @desktop {
+			padding-bottom: 100%/3;
+			width: 100%/3;
+		}
+
+		@media @tablet {
+			padding-bottom: 100%/2;
+			width: 100%/2;
+		}
+
+		.responsivecolumns & {
+			padding-bottom: 100%/2;
+			width: 100%/2;
+		}
+
+		&:nth-child(12n+1) {
+			.animation-delay(0.7s);
+			width: 100%/2;
+			.responsivecolumns & {width: 100%/2;}
+		}
+		
+		&:nth-child(12n+2) {
+			.animation-delay(0.4s);
+			width: 100%*2/3;
+			.responsivecolumns & {width: 100%*2/3;}
+		}
+
+		&:nth-child(12n+3) {
+			.animation-delay(0.5s);
+			width: 100%/3;
+			.responsivecolumns & {width: 100%/3;}
+		}
+
+		&:nth-child(12n+4) {
+			.animation-delay(0.6s);
+			width: 100%/3;
+			.responsivecolumns & {width: 100%/3;}
+		}
+
+		&:nth-child(12n+5) {
+			.animation-delay(0.7s);
+			width: 100%*2/3;
+			.responsivecolumns & {width: 100%*2/3;}
+		}
+
+		&:nth-child(12n+6) {
+			.animation-delay(0.4s);
+			width: 100%/2;
+			.responsivecolumns & {width: 100%/2;}
+		}
+
+		&:nth-child(12n+7) {
+			.animation-delay(0.5s);
+			width: 100%/2;
+			.responsivecolumns & {width: 100%/2;}
+		}
+
+		&:nth-child(12n+8) {
+			.animation-delay(0.6s);
+			width: 100%/3;
+			.responsivecolumns & {width: 100%/3;}
+		}
+
+		&:nth-child(12n+9) {
+			.animation-delay(0.7s);
+			width: 100%*2/3;
+			.responsivecolumns & {width: 100%*2/3;}
+		}
+
+		&:nth-child(12n+10) {
+			.animation-delay(0.4s);
+			width: 100%*2/3;
+			.responsivecolumns & {width: 100%*2/3;}
+		}
+
+		&:nth-child(12n+11) {
+			.animation-delay(0.5s);
+			width: 100%/3;
+			.responsivecolumns & {width: 100%/3;}
+		}
+
+		&:nth-child(12n) {
+			.animation-delay(0.6s);
+			width: 100%/2;
+			.responsivecolumns & {width: 100%/2;}
+		}
     }
 
     // Image Button
 
     .image-button {
+		.display-flex(flex);
+		.align-items(center,center);
+		.justify-content(center,center);
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-        display: inline-block;
-        line-height: 76px;
+		background-color: @color__ecomproduct-images--background;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 		
-        @media @tablet-horizontal {
-            line-height: 56px;
-            height: 60px;
-        }
+		&:hover {
+			background-color: @color__ecomproduct-images--background;
+		}
 
         // Image
 
         .image {
-            line-height: 76px;
-            display: inline-block;
-            vertical-align: middle;
-			
-            @media @tablet-horizontal {
-                line-height: 56px;
-            }
+			max-height: none;
+			min-width: 100%;
+			min-height: 100%;
+			.blur(30px);
+			.transition(all 0.25s ease-in-out)
         }
     }
 }
@@ -170,7 +254,7 @@
 // Product Title
 
 .product-title {
-    color: @color__ecomproduct-title--text;
+    color: @color__ecomproduct-title--text !important;
 	padding-bottom: 0.25em;
 }
 
@@ -178,14 +262,55 @@
 
 .ecomproduct__product-price {
 	.heading--4;
-    color: @color__ecomproduct-price--text;
+    color: @color__ecomproduct-price--text !important;
 }
 
 // Product Body
 
 .product-body {
-    margin-top: 16px;
-    margin-bottom: 24px;
+	ul li,
+	ol li,
+	blockquote {
+		color: @color__ecomproductslist-label--text;
+	}
+	
+	ul {
+		li {
+			&:before {
+				position: absolute;
+				margin-left: -2em;
+				content: "\2014";
+			}
+		}
+	}
+	
+	ol, ul {
+		li {
+			&:before {
+				color: @color__ecomproductslist-label--text;
+			}
+		}
+	}
+
+	td {
+		border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
+
+		@media @mobile {
+			&:last-child {
+				border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
+			}
+		}
+
+		.responsivecolumns & {
+			&:last-child {
+				border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
+			}
+		}
+	}
+	
+	blockquote {
+		border: 1px solid fade(@color__ecomproductslist-label--text, 25%);
+	}
 }
 
 // Product Buttons
@@ -199,7 +324,6 @@ a.ecomproduct__button {
 		display: block;
 		margin-top: 1em;
 		width: 100%;
-		line-height: 46px;
 		text-align: center;
 	}
 
@@ -210,6 +334,7 @@ a.ecomproduct__button {
 	&.icon:before {
 		margin: 0 0.5em 0 0;
 		width: auto;
+		font-size: 1.2em;
 	
 		@media @tablet {
 			float: none;

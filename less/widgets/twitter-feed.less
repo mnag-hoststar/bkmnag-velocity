@@ -32,12 +32,19 @@
 	position: relative;
 	padding: 20px;
 	border: 1px solid @color-text--light;
+	width: 48%;
 	text-align: center;
+	color: inherit;
 	.item--margin-size--2to1-cols();
 	.clearfix();
 	
+    @media @mobile {
+		width: 100%;
+    }
+	
     .responsivecolumns & {
 		width: 100%;
+		margin: 2% 0;
     }
 }
 
@@ -68,6 +75,7 @@ a.twitter__account-link {
 	hyphens: none;
     overflow-wrap: break-word;
 	.paragraph;
+	color: inherit;
 	line-height: 1.2em !important;
 	
 }
@@ -75,14 +83,6 @@ a.twitter__account-link {
 // ------------------------------
 // #Content
 // ------------------------------
-
-.tweet-item {
-	width: 48%;
-	
-    @media @mobile {
-		width: auto;
-    }
-}
 
 .tweet-content {
 	padding: 0 0.5em 4em;

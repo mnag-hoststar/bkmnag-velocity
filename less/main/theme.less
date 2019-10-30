@@ -19,6 +19,9 @@
 }
 
 html, body {
+	.animation(fadeIn 1s ease-in-out);
+	.paragraph;
+	padding: 0;
     background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	font-smooth: always;
@@ -27,17 +30,6 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
-	.animation(fadeIn 1s ease-in-out);
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
-	
-	.make-line-height-a-little-smaller(@font__p--line-height);
-	.make-line-height-smaller(@font__p--line-height);
-	.make-line-height-a-lot-smaller(@font__p--line-height);
-	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 }
 
@@ -47,11 +39,8 @@ html {
 }
 
 body {
+	margin-top: -1px;
 	padding-top: 1px;
-	
-	> :first-child {
-		margin-top: -1px;
-	}
 }
 
 .widget__item {
@@ -75,9 +64,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	top: 0;
     left: 0;
     right: 0;
+    z-index: 100;
+	padding: 0.5em 0 0.5em 0.5em;
 	background-color: @color__header--background;
-    z-index: 11000;
-	padding: 0.5em 1em;
 	border-bottom: 1px solid @color__header--border;
     font-size: @font__navigation--font-size;
 	.transition(all 0.25s ease-in-out 0s);
@@ -85,15 +74,26 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	@media @tablet {
 		padding: 1em;
 	}
+}
 	
-	.template__home .widget[data-widget-type="responsiveslideshow"] + & {
-		background-color: transparent;
-		border-bottom: none;
+.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+	background-color: transparent;
+	border-bottom: 1px solid transparent;
+	padding: 1em 0 1em 2em;
+
+	@media @tablet {
+		padding-left: 1em;
+		padding-right: 1em;
 	}
+}
 	
+.template__header,
+.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
 	&--scrolled {
+		margin-top: 0 !important;
 		background-color: @color__header--background;
-		padding: 0 1em;
+		border-bottom: 1px solid @color__header--border;
+		padding: 0.25em 0 0.25em 1em;
 		
 		@media @tablet {
 			padding: 1em;
@@ -110,21 +110,26 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     background-color: @color__footer--background;
 	border-top: 1px solid @color__footer--border;
     text-align: left;
-	margin: 2em 0 0;
-	padding: 1em 0 2em;
+	margin: 0 0 0;
+	padding: 2em 0 0;
 	
 	.footer {
 		&--container {
 			max-width: @layout-max-width;
 			margin: 0 auto;
-			padding: 1px 0;
+			padding: 0;
 			
 			@media @desktop {
 				width: 90%;
-				padding: 1px 5%;
 			}
-			
+
+			@media @desktop-narrow {
+				width: auto;
+				padding: 1em 2.5em;
+			}
+
 			@media @mobile {
+				padding: 1em 2em;
 				text-align: center;
 			}
 		}
@@ -234,31 +239,46 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .gdpr-footer {
-    background-color: @color__footer--background;
-    padding: 10px 0;
+    background-color: transparent;
+	max-width: @layout-max-width;
+	margin: -0.5em auto 0;
+	padding: 0.5em 0;
+	text-align: right;
+
+	@media @desktop {
+		width: 90%;
+		padding: 0.5em 5%;
+	}
+
+	@media @mobile {
+		text-align: center;
+	}
     
     a[class] {
 		z-index: 0;
 		position: relative;
-		margin: -0.2em 1em -0.4em;
-		padding: 0.4em 0.4em 0.1em;
+		margin: -0.2em 0.5em -0.4em;
 		line-height: 0.8em;
 		border-bottom: none;
 		text-decoration: none;
-		text-transform: uppercase;
-		font-family: @font__p--font-family;
-		font-size: @font__p--font-size;
-		font-weight: @font__p--font-weight;
-		line-height: @font__p--line-height;
-		letter-spacing: @font__p--letter-spacing;
-		color: @font__p--text;
+		.paragraph;
+		color: inherit;
 		.transition(all 0.2s ease-in-out);
 		
-		@media @tablet {
-			display: inline-block;
-			margin: 0.5em 0;
-			font-size: @font__p--font-size * 1.2;
-			line-height: @font__p--line-height * 1.2;
+		&:first-child {
+			margin-left: 0;
+
+			@media @mobile {
+				margin-right: 0.5em;
+			}
+		}
+		
+		&:last-child {
+			margin-right: 0;
+
+			@media @mobile {
+				margin-right: 0.5em;
+			}
 		}
 		
 		&:hover, &:active {

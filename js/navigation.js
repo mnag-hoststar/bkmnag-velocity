@@ -28,7 +28,7 @@ $(document).ready(function(){
     
     // Hides other submenus when a main menu point with a submenu is clicked.
     
-    $(".navigation-item").click(function(){
+    $(".navigation-item").click(function() {
         $(this).siblings(".navigation-item").removeClass("folder-open open");
     });
 	
@@ -37,9 +37,14 @@ $(document).ready(function(){
 	// ------------------------------
 	
 	function scrollListener() {
+		var languageSelectorHeight = $('.language-selector').outerHeight();
 		var scrollTop = $(window).scrollTop();
-
-		if (scrollTop > 100) {
+		
+		if (languageSelectorHeight == undefined) {
+			languageSelectorHeight = 0;
+		}
+		
+		if (scrollTop > languageSelectorHeight) {
 			$('.template__header').addClass('template__header--scrolled');
 		} else {
 			$('.template__header').removeClass('template__header--scrolled');
@@ -51,6 +56,12 @@ $(document).ready(function(){
 	$(window).on('scroll', function () {
 		scrollListener();
 	});
+	
+    $(document).bind("DOMSubtreeModified",function(){
+		$(window).resize(function() {
+			scrollListener();
+		});
+    });
 	
 	// ------------------------------
 	// Header and Section Functions
@@ -65,18 +76,18 @@ $(document).ready(function(){
 	
 		// header distance from top changes when a language selector is present
 
-		if (languageSelectorHeight==undefined) {
+		if (languageSelectorHeight == undefined) {
+			languageSelectorHeight = 0;
 			var languageAndNavigationHeight = navigationHeight;
 		} else {
 			var languageAndNavigationHeight = languageSelectorHeight+navigationHeight;
 		}
-
-		// section distance from top
-
-		$('section.template').css('margin-top', languageSelectorHeight+'px');
-		$('section.template').css('min-height', navigationHeight+'px');
 		
-		$('.responsiveslideshow .caption').css('padding-top', navigationHeight+'px');
+		// section distance from top
+		
+		$('section.template').css('min-height', navigationHeight+'px');
+		$('header.template__header').css('margin-top', languageSelectorHeight+'px');
+		$('.template__home .responsiveslideshow .caption').css('padding-top', navigationHeight+'px');
 	}
 
 	contentFromTopDistance();
