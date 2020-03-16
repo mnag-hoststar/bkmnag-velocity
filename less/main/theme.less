@@ -134,8 +134,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 			}
 		}
 		
-		&--contact,
-		&--information {
+		&--contact {
 			.display-flex(flex);
 			.flex-wrap(wrap);
 			margin: 0 -1em;
@@ -146,17 +145,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 				.flex(1);
 				
 				@media @tablet-horizontal { 
+					.flex(auto);
 					max-width: none;
 					padding: 0 1em 1em;
-				}
-			}
-		}
-		
-		&--contact {
-			> * {
-				@media @tablet-horizontal { 
 					width: 100%;
-					.flex(auto);
 				}
 			}
 			
@@ -180,57 +172,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 					&:hover {
 						background-color: desaturate(@color__button--background--hover, 100%);
 						border-color: transparent;
-					}
-				}
-			}
-		}
-		
-		&--information {
-			margin-top: 1em;
-			margin-bottom: 1em;
-			padding-top: 1em;
-			padding-bottom: 0.5em;
-			position: relative;
-			
-			&:before,
-			&:after {
-				content: "";
-				position: absolute;
-				left: 1em;
-				right: 1em;
-				border-top: 1px solid @color-text--light;
-			}
-			
-			&:before {
-				top: 0;
-			}
-			
-			&:after {
-				bottom: 0;
-			}
-			
-			> * {
-				@media @tablet-horizontal { 
-					width: 50%;
-					.flex(auto);
-				}
-				
-				@media @mobile { 
-					width: 100%;
-				}
-			}
-			
-			p {
-				padding-top: 0.3em;
-				padding-bottom: 0.3em;
-				hyphens: none;
-				line-height: @font__p--line-height * 0.75;
-				
-				a {
-					border: none;
-					
-					&:hover, &:active {
-						color: @color-highlight;
 					}
 				}
 			}

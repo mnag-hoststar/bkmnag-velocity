@@ -1,55 +1,12 @@
 <footer class="template__footer">
 	<div class="footer--container">
-		{{widget('content', 'footer-content-title', {
-			content: '<h2>Stay in contact with us.</h2>'
-		})|raw}}
 		<div class="footer--contact">
 			<div class="footer--contact-left">
-				{{widget('content', 'footer-content-contact-left', {
-					content: '<p>Current information tailored to your interests.</p>'
-				})|raw}}
 				{{widget('profile', 'footer-profile-contact-left', {'profileType':'form'})|raw}}
 			</div>
 			<div class="footer--contact-right">
-				{{widget('content', 'footer-content-contact-right', {
-					content: '<p>Velocity on Social Media</p>'
-				})|raw}}
 				{{widget('profile', 'footer-profile-contact-right', {'profileType':'socialicons'})|raw}}
 			</div>
-		</div>
-		<div class="footer--information">
-			{{widget('content', 'footer-content-info-1', {
-				content: '
-					<h6>Sales guide</h6>
-					<p><a href="#">Configurator</a></p>
-					<p><a href="#">Model overview</a></p>
-					<p><a href="#">Product finder</a></p>
-					<p><a href="#">Rate calculator</a></p>
-				'})
-			|raw}}
-			{{widget('content', 'footer-content-info-2', {
-				content: '
-					<h6>Online Services</h6>
-					<p><a href="#">Find a dealer</a></p>
-					<p><a href="#">Book service appointment</a></p>
-					<p><a href="#">Product finder</a></p>
-					<p><a href="#">Find Occasions</a></p>
-				'})
-			|raw}}
-			{{widget('content', 'footer-content-info-3', {
-				content: '
-					<h6>About us</h6>
-					<p><a href="#">Company</a></p>
-					<p><a href="#">Contact us</a></p>
-				'})
-			|raw}}
-			{{widget('content', 'footer-content-info-4', {
-				content: '
-					<h6>Press</h6>
-					<p><a href="#">Press information</a></p>
-					<p><a href="#">Top offers for new vehicles</a></p>
-				'})
-			|raw}}
 		</div>
 	</div>
 </footer>
