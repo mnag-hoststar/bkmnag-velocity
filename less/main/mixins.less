@@ -1,10 +1,6 @@
-// ----------------------------------------
 // Velocity: LESS > Main > Mixins
-// ----------------------------------------
 
-// ------------------------------
-// #Global Mixins
-// ------------------------------
+// Global Mixins
 
 .box-sizing(@attribute) {
 	-webkit-box-sizing: @attribute;
@@ -38,8 +34,8 @@
 }
 
 .blur(@blur) {
-  filter: blur(@blur);
-  -webkit-filter: blur(@blur);
+	filter: blur(@blur);
+	-webkit-filter: blur(@blur);
 }
 
 .box-shadow(@shadow) {
@@ -80,9 +76,7 @@
 	}
 }
 
-// ------------------------------
-// #Animations
-// ------------------------------
+// Animations
 
 .transition(@transition...) {
 	-webkit-transition: @transition;
@@ -187,13 +181,7 @@
 }
 
 
-// ------------------------------
-// #Font Mixins
-// ------------------------------
-
-// These two mixins only make the font smaller when its
-// over a certain size. Otherwise it will be too small
-// on mobile.
+// Font Mixins
 
 .make-font-a-little-smaller(@font-size, @size-mobile: 0.95) when (@font-size >= 13px) {
 	@media @mobile {
@@ -211,6 +199,7 @@
 	@media @tablet {
 		font-size: @font-size*@size-tablet;
 	}
+
 	@media @mobile {
 		font-size: @font-size*@size-mobile;
 	}
@@ -232,18 +221,13 @@
 	@media @tablet {
 		line-height: @line-height-size*@size-tablet;
 	}
+
 	@media @mobile {
 		line-height: @line-height-size*@size-mobile;
 	}
 }
 
-// ------------------------------
-// #Theme Mixins
-// ------------------------------
-
-// Item margin size.
-// This is the margin between various items like
-// tweets, blog posts and shop items.
+// Theme Mixins
 
 .item--margin-size--border(@item--margin-size: 1%) {
 	margin: -@item--margin-size;
@@ -320,26 +304,16 @@
     text-transform: uppercase;
 }
 
+// Flexbox LESS mixins
 
-
-// ------------------------------
-// #Flexbox LESS mixins
-// The spec: http://www.w3.org/TR/css3-flexbox
-// ------------------------------
-
-// Flexbox display
-// flex or inline-flex
 .display-flex(@display: flex) {
     display: ~"-webkit-@{display}";
     display: ~"-moz-@{display}";
-    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
-    display: ~"-ms-@{display}"; // IE11
+    display: ~"-ms-@{display}box";
+    display: ~"-ms-@{display}";
     display: @display;
 }
 
-// The 'flex' shorthand
-// - applies to: flex items
-// <positive-number>, initial, auto, or none
 .flex(@columns: initial) {
 	-webkit-flex: @columns;
 	-moz-flex: @columns;
@@ -347,9 +321,6 @@
 	flex: @columns;
 }
 
-// Flex Flow Direction
-// - applies to: flex containers
-// row | row-reverse | column | column-reverse
 .flex-direction(@direction: row) {
 	-webkit-flex-direction: @direction;
 	-moz-flex-direction: @direction;
@@ -357,9 +328,6 @@
 	flex-direction: @direction;
 }
 
-// Flex Line Wrapping
-// - applies to: flex containers
-// nowrap | wrap | wrap-reverse
 .flex-wrap(@wrap: nowrap) {
 	-webkit-flex-wrap: @wrap;
 	-moz-flex-wrap: @wrap;
@@ -367,9 +335,6 @@
 	flex-wrap: @wrap;
 }
 
-// Flex Direction and Wrap
-// - applies to: flex containers
-// <flex-direction> || <flex-wrap>
 .flex-flow(@flow) {
 	-webkit-flex-flow: @flow;
 	-moz-flex-flow: @flow;
@@ -377,9 +342,6 @@
 	flex-flow: @flow;
 }
 
-// Display Order
-// - applies to: flex items
-// <integer>
 .flex-order(@order: 0) {
 	-webkit-order: @order;
 	-moz-order: @order;
@@ -389,9 +351,6 @@
 	order: @order;
 }
 
-// Flex grow factor
-// - applies to: flex items
-// <number>
 .flex-grow(@grow: 0) {
 	-webkit-flex-grow: @grow;
 	-moz-flex-grow: @grow;
@@ -399,9 +358,6 @@
 	flex-grow: @grow;
 }
 
-// Flex shrink
-// - applies to: flex item shrink factor
-// <number>
 .flex-shrink(@shrink: 1) {
 	-webkit-flex-shrink: @shrink;
 	-moz-flex-shrink: @shrink;
@@ -409,10 +365,6 @@
 	flex-shrink: @shrink;
 }
 
-// Flex basis
-// - the initial main size of the flex item
-// - applies to: flex items, initial main size of the flex item
-// <width>
 .flex-basis(@width: auto) {
 	-webkit-flex-basis: @width;
 	-moz-flex-basis: @width;
@@ -421,11 +373,6 @@
 	max-width:  @width;
 }
 
-// Axis Alignment
-// - applies to: flex containers
-// flex-start | flex-end | center | space-between | space-around
-// For -ms-flex-pack
-// start | end | center | stretch | justify | distribute
 .justify-content(@justify: flex-start, @ms-justify: start) {
 	-webkit-justify-content: @justify;
 	-moz-justify-content: @justify;
@@ -434,11 +381,6 @@
 	justify-content: @justify;
 }
 
-// Packing Flex Lines
-// - applies to: multi-line flex containers
-// flex-start | flex-end | center | space-between | space-around | stretch
-// For -ms-flex-line-pack
-// start | end | center | stretch | justify | distribute
 .align-content(@align: stretch, @ms-align: stretch) {
 	-webkit-align-content: @align;
 	-moz-align-content: @align;
@@ -447,11 +389,6 @@
 	align-content: @align;
 }
 
-// Cross-axis Alignment
-// - applies to: flex containers
-// flex-start | flex-end | center | baseline | stretch
-// For -ms-flex-align
-// start | end | center | stretch | justify | distribute
 .align-items(@align: stretch, @ms-align: stretch) {
 	-webkit-align-items: @align;
 	-moz-align-items: @align;
@@ -460,11 +397,6 @@
 	align-items: @align;
 }
 
-// Cross-axis Alignment
-// - applies to: flex items
-// auto | flex-start | flex-end | center | baseline | stretch
-// For -ms-flex-item-align
-// start | end | center | stretch | justify | distribute
 .align-self(@align: auto) {
 	-webkit-align-self: @align;
 	-moz-align-self: @align;

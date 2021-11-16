@@ -1,10 +1,6 @@
-// ----------------------------------------
 // Velocity: LESS > Widgets > Slideshow
-// ----------------------------------------
 
-// ------------------------------
-// #Slideshow
-// ------------------------------
+// Slideshow
 
 .widget[data-widget-type="responsiveslideshow"] {
 	z-index: 50;
@@ -55,9 +51,6 @@
 			opacity: 1;
 		}
 
-		// Prevents two slides from displaying at the same time
-		// because of slow JS state changes
-
 		&.current + .slide-item {
 			display: none;
 		}
@@ -97,9 +90,7 @@
 	}
 }
 
-// ------------------------------
-// #Slide Caption
-// ------------------------------
+// Slide Caption
 
 .responsiveslideshow .caption {
 	z-index: 21;
@@ -258,9 +249,7 @@
 	}
 }
 
-// ------------------------------
-// #Slide Navigation Buttons
-// ------------------------------
+// Slide Navigation Buttons
 
 .slide-navigation {
 	z-index: 22;
@@ -382,8 +371,6 @@
 		background-position: center center;
 		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTtzdHJva2U6IzI2MjYyNjtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6NnB4fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJ2ZWxvY2l0eS1pY29uLXBhdXNlIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01NSAzNHY2ME03MyAzNHY2MCIvPjwvZz48L3N2Zz4=");
 
-		// Play Icon
-
 		&.pause {
 			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMyNjI2MjYiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJNNTQuMzggOTRsMzAtMzAtMzAtMzB2NjB6Ii8+PC9zdmc+");
 			
@@ -394,9 +381,7 @@
 	}
 }
 
-// ------------------------------
-// #Slide Pagination
-// ------------------------------
+// Slide Pagination
 
 .responsiveslideshow__slide-pagination {
 	z-index: 23;

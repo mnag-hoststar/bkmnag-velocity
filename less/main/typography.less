@@ -1,10 +1,6 @@
-// ----------------------------------------
 // Velocity: LESS > Main > Typography
-// ----------------------------------------
 
-// ------------------------------
-// #General Typography
-// ------------------------------
+// General Typography
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -20,8 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Break long words.
+
 h1, h2, h3, h4, h5, h6, p {
-	word-wrap: break-word;
+	word-break: break-word;
 }
 
 p, a {
@@ -163,7 +160,7 @@ p, .paragraph, ul, ol, li {
 	font-size: @font__p--font-size;
 	color: @color__p--text;
 	padding: 0 0 1em;
-	word-wrap: break-word;
+	word-break: break-word;
 	hyphens: auto;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -175,9 +172,7 @@ p, .paragraph, ul, ol, li {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
-// ------------------------------
-// #Bold, Italic, Underlined
-// ------------------------------
+// Bold, Italic, Underlined
 
 b, strong {
 	font-weight: 700;
@@ -188,26 +183,20 @@ u {
 	border-bottom: 1px solid @color-text--light;
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 label, .label-text {
 	font-size: 1em;
 	color: @color-text--faded;
 }
 
-// ------------------------------
-// #Span
-// ------------------------------
+// Span
 
 span {
 	background-color: transparent;
 }
 
-// ------------------------------
-// #Link
-// ------------------------------
+// Link
 
 a,
 a.vglnk {
@@ -245,17 +234,13 @@ a[class] {
 	}
 }
 
-// ------------------------------
-// #Small
-// ------------------------------
+// Small
 
 small {
 	color: @color__p--text;
 }
 
-// ------------------------------
-// #Preformatted Text and Code
-// ------------------------------
+// Preformatted Text and Code
 
 pre, code {
 	.paragraph;
@@ -274,9 +259,7 @@ code {
 	border-left: 2px solid @color-highlight;
 }
 
-// ------------------------------
-// #Unordered and Ordered List
-// ------------------------------
+// Unordered and Ordered List
 
 ul, ol {
 	padding: 0;
@@ -305,7 +288,6 @@ ol {
 	counter-reset: section;
 
 	li {
-		// Custom Numbers
 		&:before {
 			content: counter(section) ".";
 			counter-increment: section;
@@ -317,9 +299,7 @@ ol {
 	}
 }
 
-// ------------------------------
-// #Block Quote
-// ------------------------------
+// Block Quote
 
 blockquote {
 	position: relative;
@@ -369,9 +349,7 @@ blockquote {
 	}
 }
 
-// ------------------------------
-// #Highlighted Text
-// ------------------------------
+// Highlighted Text
 
 ::-moz-selection {
     background: @color-text--light;
