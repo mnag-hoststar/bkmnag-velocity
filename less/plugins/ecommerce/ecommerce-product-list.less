@@ -94,6 +94,11 @@
 		padding: 1em 2em;
 	}
 	
+	.responsivecolumns & {
+		width: 100%;
+		padding: 1em 2em;
+	}
+	
 	.legend {
 		display: none;
 	}
@@ -233,6 +238,11 @@
 				width: 100%;
 				text-align: center;
 			}
+
+			.responsivecolumns & {
+				width: 100%;
+				text-align: center;
+			}
 		}
     }
 
@@ -275,6 +285,10 @@
     @media @tablet-horizontal {
         width: 100%;
     }
+
+	.responsivecolumns & {
+        width: 100%;
+	}
 	
 	.form-body {
 		.display-flex(flex);
@@ -292,6 +306,10 @@
 		@media @mobile {
 			margin: 0;
 		}
+
+		.responsivecolumns & {
+			width: 100%;
+		}
 	}
 	
 	.form-group {
@@ -304,6 +322,20 @@
 
 		@media @tablet {
 			margin: 0 2%;
+		}
+
+		@media @mobile {
+			width: 100%;
+			margin-bottom: 8px;
+			margin-right: 0;
+			margin-left: 0;
+		}
+
+		.responsivecolumns & {
+			width: 100%;
+			margin-bottom: 8px;
+			margin-right: 0;
+			margin-left: 0;
 		}
 
 		@media @mobile {
@@ -322,11 +354,20 @@
 			}
 		}
 
-		@media @mobile {
-			width: 100%;
-			margin-bottom: 8px;
-			margin-right: 0;
-			margin-left: 0;
+		.responsivecolumns & {
+			&:first-child,
+			&:last-child {
+				margin-left: 0;
+			}
+			
+			&:nth-child(2),
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			&:last-child {
+				width: 100%;
+			}
 		}
 
 		.select-wrap {
@@ -338,6 +379,10 @@
 			}
 
 			@media @mobile {
+				.select.small;
+			}
+
+			.responsivecolumns & {
 				.select.small;
 			}
 		}
@@ -359,6 +404,10 @@
     @media @tablet {
         padding: 12px 20px;
     }
+
+	.responsivecolumns & {
+        padding: 12px 20px;
+	}
 }
 
 // Product List
