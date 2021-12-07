@@ -5,6 +5,12 @@
 .widget[data-name="blogpostlist"] {
 	.blogpostlist {
 		overflow: hidden;
+	
+		.responsivecolumns & {
+			@media @mobile {
+				margin: 0 -2em;
+			}
+		}
 	}
 }
 
@@ -75,8 +81,15 @@
 
 	.responsivecolumns & {
 		width: 100%;
-		min-height: 100%;
-		min-height: 100vw;
+		min-height: 450px;
+	
+		@media @desktop {
+			min-height: 450px;
+		}
+		
+		@media @tablet {
+			min-height: 350px;
+		}
 	}
 }
 
