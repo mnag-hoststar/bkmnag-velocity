@@ -152,6 +152,8 @@ h6, .heading--6 {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
+// Normal Text
+
 p, .paragraph, ul, ol, li {
 	line-height: @font__p--line-height;
 	letter-spacing: @font__p--letter-spacing;
@@ -170,6 +172,38 @@ p, .paragraph, ul, ol, li {
 	.make-line-height-a-little-smaller(@font__p--line-height);
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+    .style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
+}
+
+.widget {
+	p, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @color__p--text;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
 }
 
 // Bold, Italic, Underlined
@@ -234,13 +268,7 @@ a[class] {
 	}
 }
 
-// Small
-
-small {
-	color: @color__p--text;
-}
-
-// Preformatted Text and Code
+// Preformatted and Code Text
 
 pre, code {
 	.paragraph;
@@ -253,10 +281,34 @@ pre, code {
 	border: 1px solid @color-text--light;
 	overflow: auto;
 	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
 }
 
 code {
 	border-left: 2px solid @color-highlight;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
 }
 
 // Unordered and Ordered List
@@ -299,7 +351,7 @@ ol {
 	}
 }
 
-// Block Quote
+// Blockquote
 
 blockquote {
 	position: relative;
