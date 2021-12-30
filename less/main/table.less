@@ -75,11 +75,35 @@ td {
 	border-bottom: 1px solid @color-text--light;
 	padding: 1em 0.5em;
 	line-height: 1.5em;
+
+	.style--light & {
+		border-bottom-color: fade(@contrast--light, 50%);
+	}
+
+	.style--accent & {
+		border-bottom-color: fade(@contrast--accent, 50%);
+	}
+
+	.style--dark & {
+		border-bottom-color: fade(@contrast--dark, 50%);
+	}
 		
 	@media @mobile {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;
+
+		.style--light & {
+			border-bottom: 1px solid transparent;
+		}
+	
+		.style--accent & {
+			border-bottom: 1px solid transparent;
+		}
+	
+		.style--dark & {
+			border-bottom: 1px solid transparent;
+		}
 		
 		&:first-child {
 			padding-top: 1em;
@@ -88,11 +112,35 @@ td {
 		&:last-child {
 			border-bottom: 1px solid @color-text--light;
 			padding-bottom: 1em;
+
+			.style--light & {
+				border-bottom-color: fade(@contrast--light, 50%);
+			}
+		
+			.style--accent & {
+				border-bottom-color: fade(@contrast--accent, 50%);
+			}
+		
+			.style--dark & {
+				border-bottom-color: fade(@contrast--dark, 50%);
+			}
 		}
 		
 		tr:last-child &:last-child {
 			border-bottom: 1px solid transparent;
 			padding-bottom: 0;
+
+			.style--light & {
+				border-bottom: 1px solid transparent;
+			}
+		
+			.style--accent & {
+				border-bottom: 1px solid transparent;
+			}
+		
+			.style--dark & {
+				border-bottom: 1px solid transparent;
+			}
 		}
 	}
 	
@@ -100,6 +148,18 @@ td {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;
+
+		.style--light & {
+			border-bottom: 1px solid transparent;
+		}
+	
+		.style--accent & {
+			border-bottom: 1px solid transparent;
+		}
+	
+		.style--dark & {
+			border-bottom: 1px solid transparent;
+		}
 		
 		&:first-child {
 			padding-top: 1em;
@@ -108,11 +168,35 @@ td {
 		&:last-child {
 			border-bottom: 1px solid @color-text--light;
 			padding-bottom: 1em;
+
+			.style--light & {
+				border-bottom-color: fade(@contrast--light, 50%);
+			}
+		
+			.style--accent & {
+				border-bottom-color: fade(@contrast--accent, 50%);
+			}
+		
+			.style--dark & {
+				border-bottom-color: fade(@contrast--dark, 50%);
+			}
 		}
 		
 		tr:last-child &:last-child {
 			border-bottom: 1px solid transparent;
 			padding-bottom: 0;
+
+			.style--light & {
+				border-bottom: 1px solid transparent;
+			}
+		
+			.style--accent & {
+				border-bottom: 1px solid transparent;
+			}
+		
+			.style--dark & {
+				border-bottom: 1px solid transparent;
+			}
 		}
 	}
 }
