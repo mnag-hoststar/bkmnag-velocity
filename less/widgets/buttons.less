@@ -77,9 +77,11 @@ a.link-button,
 		line-height: 1em;
 		font-weight: 400;
 	}
+
 	&:before {
 		margin-right: 0.5em;
 	}
+
 	&:after {
 		margin-left: 0.5em;
 	}
@@ -222,6 +224,22 @@ a.link-button,
 		font-size: 1.2em;
 		display: block;
 	}
+}
+
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
 }
 
 // The name of the button is not displayed.
