@@ -41,6 +41,7 @@
 
 // Text Inputs
 
+.input,
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -52,6 +53,7 @@ select {
 	height: 50px;
 }
 
+.input,
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -438,5 +440,41 @@ input:focus {
 
 	label {
 		display: none;
+	}
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
 	}
 }
