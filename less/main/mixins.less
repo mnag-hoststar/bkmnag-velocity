@@ -297,11 +297,32 @@
 // Mixing for global time-stamp styles.
 
 .timestamp-styles {
+	display: inline-block;
+	margin: 0;
     padding: 0;
 	height: 1.2em;
-	background: transparent; 
+	background: transparent;
+	font-size: @font__p--font-size;
+	line-height: 1.2em;
+	color: @font__p--text;
 	letter-spacing: 0;
     text-transform: uppercase;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // Flexbox LESS mixins
