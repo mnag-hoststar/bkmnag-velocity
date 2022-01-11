@@ -233,7 +233,8 @@ span {
 // Link
 
 a,
-a.vglnk {
+a.vglnk,
+.link {
 	z-index: 0;
 	position: relative;
 	display: inline;
@@ -247,9 +248,21 @@ a.vglnk {
 	border-bottom: 2px solid @color-highlight;
 	.transition(all 0.25s ease-in-out 0s);
 
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @color--dark;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
+
     &:hover, &:active, &:visited {
 		text-decoration: none;
-		border-bottom: 5px solid @color-highlight;
+		border-bottom: 5px solid;
     }
 }
 
