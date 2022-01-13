@@ -227,11 +227,39 @@
 	}
 }
 
-// Theme Mixins
+// Item margin size
 
 .item--margin-size--border(@item--margin-size: 1%) {
 	margin-left: -@item--margin-size;
 	margin-right: -@item--margin-size;
+	
+    @media @mobile {
+		margin-left: 0;
+		margin-right: 0;
+    }
+
+    .responsivecolumns & {
+		margin-left: 0;
+		margin-right: 0;
+    }
+}
+
+.item--margin-size--2cols(@item--margin-size: 1%) {
+	width: 100%/2-@item--margin-size*2;
+	margin-left: @item--margin-size;
+	margin-right: @item--margin-size;
+	
+    @media @mobile {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+    }
+
+    .responsivecolumns & {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+    }
 }
 
 .item--margin-size--2to1-cols(@item--margin-size: 1%) {
@@ -241,13 +269,37 @@
 	
     @media @mobile {
 		width: 100%;
-		margin: @item--margin-size*2 @item--margin-size;
+		margin-left: auto;
+		margin-right: auto;
     }
 
     .responsivecolumns & {
 		width: 100%;
-		margin: @item--margin-size*2 @item--margin-size;
+		margin-left: auto;
+		margin-right: auto;
     }
+}
+
+.item--margin-size--3to1-cols(@item--margin-size: 1%) {
+    width: 100%/3-@item--margin-size*2;
+	margin-left: @item--margin-size;
+	margin-right: @item--margin-size;
+	
+    @media @tablet-horizontal {
+		width: 100%/2-@item--margin-size*2;
+	}
+
+	@media @mobile {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.responsivecolumns & {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 // Widget Mixins
