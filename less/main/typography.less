@@ -129,9 +129,9 @@ h5, .heading--5 {
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
-	.make-line-height-a-little-smaller(@font__p--line-height);
-	.make-line-height-smaller(@font__p--line-height);
-	.make-line-height-a-lot-smaller(@font__p--line-height);
+	.make-line-height-a-little-smaller(@font__p--line-height*0.9);
+	.make-line-height-smaller(@font__p--line-height*0.9);
+	.make-line-height-a-lot-smaller(@font__p--line-height*0.9);
 }
 
 h6, .heading--6 {
@@ -186,10 +186,9 @@ p, .paragraph, ul, ol, li {
 	}
 }
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @color__p--text;
 	
 		.style--light & {
@@ -204,6 +203,20 @@ p, .paragraph, ul, ol, li {
 			color: @contrast--dark;
 		}
 	}
+}
+
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font__p--font-size !important;
+	line-height: @font__p--line-height !important;
+
+	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+	.make-font-smaller(@font__p--font-size, ~"!important");
+	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
+	
+	.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
 }
 
 // Bold, Italic, Underlined

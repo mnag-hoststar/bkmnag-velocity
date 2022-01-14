@@ -183,47 +183,46 @@
 
 // Font Mixins
 
-.make-font-a-little-smaller(@font-size, @size-mobile: 0.95) when (@font-size >= 13px) {
+.make-font-a-little-smaller(@font-size, @font-size-important: ~"", @size-mobile: 0.95) when (@font-size >= 13px) {
 	@media @mobile {
-		font-size: @font-size*@size-mobile;
+		font-size: @font-size*@size-mobile @font-size-important;
 	}
 }
 
-.make-font-smaller(@font-size, @size-mobile: 0.9) when (@font-size >= 15px) {
+.make-font-smaller(@font-size, @font-size-important: ~"", @size-mobile: 0.9) when (@font-size >= 15px) {
 	@media @mobile {
-		font-size: @font-size*@size-mobile;
+		font-size: @font-size*@size-mobile @font-size-important;
 	}
 }
 
-.make-font-a-lot-smaller(@font-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
+.make-font-a-lot-smaller(@font-size, @font-size-important: ~"", @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
 	@media @tablet {
-		font-size: @font-size*@size-tablet;
+		font-size: @font-size*@size-tablet @font-size-important;
 	}
-
 	@media @mobile {
-		font-size: @font-size*@size-mobile;
+		font-size: @font-size*@size-mobile @font-size-important;
 	}
 }
 
-.make-line-height-a-little-smaller(@line-height-size, @size-mobile: 0.95) when (@line-height-size >= 13px) {
+.make-line-height-a-little-smaller(@line-height-size, @font-size-important: ~"", @size-mobile: 0.95) when (@line-height-size >= 13px) {
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile;
+		line-height: @line-height-size*@size-mobile @font-size-important;
 	}
 }
 
-.make-line-height-smaller(@line-height-size, @size-mobile: 0.9) when (@line-height-size >= 15px) {
+.make-line-height-smaller(@line-height-size, @font-size-important: ~"", @size-mobile: 0.9) when (@line-height-size >= 15px) {
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile;
+		line-height: @line-height-size*@size-mobile @font-size-important;
 	}
 }
 
-.make-line-height-a-lot-smaller(@line-height-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@line-height-size >= 17px) {
+.make-line-height-a-lot-smaller(@line-height-size, @font-size-important: ~"", @size-tablet: 0.9, @size-mobile: 0.8) {
 	@media @tablet {
-		line-height: @line-height-size*@size-tablet;
+		line-height: @line-height-size*@size-tablet @font-size-important;
 	}
 
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile;
+		line-height: @line-height-size*@size-mobile @font-size-important;
 	}
 }
 

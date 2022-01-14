@@ -263,14 +263,14 @@
 	margin: 0;
 	font-size: @font__p--font-size;
 	.transition(all 0.25s ease-in-out 0s);
-	
-	&:hover {
-		opacity: 1;
-	}
 
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	&:hover {
+		opacity: 1;
+	}
 		
 	.columns-four-first &,
 	.columns-four-second &,
@@ -280,6 +280,7 @@
 	.columns-three-right &,
 	.columns-three-middle & {
 		font-size: @font__p--font-size*0.8;
+
 		.make-font-a-little-smaller(@font__p--font-size*0.8);
 		.make-font-smaller(@font__p--font-size*0.8);
 		.make-font-a-lot-smaller(@font__p--font-size*0.8);
