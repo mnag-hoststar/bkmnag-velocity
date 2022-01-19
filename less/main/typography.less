@@ -186,37 +186,40 @@ p, .paragraph, ul, ol, li {
 	}
 }
 
-.widget, .widget.in-editing {
-	p, span, small, pre, code,
-	table, th, td, .content {
-		color: @color__p--text;
+// Normal Text
+
+.widget.content,
+.widget.content.in-editing {
+	.wysihtml-editor-content,
+	.embed-content {
+		font-size: @font__p--font-size !important;
+		line-height: @font__p--line-height !important;
 	
-		.style--light & {
-			color: @contrast--light;
-		}
+		.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+		.make-font-smaller(@font__p--font-size, ~"!important");
+		.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
+		
+		.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
+		.make-line-height-smaller(@font__p--line-height, ~"!important");
+		.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
 	
-		.style--accent & {
-			color: @contrast--accent;
-		}
-	
-		.style--dark & {
-			color: @contrast--dark;
+		&, p, span, small, pre, code,
+		table, th, td {
+			color: @color__p--text;
+		
+			.style--light & {
+				color: @contrast--light;
+			}
+		
+			.style--accent & {
+				color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				color: @contrast--dark;
+			}
 		}
 	}
-}
-
-.widget .content,
-.widget.in-editing .content {
-	font-size: @font__p--font-size !important;
-	line-height: @font__p--line-height !important;
-
-	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
-	.make-font-smaller(@font__p--font-size, ~"!important");
-	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
-	
-	.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
-	.make-line-height-smaller(@font__p--line-height, ~"!important");
-	.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
 }
 
 // Bold, Italic, Underlined
