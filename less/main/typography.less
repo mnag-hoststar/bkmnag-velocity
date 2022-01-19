@@ -300,27 +300,25 @@ a[class] {
 // Preformatted and Code Text
 
 pre, code {
-	.paragraph;
 	display: block;
 	margin: 1em 0;
 	padding: 1em 1.5em;
 	border: none;
 	.border-radius(0);
-	background-color: transparent;
-	border: 1px solid @color-text--light;
+	background-color: darken(@color-swatch1, 10%);
 	overflow: auto;
 	font-family: monospace;
 
 	.style--light & {
-		background-color: darken(@color--light, 10%);
+		background-color: fade(@contrast--light, 10%);
 	}
 
 	.style--accent & {
-		background-color: lighten(@color--accent, 10%);
+		background-color: fade(@contrast--accent, 10%);
 	}
 
 	.style--dark & {
-		background-color: lighten(@color--dark, 10%);
+		background-color: fade(@contrast--dark, 10%);
 	}
 }
 
@@ -328,7 +326,7 @@ code {
 	border-left: 2px solid @color-highlight;
 
 	.style--light & {
-		border-color: @color--accent;
+		border-color: @contrast--light;
 	}
 
 	.style--accent & {
@@ -336,7 +334,7 @@ code {
 	}
 
 	.style--dark & {
-		border-color: @color--accent;
+		border-color: @contrast--dark;
 	}
 }
 
