@@ -401,6 +401,21 @@ blockquote {
 	.make-line-height-a-little-smaller(@font__h3--line-height);
 	.make-line-height-smaller(@font__h3--line-height);
 	.make-line-height-a-lot-smaller(@font__h3--line-height);
+
+	.style--light & {
+		color: @color--light;
+		border-color: fade(@contrast--light, 50%);
+	}
+
+	.style--accent & {
+		color: @color--accent;
+		border-color: fade(@contrast--accent, 50%);
+	}
+
+	.style--dark & {
+		color: @color--dark;
+		border-color: fade(@contrast--dark, 50%);
+	}
 	
 	@media @tablet {
 		margin: 1em 0;
