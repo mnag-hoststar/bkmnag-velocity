@@ -7,7 +7,22 @@ table {
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 0 0 1em;
-	color: inherit;
+	color: @font-swatch5-color;
+
+	.style--light & {
+		border-top-color: @contrast--light;
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-top-color: @contrast--accent;
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-top-color: @contrast--dark;
+		color: @contrast--dark;
+	}
 		
 	@media @mobile {
 		display: block;
