@@ -443,6 +443,59 @@ blockquote {
 	}
 }
 
+// Unordered and Ordered List
+
+.widget.content,
+.blog-post-content,
+.ecom-product-long-description {
+	ul {
+		margin: 0.5em 0 0.5em 2em;
+		padding-left: 0;
+		list-style: none;
+	
+		li {
+			position: relative;
+			padding: 0;
+			margin: 0 0 0.25em 0;
+	
+			&:before {
+				position: absolute;
+				content: "\2013";
+				left: -2em;
+			}
+		}
+	}
+	
+	ol {
+		margin: 0.5em 0;
+		padding-left: 0;
+		counter-reset: ordered-counter;
+	
+		li {
+			position: relative;
+			padding-left: 2em;
+			margin: 0 0 0.25em 0;
+			list-style-type: none;
+	
+			// Custom Numbers
+	
+			&:before {
+				min-width: 2em;
+				padding: 0 0.4em 0 0;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				.box-sizing(border-box);
+				content: counter(ordered-counter) ".";
+				counter-increment: ordered-counter;
+				text-align: left;
+			}
+		}
+	}
+}
+
 // Highlighted Text
 
 ::-moz-selection {
