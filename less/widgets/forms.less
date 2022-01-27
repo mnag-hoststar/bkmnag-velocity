@@ -121,7 +121,20 @@ textarea {
 	}
 }
 
-// Select
+// Dropdown
+
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
 
 select {
 	z-index: 2;
