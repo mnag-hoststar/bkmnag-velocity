@@ -131,7 +131,7 @@
 	position: relative;
 	margin: 0;
 	padding: 0 1.5em 2em;
-	color: inherit;
+	color: @color__p--text!important;
 	background-color: @color__blogpostlist-article--background;
 	.transition(all 0.25s ease-in-out);
 	
@@ -181,7 +181,7 @@ a.blogpostlist__title-link {
 a.blogpostlist__read-more {
 	.paragraph;
 	padding: 0.40em 2.5em 0.60em 0.5em;
-	color: @color__blogpostlist-title--text;
+	color: @color__blogpostlist-title--text!important;
 	background-repeat: no-repeat;
 	background-size: 2em;
 	background-position: right center;
@@ -260,6 +260,7 @@ a.blogpostlist__read-more {
 	.timestamp {
 		margin: 0;
 		.timestamp-styles;
+		color: @color__p--text !important;
 	}
 }
 

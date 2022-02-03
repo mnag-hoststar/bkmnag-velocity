@@ -65,9 +65,36 @@ a.tag-link,
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
+
+	.style--light & {
+        background: darken(@color--light, 20%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background: darken(@color--accent, 20%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background: lighten(@color--dark, 20%);
+        color: @contrast--dark;
+    }
 	
 	&:hover {
 		background: desaturate(@color__button--background--hover, 100%);
+
+		.style--light & {
+	        background: darken(@color--light, 10%);
+	    }
+
+	    .style--accent & {
+	        background: darken(@color--accent, 10%);
+	    }
+
+	    .style--dark & {
+	        background: lighten(@color--dark, 10%);
+	    }
 	}
 }
 

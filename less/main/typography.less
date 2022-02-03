@@ -41,6 +41,18 @@ h1, .heading--1 {
 	.make-line-height-a-little-smaller(@font__h1--line-height);
 	.make-line-height-smaller(@font__h1--line-height);
 	.make-line-height-a-lot-smaller(@font__h1--line-height);
+
+	.style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 	
 	@media @mobile {
 		margin: 0;
@@ -80,6 +92,18 @@ h2, .heading--2 {
 	.make-line-height-a-little-smaller(@font__h2--line-height);
 	.make-line-height-smaller(@font__h2--line-height);
 	.make-line-height-a-lot-smaller(@font__h2--line-height);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 h3, .heading--3 {
@@ -97,6 +121,18 @@ h3, .heading--3 {
 	.make-line-height-a-little-smaller(@font__h3--line-height);
 	.make-line-height-smaller(@font__h3--line-height);
 	.make-line-height-a-lot-smaller(@font__h3--line-height);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 h4, .heading--4 {
@@ -114,6 +150,18 @@ h4, .heading--4 {
 	.make-line-height-a-little-smaller(@font__h4--line-height);
 	.make-line-height-smaller(@font__h4--line-height);
 	.make-line-height-a-lot-smaller(@font__h4--line-height);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 h5, .heading--5 {
@@ -132,6 +180,18 @@ h5, .heading--5 {
 	.make-line-height-a-little-smaller(@font__p--line-height*0.9);
 	.make-line-height-smaller(@font__p--line-height*0.9);
 	.make-line-height-a-lot-smaller(@font__p--line-height*0.9);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 h6, .heading--6 {
@@ -150,6 +210,18 @@ h6, .heading--6 {
 	.make-line-height-a-little-smaller(@font__p--line-height);
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // Normal Text
@@ -174,16 +246,16 @@ p, .paragraph, ul, ol, li {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 
     .style--light & {
-		color: @contrast--light;
-	}
+        color: fade(@contrast--light, 90%);
+    }
 
-	.style--accent & {
-		color: @contrast--accent;
-	}
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
 
-	.style--dark & {
-		color: @contrast--dark;
-	}
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // Normal Text
@@ -231,6 +303,18 @@ b, strong {
 u {
 	text-decoration: none;
 	border-bottom: 1px solid @color-text--light;
+
+	.style--light & {
+        border-color: fade(@contrast--light, 50%);
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 50%);
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 50%);
+    }
 }
 
 // Label
@@ -238,6 +322,18 @@ u {
 label, .label, .label-text {
 	font-size: 1em;
 	color: @color-text--faded;
+
+	.style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // Span
@@ -257,23 +353,25 @@ a.vglnk,
 	margin: -0.2em -0.1em -0.4em;
 	padding: 0.2em 0.1em 0;
 	line-height: 0.8em;
-	color: inherit;
 	overflow: visible;
 	height: auto;
-	text-decoration: none;
+	text-decoration: none!important;
 	border-bottom: 2px solid @color-highlight;
 	.transition(all 0.25s ease-in-out 0s);
 
 	.style--light & {
 		border-color: @color--accent;
+		color: @color--accent;
 	}
 
 	.style--accent & {
 		border-color: @color--dark;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-color: @color--accent;
+		color: @color--accent;
 	}
 
     &:hover, &:active, &:visited {
@@ -359,11 +457,23 @@ ul, ol {
 			margin-left: -2em;
 			content: "\2014";
 			color: @color-text--faded;
+
+			.style--light & {
+		        color: fade(@contrast--light, 50%);
+		    }
+
+		    .style--accent & {
+		        color: fade(@contrast--accent, 50%);
+		    }
+
+		    .style--dark & {
+		        color: fade(@contrast--dark, 50%);
+		    }
 		}
 	}
 }
 
-ol {
+.content ol {
 	counter-reset: section;
 
 	li {
@@ -374,6 +484,18 @@ ol {
 			margin-left: -2em;
 			padding: 0 0.4em 0 0;
 			color: @color-text--faded;
+
+			.style--light & {
+		        color: fade(@contrast--light, 50%);
+		    }
+
+		    .style--accent & {
+		        color: fade(@contrast--accent, 50%);
+		    }
+
+		    .style--dark & {
+		        color: fade(@contrast--dark, 50%);
+		    }
 		}
 	}
 }
@@ -403,17 +525,17 @@ blockquote {
 	.make-line-height-a-lot-smaller(@font__h3--line-height);
 
 	.style--light & {
-		color: @color--light;
+		color: @contrast--light;
 		border-color: fade(@contrast--light, 50%);
 	}
 
 	.style--accent & {
-		color: @color--accent;
+		color: @contrast--accent;
 		border-color: fade(@contrast--accent, 50%);
 	}
 
 	.style--dark & {
-		color: @color--dark;
+		color: @contrast--dark;
 		border-color: fade(@contrast--dark, 50%);
 	}
 	

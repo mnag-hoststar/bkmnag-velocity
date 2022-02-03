@@ -1,0 +1,53 @@
+
+// -------------------------------------------
+//  Migration Styles -
+//
+//  These changes allow rows to work with
+//  existing templates in BK10
+// -------------------------------------------
+
+
+
+// Template styling resets
+// ------------------------------------
+
+.template__header,
+.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+
+	#migrated.edit & {
+			@media only screen and (min-width: 930px) {
+			margin-left: auto;
+			margin-right: auto;
+			width: ~"calc(100% - 200px)";
+		}
+	}
+
+	#migrated.row-editing & {
+		display: none;
+	}
+}
+
+
+// Row improvments
+// ------------------------------------
+
+#migrated {
+	.row--layout-gallery-rounded [data-name="gallery"] .gallery__image-link {
+		border-radius: 0;
+	}
+
+	.row--layout-pricing-1a .widget__content li:before,
+	.row--layout-text-14a .widget__content li:before {
+		display: none;
+	}
+}
+
+
+// Re-add the reset styles
+// ------------------------------------
+
+#migrated [data-name="row"] .row:not(.row--width-no-padding) .row__container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+}

@@ -60,6 +60,18 @@
 		width: auto;
 		max-width: none;
 		background-color: @color__ecomproductslist--background;
+
+		.style--light & {
+			background-color: @color--light;
+	    }
+
+	    .style--accent & {
+	    	background-color: @color--accent;
+	    }
+
+	    .style--dark & {
+	    	background-color: @color--dark;
+	    }
 		
 		.ecomproductslist,
 		.ecomfeaturedproducts {
@@ -79,6 +91,18 @@
 			margin: 0 -2em;
 			padding: 1em 2em;
 			background-color: @color__ecomproductslist--background;
+
+			.style--light & {
+				background-color: @color--light;
+		    }
+
+		    .style--accent & {
+		    	background-color: @color--accent;
+		    }
+
+		    .style--dark & {
+		    	background-color: @color--dark;
+		    }
 		}
 	}
 }
@@ -167,6 +191,18 @@
 	
 	.form label {
 		color: @color__ecomproductslist-label--text;
+
+		.style--light & {
+	        color: fade(@contrast--light, 90%);
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
 	}
 }
 	
@@ -183,34 +219,148 @@
 		border: 1px solid fade(@color__ecomproductslist-label--text, 75%);
 		color: @color__ecomproductslist-label--text;
 
+		.style--light & {
+	        background-color: fade(@contrast--light, 5%);
+	        border-color: fade(@contrast--light, 75%);
+	        color: fade(@contrast--light, 90%);
+	    }
+
+	    .style--accent & {
+	        background-color: fade(@contrast--accent, 5%);
+	        border-color: fade(@contrast--accent, 75%);
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        background-color: fade(@contrast--dark, 5%);
+	        border-color: fade(@contrast--dark, 75%);
+	        color: fade(@contrast--dark, 90%);
+	    }
+
 		.responsivecolumns & {
 			background-color: @color__form--background;
 			border: 1px solid fade(@color__form--border, 75%);
 			color: @color__p--text;
 
+			.style--light & {
+		        background-color: fade(@contrast--light, 5%);
+		        border-color: fade(@contrast--light, 75%);
+		        color: fade(@contrast--light, 90%);
+		    }
+
+		    .style--accent & {
+		        background-color: fade(@contrast--accent, 5%);
+		        border-color: fade(@contrast--accent, 75%);
+		        color: fade(@contrast--accent, 90%);
+		    }
+
+		    .style--dark & {
+		        background-color: fade(@contrast--dark, 5%);
+		        border-color: fade(@contrast--dark, 75%);
+		        color: fade(@contrast--dark, 90%);
+		    }
+
 			@media @mobile {
 				background-color: fade(@color__ecomproductslist-label--text, 20%);
 				border: 1px solid fade(@color__ecomproductslist-label--text, 75%);
 				color: @color__ecomproductslist-label--text;
+
+				.style--light & {
+			        background-color: fade(@contrast--light, 5%);
+			        border-color: fade(@contrast--light, 75%);
+			        color: fade(@contrast--light, 90%);
+			    }
+
+			    .style--accent & {
+			        background-color: fade(@contrast--accent, 5%);
+			        border-color: fade(@contrast--accent, 75%);
+			        color: fade(@contrast--accent, 90%);
+			    }
+
+			    .style--dark & {
+			        background-color: fade(@contrast--dark, 5%);
+			        border-color: fade(@contrast--dark, 75%);
+			        color: fade(@contrast--dark, 90%);
+			    }
 			}
 		}
 		
 		select {
 			color: @color__ecomproductslist-label--text;
 
+			.style--light & {
+		        color: fade(@contrast--light, 90%);
+		    }
+
+		    .style--accent & {
+		        color: fade(@contrast--accent, 90%);
+		    }
+
+		    .style--dark & {
+		        color: fade(@contrast--dark, 90%);
+		    }
+
 			.responsivecolumns & {
 				color: @color__p--text;
+
+				.style--light & {
+			        color: fade(@contrast--light, 90%);
+			    }
+
+			    .style--accent & {
+			        color: fade(@contrast--accent, 90%);
+			    }
+
+			    .style--dark & {
+			        color: fade(@contrast--dark, 90%);
+			    }
 	
 				@media @mobile {
 					color: @color__ecomproductslist-label--text;
+
+					.style--light & {
+				        color: fade(@contrast--light, 90%);
+				    }
+
+				    .style--accent & {
+				        color: fade(@contrast--accent, 90%);
+				    }
+
+				    .style--dark & {
+				        color: fade(@contrast--dark, 90%);
+					}
 				}
 			}
 
 			option {
 				background-color: @color__ecomproductslist--background;
 
+				.style--light & {
+			        color: @color--light;
+			    }
+
+			    .style--accent & {
+			        color: @color--accent;
+			    }
+
+			    .style--dark & {
+			        color: @color--dark;
+			    }
+
 				.responsivecolumns & {
 					color: @color__p--text;
+
+					.style--light & {
+				        color: fade(@contrast--light, 90%);
+				    }
+
+				    .style--accent & {
+				        color: fade(@contrast--accent, 90%);
+				    }
+
+				    .style--dark & {
+				        color: fade(@contrast--dark, 90%);
+				    }
 		
 					@media @mobile {
 						background-color: @color__ecomproductslist--background;
@@ -360,6 +510,18 @@
                 right: 0;
                 text-indent: 0;
                 margin-left: 0;
+
+                .style--light & {
+			        color: @contrast--accent;
+			    }
+
+			    .style--accent & {
+			        color: @contrast--dark;
+			    }
+
+			    .style--dark & {
+			        color: @contrast--accent;
+			    }
             }
         }
     }
@@ -483,6 +645,21 @@
     color: fade(@color__p--text, 80%);
     border-bottom: 1px solid fade(@color__p--text, 16%);
 	padding: 20px 70px;
+
+	.style--light & {
+		border-bottom-color: fade(@contrast--light, 16%);
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+    	border-bottom-color: fade(@contrast--accent, 16%);
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+    	border-bottom-color: fade(@contrast--dark, 16%);
+        color: fade(@contrast--dark, 80%);
+    }
 	
     @media @tablet-horizontal {
         padding: 16px 40px;
@@ -597,6 +774,18 @@
 	background-color: @color__ecomproductslist-product-item--background;
     width: auto;
 	font-size: 0;
+
+	.style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 	
     @media @mobile-small {
         line-height: 1;
@@ -651,6 +840,18 @@
 		font-family: @font__h3--font-family;
         color: @color__ecomproductslist-product-title--text;
 		hyphens: none;
+
+		.style--light & {
+	        color: fade(@contrast--light, 90%);
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
 		
 		@media @mobile {
 			font-size: 0.8em;
@@ -658,9 +859,33 @@
 
 		.responsivecolumns & {
 			color: @color__p--text;
+
+			.style--light & {
+		        color: fade(@contrast--light, 90%);
+		    }
+
+		    .style--accent & {
+		        color: fade(@contrast--accent, 90%);
+		    }
+
+		    .style--dark & {
+		        color: fade(@contrast--dark, 90%);
+		    }
 	
 			@media @mobile {
 				color: @color__ecomproductslist-product-title--text;
+
+				.style--light & {
+			        color: fade(@contrast--light, 90%);
+			    }
+
+			    .style--accent & {
+			        color: fade(@contrast--accent, 90%);
+			    }
+
+			    .style--dark & {
+			        color: fade(@contrast--dark, 90%);
+			    }
 			}
 		}
     }
@@ -672,13 +897,49 @@
 	color: inherit;
 	color: @color__ecomproductslist-product-title--text;
 
+	.style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
+
 	.responsivecolumns & {
 		display: block;
 		color: @color__p--text;
 
+		.style--light & {
+	        color: fade(@contrast--light, 90%);
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
+
 		@media @mobile {
 			display: block;
 			color: @color__ecomproductslist-product-title--text;
+
+			.style--light & {
+		        color: fade(@contrast--light, 90%);
+		    }
+
+		    .style--accent & {
+		        color: fade(@contrast--accent, 90%);
+		    }
+
+		    .style--dark & {
+		        color: fade(@contrast--dark, 90%);
+		    }
 		}
 	}
 }
