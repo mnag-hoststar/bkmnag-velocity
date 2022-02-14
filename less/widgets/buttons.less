@@ -9,7 +9,8 @@ a.link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
 .userregistration fieldset .userregistrationbtn,
-a.ecomproduct__button {
+a.ecomproduct__button,
+a.contentgroup__link {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -33,6 +34,24 @@ a.ecomproduct__button {
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
 
+	.style--light & {
+		background-color: @color--accent;
+		border-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+    	border-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+    	border-color: @color--accent;
+        color: @contrast--accent;
+    }
+
     @media @tablet {
 		line-height: 1.5em;
     }
@@ -49,6 +68,24 @@ a.ecomproduct__button {
         background-color: @color__button--background--hover;
 		border-color: @color__button--background--hover;
     	color: @color__button--text--hover;
+
+    	.style--light & {
+			background-color: @color--dark;
+			border-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--accent & {
+	    	background-color: @color--dark;
+	    	border-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	    	background-color: @color--light;
+	    	border-color: @color--light;
+	        color: @contrast--light;
+	    }
     }
 	
 	.responsivecolumns .columns-three-left &,
@@ -114,6 +151,20 @@ a.link-button,
 	&:before {
 		margin-right: 0.5em;
 	}
+}
+
+.clicktocall .label {
+	.style--light & {
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        color: @contrast--accent;
+    }
 }
 
 // Dropbox
@@ -208,6 +259,24 @@ a.link-button,
 	border: 1px solid @color__button--border;
 	color: @color__button--text;
 	.transition(all 0.5s ease);
+
+	.style--light & {
+		background-color: @color--accent;
+		border-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+    	border-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+    	border-color: @color--accent;
+        color: @contrast--accent;
+    }
 	
 	&:hover {
 		text-decoration: none;
@@ -215,6 +284,24 @@ a.link-button,
 		border-color: @color__button--background--hover;
 		color: @color__button--text--hover;
 		.transition(all 0.5s ease);
+
+		.style--light & {
+			background-color: @color--dark;
+			border-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--accent & {
+	    	background-color: @color--dark;
+	    	border-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	    	background-color: @color--light;
+	    	border-color: @color--light;
+	        color: @contrast--light;
+	    }
 	}
 
 	// Icon
