@@ -399,17 +399,16 @@ a.companyname {
 		&:after {
 			content: "";
 			position: absolute;
-			top: 0;
-			right: 0.25em;
-			bottom: 0;
-			margin-left: 0.25em;
-			width: 1.5em;
-			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjYyODI5IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTkgMTMuMTVsNyA3IDctNyIvPjwvc3ZnPg==");
-			background-size: 1.5em;
-			background-position: 0 center;
-			background-repeat: no-repeat;
-			font-size: 1.2em;
-			text-align: right;
+			top: 50%;
+			right: 0.75em;
+			border: 0.2em solid @color__navigation--text;
+			transform: rotate(45deg);
+			margin-left: auto;
+			width: 0.6em;
+			height: 0.6em;
+			border-left: transparent;
+			border-top: transparent;
+			margin-top: -0.4em;
 			.transition(transform 0.25s ease-in-out);
 		}
 	}

@@ -1,19 +1,19 @@
 {
     "name":"Velocity",
     "widgetVersion": 2,
-    "thumbnail":"velocity.png",
+    "thumbnail":"images/thumbnail.png",
     "templateType":"standard",
     "pageTypes": ["home", "404"],
-    "screenshot":"velocity-screenshot.jpg",
+    "screenshot":"images/screenshot.jpg",
     "images":[
-        "images/feature-image--1.jpg",
-        "images/feature-image--2.jpg",
-        "images/feature-image--3.jpg",
-        "images/gallery-image--1.jpg",
-        "images/gallery-image--2.jpg",
-        "images/gallery-image--3.jpg",
-        "images/gallery-image--4.jpg",
-        "images/gallery-image--5.jpg"
+        "images/feature/feature-image--1.jpg",
+        "images/feature/feature-image--2.jpg",
+        "images/feature/feature-image--3.jpg",
+        "images/gallery/gallery-image--1.jpg",
+        "images/gallery/gallery-image--2.jpg",
+        "images/gallery/gallery-image--3.jpg",
+        "images/gallery/gallery-image--4.jpg",
+        "images/gallery/gallery-image--5.jpg"
     ],
     "colorSwatches":
     {
