@@ -37,6 +37,7 @@
 	margin: 0 0 0.3em;
 	line-height: 1.5em;
 	color: @color__form-label--text;
+    word-break: break-word;
 }
 
 // Text Inputs
@@ -125,6 +126,19 @@ textarea {
     border: 1px solid fade(@color__form--border, 75%);
 	background-color: @color-text--lightest;
 	.transition(all 0.25s ease-in-out);
+	position: relative;
+
+    .advancedcontactform & {
+        max-width: 50%;
+
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 
 	.style--light & {
         background-color: fade(@contrast--light, 5%);
@@ -211,21 +225,6 @@ textarea {
 	}
 }
 
-// Dropdown
-
-.select-wrap {
-	position: relative;
-	max-width: 50%;
-
-	@media @mobile {
-		max-width: 100%;
-	}
-
-	.responsivecolumns & {
-		max-width: 100%;
-	}
-}
-
 select {
 	z-index: 2;
     position: relative;
@@ -251,10 +250,10 @@ select {
 		background-color: @color__container--background;
         color: @color__p--text;
 	}
-}
 
-.select::-ms-expand {
-    display: none;
+	&::-ms-expand {
+		display: none;
+	}
 }
 
 // Placeholders

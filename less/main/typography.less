@@ -319,9 +319,12 @@ u {
 
 // Label
 
-label, .label, .label-text {
+label,
+.label,
+.label-text {
 	font-size: 1em;
 	color: @color-text--faded;
+    word-break: break-word;
 
 	.style--light & {
         color: fade(@contrast--light, 90%);
