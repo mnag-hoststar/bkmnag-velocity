@@ -69,8 +69,8 @@ textarea {
     .appearance(none);
 
 	.style--light & {
-        background-color: fade(@contrast--light, 5%);
-        border-color: fade(@contrast--light, 75%);
+        background-color: @color__form--background;
+        border-color: fade(@color__form--border, 75%);
     }
 
     .style--accent & {
@@ -87,7 +87,7 @@ textarea {
     	border-color: @color__form--border;
 
     	.style--light & {
-	        border-color: @contrast--light;
+			border-color: @color__form--border;
 	    }
 
 	    .style--accent & {
@@ -106,7 +106,7 @@ textarea {
 		.box-shadow(none);
 
 		.style--light & {
-	        border-color: @contrast--light;
+			border-color: @color__form--border;
 	    }
 
 	    .style--accent & {
@@ -141,8 +141,8 @@ textarea {
     }
 
 	.style--light & {
-        background-color: fade(@contrast--light, 5%);
-        border-color: fade(@contrast--light, 75%);
+        background-color: @color-text--lightest;
+        border-color: fade(@color__form--border, 75%);
     }
 
     .style--accent & {
@@ -161,7 +161,7 @@ textarea {
 		border-color: @color__form--border;
 
 		.style--light & {
-	        border-color: @contrast--light;
+			border-color: @color__form--border;
 	    }
 
 	    .style--accent & {
@@ -196,7 +196,7 @@ textarea {
 		.transition(all 0.25s ease-in-out);
 
 		.style--light & {
-	        background-color: @color--accent;
+			background-color: @color__button--background;
 	    }
 
 	    .style--accent & {
@@ -212,7 +212,7 @@ textarea {
 		background-color: @color__button--background--hover;
 
 		.style--light & {
-	        background-color: @color--accent;
+			background-color: @color__button--background--hover;
 	    }
 
 	    .style--accent & {
@@ -259,10 +259,10 @@ select {
 // Placeholders
 
 ::-webkit-input-placeholder {
-   color: @@color-text--light;
+   	color: @color-text--light;
 
-   .style--light & {
-        color: fade(@contrast--light, 90%);
+   	.style--light & {
+		color: @color-text--light;
     }
 
     .style--accent & {
@@ -275,10 +275,10 @@ select {
 }
 
 :-moz-placeholder {
-   color: @@color-text--light;
+   	color: @color-text--light;
 
-   .style--light & {
-        color: fade(@contrast--light, 90%);
+   	.style--light & {
+		color: @color-text--light;
     }
 
     .style--accent & {
@@ -291,10 +291,10 @@ select {
 }
 
 ::-moz-placeholder {
-   color: @@color-text--light;
+   	color: @color-text--light;
 
-   .style--light & {
-        color: fade(@contrast--light, 90%);
+  	.style--light & {
+		color: @color-text--light;
     }
 
     .style--accent & {
@@ -307,10 +307,10 @@ select {
 }
 
 :-ms-input-placeholder {
-   color: @@color-text--light;
+   	color: @color-text--light;
 
-   .style--light & {
-        color: fade(@contrast--light, 90%);
+  	.style--light & {
+		color: @color-text--light;
     }
 
     .style--accent & {
@@ -382,7 +382,7 @@ input:focus {
 				.transition(all 0.25s ease-in-out);
 
 				.style--light & {
-			        border-color: @contrast--light;
+			        border-color: @color__form--border;
 			    }
 
 			    .style--accent & {
@@ -436,8 +436,8 @@ input:focus {
 					.border-radius(0);
 
 					.style--light & {
-				        background-color: fade(@contrast--light, 5%);
-				        border-color: fade(@contrast--light, 75%);
+						background-color: @color__form--background;
+				        border-color: fade(@color__form--border, 75%);
 				    }
 
 				    .style--accent & {
@@ -464,18 +464,18 @@ input:focus {
 					.transform-scale(0.4);
 
 					.style--light & {
-						background-color: @color--accent;
-				        color: @contrast--accent;
+						color: @color__button--text;
+						background-color: @color__button--background;
 				    }
 
 				    .style--accent & {
+						color: @contrast--dark;
 				    	background-color: @color--dark;
-				        color: @contrast--dark;
 				    }
 
 				    .style--dark & {
+						color: @contrast--accent;
 				    	background-color: @color--accent;
-				        color: @contrast--accent;
 				    }
 				}
 			}
@@ -499,7 +499,7 @@ input:focus {
 			border-bottom: 2px solid @color-highlight;
 
 			.style--light & {
-		        border-color: @color--accent;
+		        border-color: @color-highlight;
 		    }
 
 		    .style--accent & {
@@ -514,7 +514,7 @@ input:focus {
 				border-bottom: 5px solid @color-highlight;
 
 				.style--light & {
-			        border-color: @color--accent;
+			        border-color: @color-highlight;
 			    }
 
 			    .style--accent & {

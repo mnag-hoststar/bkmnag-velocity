@@ -10,17 +10,14 @@ table {
 	color: @font-swatch5-color;
 
 	.style--light & {
-		border-top-color: @contrast--light;
-		color: @contrast--light;
+		color: @font-swatch5-color;
 	}
 
 	.style--accent & {
-		border-top-color: @contrast--accent;
 		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-top-color: @contrast--dark;
 		color: @contrast--dark;
 	}
 		
@@ -92,7 +89,7 @@ td {
 	line-height: 1.5em;
 
 	.style--light & {
-		border-bottom-color: fade(@contrast--light, 50%);
+		border-bottom-color: @color-text--light;
 	}
 
 	.style--accent & {
@@ -107,18 +104,6 @@ td {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;
-
-		.style--light & {
-			border-bottom: 1px solid transparent;
-		}
-	
-		.style--accent & {
-			border-bottom: 1px solid transparent;
-		}
-	
-		.style--dark & {
-			border-bottom: 1px solid transparent;
-		}
 		
 		&:first-child {
 			padding-top: 1em;
@@ -129,7 +114,7 @@ td {
 			padding-bottom: 1em;
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 50%);
+				border-bottom-color: @color-text--light;
 			}
 		
 			.style--accent & {
@@ -144,18 +129,6 @@ td {
 		tr:last-child &:last-child {
 			border-bottom: 1px solid transparent;
 			padding-bottom: 0;
-
-			.style--light & {
-				border-bottom: 1px solid transparent;
-			}
-		
-			.style--accent & {
-				border-bottom: 1px solid transparent;
-			}
-		
-			.style--dark & {
-				border-bottom: 1px solid transparent;
-			}
 		}
 	}
 	
@@ -163,18 +136,6 @@ td {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;
-
-		.style--light & {
-			border-bottom: 1px solid transparent;
-		}
-	
-		.style--accent & {
-			border-bottom: 1px solid transparent;
-		}
-	
-		.style--dark & {
-			border-bottom: 1px solid transparent;
-		}
 		
 		&:first-child {
 			padding-top: 1em;
@@ -185,7 +146,7 @@ td {
 			padding-bottom: 1em;
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 50%);
+				border-bottom-color: @color-text--light;
 			}
 		
 			.style--accent & {
@@ -200,18 +161,6 @@ td {
 		tr:last-child &:last-child {
 			border-bottom: 1px solid transparent;
 			padding-bottom: 0;
-
-			.style--light & {
-				border-bottom: 1px solid transparent;
-			}
-		
-			.style--accent & {
-				border-bottom: 1px solid transparent;
-			}
-		
-			.style--dark & {
-				border-bottom: 1px solid transparent;
-			}
 		}
 	}
 }

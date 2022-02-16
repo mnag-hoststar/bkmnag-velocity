@@ -67,8 +67,8 @@ a.tag-link,
 	.make-font-a-lot-smaller(@font__button--font-size);
 
 	.style--light & {
-        background: darken(@color--light, 20%);
-        color: @contrast--light;
+        background: lighten(desaturate(@color__button--background, 100%), 10%);
+        color: @color__button--text;
     }
 
     .style--accent & {
@@ -85,7 +85,7 @@ a.tag-link,
 		background: desaturate(@color__button--background--hover, 100%);
 
 		.style--light & {
-	        background: darken(@color--light, 10%);
+	        background: desaturate(@color__button--background--hover, 100%);
 	    }
 
 	    .style--accent & {

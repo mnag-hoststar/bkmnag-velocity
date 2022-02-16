@@ -35,9 +35,9 @@ a.contentgroup__link {
 	.make-font-a-lot-smaller(@font__button--font-size);
 
 	.style--light & {
-		background-color: @color--accent;
-		border-color: @color--accent;
-        color: @contrast--accent;
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+        color: @color__button--text;
     }
 
     .style--accent & {
@@ -70,9 +70,9 @@ a.contentgroup__link {
     	color: @color__button--text--hover;
 
     	.style--light & {
-			background-color: @color--dark;
-			border-color: @color--dark;
-	        color: @contrast--dark;
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
 	    }
 
 	    .style--accent & {
@@ -154,6 +154,8 @@ a.link-button,
 }
 
 .clicktocall .label {
+	color: @color__p--text;
+
 	.style--light & {
         color: @contrast--accent;
     }
@@ -261,9 +263,9 @@ a.link-button,
 	.transition(all 0.5s ease);
 
 	.style--light & {
-		background-color: @color--accent;
-		border-color: @color--accent;
-        color: @contrast--accent;
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+		color: @color__button--text;
     }
 
     .style--accent & {
@@ -286,9 +288,9 @@ a.link-button,
 		.transition(all 0.5s ease);
 
 		.style--light & {
-			background-color: @color--dark;
-			border-color: @color--dark;
-	        color: @contrast--dark;
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
 	    }
 
 	    .style--accent & {
@@ -318,7 +320,7 @@ a.link-button,
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @font-swatch7-color;
 	}
 
 	.style--accent & {
