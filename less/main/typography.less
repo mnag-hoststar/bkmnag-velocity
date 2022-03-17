@@ -260,36 +260,34 @@ p, .paragraph, ul, ol, li {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font__p--font-size !important;
-		line-height: @font__p--line-height !important;
+.widget .content,
+.widget .content.in-editing,
+.widget .embed .embed-content {
+	font-size: @font__p--font-size !important;
+	line-height: @font__p--line-height !important;
+
+	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+	.make-font-smaller(@font__p--font-size, ~"!important");
+	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
 	
-		.make-font-a-little-smaller(@font__p--font-size, ~"!important");
-		.make-font-smaller(@font__p--font-size, ~"!important");
-		.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
-		
-		.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
-		.make-line-height-smaller(@font__p--line-height, ~"!important");
-		.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-smaller(@font__p--line-height, ~"!important");
+	.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @color__p--text;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @color__p--text;
-		
-			.style--light & {
-				color: @color__p--text;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -459,7 +457,7 @@ ul, ol {
 		&:before {
 			position: absolute;
 			margin-left: -2em;
-			content: "\2014";
+			content: '\2014';
 			color: @color-text--faded;
 
 			.style--light & {
@@ -571,9 +569,9 @@ blockquote {
 
 // Unordered and Ordered List
 
-.widget.content,
-.blog-post-content,
-.ecom-product-long-description {
+.widget .content,
+.blogpost__post-body,
+.ecomproduct__product-body {
 	ul {
 		margin: 0.5em 0 0.5em 2em;
 		padding-left: 0;
@@ -586,7 +584,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}

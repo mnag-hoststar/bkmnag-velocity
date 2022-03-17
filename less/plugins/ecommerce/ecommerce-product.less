@@ -254,7 +254,7 @@
 			&:before {
 				position: absolute;
 				margin-left: -2em;
-				content: "\2014";
+				content: '\2014';
 			}
 		}
 	}
@@ -387,6 +387,32 @@ a.ecomproduct__button {
             line-height: 1;
         }
     }
+
+	.ecom-product-tag,
+	.ecom-product-category {
+		display: flex;
+		flex-wrap: wrap;
+
+		&:after {
+			content: ':\00a0';
+			order: 0;
+			display: inline-block;
+		}
+	}
+
+	.store-category-link,
+	.ecom-product-tag-link {
+		font-weight: 300;
+        order: 1;
+
+		&:after {
+			content: ',\00a0';
+		}
+
+		&:last-child::after {
+			content: none;
+		}
+	}
 	
 	.product-tags {
 		border-top: 1px solid fade(@color__ecomproductslist-label--text, 20%);
