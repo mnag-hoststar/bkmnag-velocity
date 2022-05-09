@@ -1,6 +1,7 @@
 {
     "name":"Velocity",
     "versionTenCompatible": 1,
+    "widgetVersion": 2,
     "thumbnail":"images/thumbnail.png",
     "templateType":"standard",
     "pageTypes": ["home", "404"],

@@ -8,9 +8,7 @@ a.button,
 a.link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
-.userregistration fieldset .userregistrationbtn,
-a.ecomproduct__button,
-a.contentgroup__link {
+a.ecomproduct__button {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -29,7 +27,6 @@ a.contentgroup__link {
 	vertical-align: middle;
 	.transition (all 0.25s ease-in-out);
 	text-align: center;
-	
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
@@ -115,11 +112,9 @@ a.link-button,
 		line-height: 1em;
 		font-weight: 400;
 	}
-
 	&:before {
 		margin-right: 0.5em;
 	}
-
 	&:after {
 		margin-left: 0.5em;
 	}
@@ -153,30 +148,14 @@ a.link-button,
 	}
 }
 
-.clicktocall .label {
-	color: @color__p--text;
-
-	.style--light & {
-        color: @contrast--accent;
-    }
-
-    .style--accent & {
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-        color: @contrast--accent;
-    }
-}
-
 // Dropbox
 
 .dropbox,
 [data-name="filedownload"] {
 	.button {
 		&:before {
-			display: inline;
-			margin-right: 0.5em;
+			margin: -0.05em 0.5em 0 0;
+			float: left;
 		}
 	}
 }
@@ -246,7 +225,7 @@ a.link-button,
 	height: 40px;
 
 	&:before {
-		content: '';
+		content: "";
 	}
 }
 

@@ -37,12 +37,10 @@
 	margin: 0 0 0.3em;
 	line-height: 1.5em;
 	color: @color__form-label--text;
-    word-break: break-word;
 }
 
 // Text Inputs
 
-input,
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -54,7 +52,6 @@ select {
 	height: 50px;
 }
 
-input,
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -126,19 +123,6 @@ textarea {
     border: 1px solid fade(@color__form--border, 75%);
 	background-color: @color-text--lightest;
 	.transition(all 0.25s ease-in-out);
-	position: relative;
-
-    .advancedcontactform & {
-        max-width: 50%;
-
-        @media @tablet {
-            max-width: 100%;
-        }
-    
-        .responsivecolumns & {
-            max-width: 100%;
-        }
-    }
 
 	.style--light & {
         background-color: @color-text--lightest;
@@ -178,7 +162,7 @@ textarea {
     }
 
     &:after {
-		content: '';
+		content: "";
 		cursor: pointer;
 		position: absolute;
 		top: 0;
@@ -225,7 +209,9 @@ textarea {
 	}
 }
 
-select {
+// Select
+
+.select {
 	z-index: 2;
     position: relative;
     display: block;
@@ -248,12 +234,11 @@ select {
 	
 	option {
 		background-color: @color__container--background;
-        color: @color__p--text;
 	}
+}
 
-	&::-ms-expand {
-		display: none;
-	}
+.select::-ms-expand {
+    display: none;
 }
 
 // Placeholders
@@ -354,7 +339,7 @@ input:focus {
 		label[for*="input--terms"] span a.form__link {
 			.paragraph;
 			padding: 0;
-			margin: 1em 0;
+			margin: 0.5em 0;
 			line-height: 1.5em;
 			text-align: left;
 			color: inherit;
@@ -415,10 +400,12 @@ input:focus {
 				margin-left: 1em * 2.5;
 				.transform-scale(1);
 				word-break: break-word;
+				min-height: @font__p--line-height;
+				width: 100%;
 				
 				&:before,
 				&:after {
-					content: ' ';
+					content: " ";
 					cursor: pointer;
 					position: absolute;
 					top: 0.75em;
@@ -602,11 +589,11 @@ input:focus {
 		
 		&:first-child {
 			width: 100%;
-			padding-right: 1em;
+			padding-right: 0.5em;
 
 			@media @tablet {
 				display: block;
-				margin-bottom: 1em;
+				margin-bottom: 0.5em;
 				padding-right: 0;
 				width: 100%;
 				height: auto;
@@ -657,41 +644,5 @@ input:focus {
 
 	label {
 		display: none;
-	}
-}
-
-// Registration Form
-
-.widget__userregistration {
-	fieldset {
-		margin: 0 auto;
-		padding: 0;
-		border: none;
-		max-width: 400px;
-		
-		@media @mobile {
-			max-width: none;
-		}
-
-		.responsivecolumns & {
-			max-width: none;
-		}
-
-		input {
-			width: 100%;
-			box-sizing: border-box;
-		}
-
-		.error {
-			padding: 20px 0 0;
-
-			&[style*="display: block"] {
-				padding: 20px 0;
-			}
-
-			&[style*="display: none"] {
-				display: block !important;
-			}
-		}
 	}
 }

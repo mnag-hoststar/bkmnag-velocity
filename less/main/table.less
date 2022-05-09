@@ -2,24 +2,12 @@
 
 table {
 	.paragraph;
-	max-width: 100%;
+	width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 0 0 1em;
-	color: @font-swatch5-color;
-
-	.style--light & {
-		color: @font-swatch5-color;
-	}
-
-	.style--accent & {
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
-	}
+	color: inherit;
 		
 	@media @mobile {
 		display: block;

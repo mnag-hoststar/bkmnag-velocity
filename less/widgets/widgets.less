@@ -20,15 +20,12 @@ section.template {
 
 .template__content {
 	position: relative;
-
-	body:not(.edit) & {
-		overflow: hidden;
-	}
+	overflow: hidden;
 }
 
 .template__content,
 .template__content section {
-	> .widget:not([data-name="row"]) {
+	> .widget {
 		.widget-styles;
 		
 		&[data-name="content"] {
@@ -48,20 +45,10 @@ section.template {
 	}
 }
 
-.template__content .row__container .widget > * {
-	margin: 0 auto;
-	max-width: 940px;
-}
-
-.template__content .row--width-no-padding .row__container .widget > * {
-	max-width: none;
-}
-
 // Layout Width Widgets
 
 .template__content >,
-.template__content section >,
-.template__content .row__container {
+.template__content section > {
 	.widget[data-name="line"],
 	.widget[data-name="line"] {
 		padding-left: 0;
@@ -77,8 +64,7 @@ section.template {
 // Page Width Widgets
 
 .template__content >,
-.template__content section >,
-.template__content .row__container {
+.template__content section > {
 	.widget[data-name="gallery"],
 	.widget[data-widget-type="gallery"],
 	.widget[data-name="responsiveslideshow"],
@@ -89,10 +75,6 @@ section.template {
 	.widget[data-name="line"] {
 		padding: 0;
 		width: auto;
-
-		.widget-overlay {
-			max-width: none;
-		}
 		
 		> * {
 			max-width: none;
@@ -101,7 +83,7 @@ section.template {
 		}
 		
 		&:before, &:after {
-			content: '';
+			content: "";
 			display: block;
 		}
 		

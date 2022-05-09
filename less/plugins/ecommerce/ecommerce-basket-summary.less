@@ -296,18 +296,13 @@
     }
 }
 
-.ecombasketsummary {
+.ecombasketsummary{
 	.continue-shopping {
-		&,
-		& + .ecombasketsummary__button {
-			.button;
+		.button;
+		
+		+ .ecombasketsummary__button {
 			margin-top: 0;
 			margin-left: 0.5em;
-			
-			@media @mobile {
-				width: 100%;
-				text-align: center;
-			}
 		}
 	}
 }

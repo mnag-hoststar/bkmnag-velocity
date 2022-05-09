@@ -224,8 +224,6 @@ h6, .heading--6 {
     }
 }
 
-// Normal Text
-
 p, .paragraph, ul, ol, li {
 	line-height: @font__p--line-height;
 	letter-spacing: @font__p--letter-spacing;
@@ -354,31 +352,16 @@ a.vglnk,
 	margin: -0.2em -0.1em -0.4em;
 	padding: 0.2em 0.1em 0;
 	line-height: 0.8em;
+	color: inherit;
 	overflow: visible;
 	height: auto;
-	text-decoration: none !important;
+	text-decoration: none;
 	border-bottom: 2px solid @color-highlight;
 	.transition(all 0.25s ease-in-out 0s);
-	color: @color__link--text;
-
-	.style--light & {
-		border-color: @color-highlight;
-		color: @color__link--text;
-	}
-
-	.style--accent & {
-		border-color: @color--dark;
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		border-color: @color--accent;
-		color: @color--accent;
-	}
 
     &:hover, &:active, &:visited {
 		text-decoration: none;
-		border-bottom: 5px solid;
+		border-bottom: 5px solid @color-highlight;
     }
 }
 
@@ -397,7 +380,13 @@ a[class] {
 	}
 }
 
-// Preformatted and Code Text
+// Small
+
+small {
+	color: @color__p--text;
+}
+
+// Preformatted Text and Code
 
 pre, code {
 	display: block;
@@ -405,8 +394,10 @@ pre, code {
 	padding: 1em 1.5em;
 	border: none;
 	.border-radius(0);
-	background-color: darken(@color-swatch1, 10%);
+	background-color: transparent;
+	border: 1px solid @color-text--light;
 	overflow: auto;
+	line-height: 1.4em;
 	font-family: monospace;
 
 	.style--light & {
@@ -420,6 +411,7 @@ pre, code {
 	.style--dark & {
 		background-color: fade(@contrast--dark, 10%);
 	}
+	font-size: bkscale(@font__p--font-size, 0.8);
 }
 
 code {
@@ -457,7 +449,7 @@ ul, ol {
 		&:before {
 			position: absolute;
 			margin-left: -2em;
-			content: '\2014';
+			content: "\2014";
 			color: @color-text--faded;
 
 			.style--light & {
@@ -475,7 +467,7 @@ ul, ol {
 	}
 }
 
-.content ol {
+ol {
 	counter-reset: section;
 
 	li {
@@ -564,59 +556,6 @@ blockquote {
 	.columns-four-fourth & {
 		padding-right: 0;
     	padding-left: 0;
-	}
-}
-
-// Unordered and Ordered List
-
-.widget .content,
-.blogpost__post-body,
-.ecomproduct__product-body {
-	ul {
-		margin: 0.5em 0 0.5em 2em;
-		padding-left: 0;
-		list-style: none;
-	
-		li {
-			position: relative;
-			padding: 0;
-			margin: 0 0 0.25em 0;
-	
-			&:before {
-				position: absolute;
-				content: '\2013';
-				left: -2em;
-			}
-		}
-	}
-	
-	ol {
-		margin: 0.5em 0;
-		padding-left: 0;
-		counter-reset: ordered-counter;
-	
-		li {
-			position: relative;
-			padding-left: 2em;
-			margin: 0 0 0.25em 0;
-			list-style-type: none;
-	
-			// Custom Numbers
-	
-			&:before {
-				min-width: 2em;
-				padding: 0 0.4em 0 0;
-				display: inline-block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				.box-sizing(border-box);
-				content: counter(ordered-counter) ".";
-				counter-increment: ordered-counter;
-				text-align: left;
-			}
-		}
 	}
 }
 

@@ -52,7 +52,7 @@
 
 .clearfix() {
 	&:after {
-		content: ' ';
+		content: " ";
 		display: block;
 		clear: both;
 	}
@@ -183,121 +183,67 @@
 
 // Font Mixins
 
-.make-font-a-little-smaller(@font-size, @font-size-important: ~"", @size-mobile: 0.95) when (@font-size >= 13px) {
+.make-font-a-little-smaller(@font-size, @size-mobile: 0.95) when (@font-size >= 13px) {
 	@media @mobile {
-		font-size: @font-size*@size-mobile @font-size-important;
+		font-size: @font-size*@size-mobile;
 	}
 }
 
-.make-font-smaller(@font-size, @font-size-important: ~"", @size-mobile: 0.9) when (@font-size >= 15px) {
+.make-font-smaller(@font-size, @size-mobile: 0.9) when (@font-size >= 15px) {
 	@media @mobile {
-		font-size: @font-size*@size-mobile @font-size-important;
+		font-size: @font-size*@size-mobile;
 	}
 }
 
-.make-font-a-lot-smaller(@font-size, @font-size-important: ~"", @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
+.make-font-a-lot-smaller(@font-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
 	@media @tablet {
-		font-size: @font-size*@size-tablet @font-size-important;
+		font-size: @font-size*@size-tablet;
 	}
+
 	@media @mobile {
-		font-size: @font-size*@size-mobile @font-size-important;
+		font-size: @font-size*@size-mobile;
 	}
 }
 
-.make-line-height-a-little-smaller(@line-height-size, @font-size-important: ~"", @size-mobile: 0.95) when (@line-height-size >= 13px) {
+.make-line-height-a-little-smaller(@line-height-size, @size-mobile: 0.95) when (@line-height-size >= 13px) {
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile @font-size-important;
+		line-height: @line-height-size*@size-mobile;
 	}
 }
 
-.make-line-height-smaller(@line-height-size, @font-size-important: ~"", @size-mobile: 0.9) when (@line-height-size >= 15px) {
+.make-line-height-smaller(@line-height-size, @size-mobile: 0.9) when (@line-height-size >= 15px) {
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile @font-size-important;
+		line-height: @line-height-size*@size-mobile;
 	}
 }
 
-.make-line-height-a-lot-smaller(@line-height-size, @font-size-important: ~"", @size-tablet: 0.9, @size-mobile: 0.8) {
+.make-line-height-a-lot-smaller(@line-height-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@line-height-size >= 17px) {
 	@media @tablet {
-		line-height: @line-height-size*@size-tablet @font-size-important;
+		line-height: @line-height-size*@size-tablet;
 	}
 
 	@media @mobile {
-		line-height: @line-height-size*@size-mobile @font-size-important;
+		line-height: @line-height-size*@size-mobile;
 	}
 }
 
-// Item margin size
+// Theme Mixins
 
 .item--margin-size--border(@item--margin-size: 1%) {
-	margin-left: -@item--margin-size;
-	margin-right: -@item--margin-size;
-	
-    @media @mobile {
-		margin-left: 0;
-		margin-right: 0;
-    }
-
-    .responsivecolumns & {
-		margin-left: 0;
-		margin-right: 0;
-    }
-}
-
-.item--margin-size--2cols(@item--margin-size: 1%) {
-	width: 100%/2-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
-	
-    @media @mobile {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-    }
-
-    .responsivecolumns & {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-    }
+	margin: -@item--margin-size;
 }
 
 .item--margin-size--2to1-cols(@item--margin-size: 1%) {
 	width: 100%/2-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
+	margin: @item--margin-size;
 	
     @media @mobile {
 		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
+		margin: @item--margin-size*2 @item--margin-size;
     }
-
-    .responsivecolumns & {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-    }
-}
-
-.item--margin-size--3to1-cols(@item--margin-size: 1%) {
-    width: 100%/3-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
 	
-    @media @tablet-horizontal {
-		width: 100%/2-@item--margin-size*2;
-	}
-
-	@media @mobile {
-		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.responsivecolumns & {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
+	&:last-child {
+		margin-bottom: @item--margin-size;
 	}
 }
 
@@ -351,32 +297,11 @@
 // Mixing for global time-stamp styles.
 
 .timestamp-styles {
-	display: inline-block;
-	margin: 0;
     padding: 0;
 	height: 1.2em;
-	background: transparent;
-	font-size: @font__p--font-size;
-	line-height: 1.2em;
-	color: @color__p--text;
+	background: transparent; 
 	letter-spacing: 0;
     text-transform: uppercase;
-
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
-
-	.style--light & {
-		color: @color__p--text;
-	}
-
-	.style--accent & {
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
-	}
 }
 
 // Flexbox LESS mixins

@@ -69,13 +69,13 @@
 		height: 2.5em;
 		
     	&:before {
-    	    content: '';
+    	    content: "";
             display: block;
     	    height: @font__button--line-height;
     	}
 		
     	&:after {
-    	    content: '';
+    	    content: "";
             display: block;
     	}
 
@@ -125,7 +125,7 @@
 			width: auto;
 			max-width: 100%;
 			background-color: @color__navigation-item--background;
-			.transition(all 0.25s ease !important);
+			.transition(all 0.25s ease) !important;
 
 			&--current,
 			&:hover {
@@ -339,7 +339,7 @@
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media @mobile-small {
+			@media only screen and (max-width: 380px) {
 				display: none;
 			}
 		}
