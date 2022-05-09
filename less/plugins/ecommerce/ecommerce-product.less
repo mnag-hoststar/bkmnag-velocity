@@ -388,29 +388,31 @@ a.ecomproduct__button {
         }
     }
 
-	.ecom-product-tag,
-	.ecom-product-category {
-		display: flex;
-		flex-wrap: wrap;
+	.ecom-product-cattag {
+		.ecom-product-tag,
+		.ecom-product-category {
+			display: flex;
+			flex-wrap: wrap;
 
-		&:after {
-			content: ':\00a0';
-			order: 0;
-			display: inline-block;
-		}
-	}
-
-	.store-category-link,
-	.ecom-product-tag-link {
-		font-weight: 300;
-        order: 1;
-
-		&:after {
-			content: ',\00a0';
+			&:after {
+				content: ':\00a0';
+				order: 0;
+				display: inline-block;
+			}
 		}
 
-		&:last-child::after {
-			content: none;
+		.store-category-link,
+		.ecom-product-tag-link {
+			font-weight: 300;
+			order: 1;
+
+			&:after {
+				content: ',\00a0';
+			}
+
+			&:last-child::after {
+				content: none;
+			}
 		}
 	}
 	
