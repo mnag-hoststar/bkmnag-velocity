@@ -20,7 +20,6 @@ section.template {
 
 .template__content {
 	position: relative;
-	overflow: hidden;
 }
 
 .template__content,
@@ -59,12 +58,56 @@ section.template {
 	.widget[data-name="line"] .line {
 		max-width: none;
 	}
+
+	// Widget Animations
+
+	form,
+	.widget[data-name="gallery"] li.gallery-item,
+	.widget[data-name="responsiveslideshow"],
+	.widget[data-name="map"],
+	.widget[data-name="youtube"],
+	.widget[data-name="blogpostlist"] .post-article,
+	.widget[data-name="ecomproductslist"] li.product-item,
+	.widget[data-name="ecomfeaturedproducts"] li.product-item {
+		opacity: 0;
+		.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0.25s forwards);
+	}
 }
 
 // Page Width Widgets
 
-.template__content >,
-.template__content section > {
+.template__content,
+.template__content section {
+	.widget {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: @layout-max-width-text;
+		padding-right: 1em;
+		padding-left: 1em;
+
+		@media @desktop {
+			padding-right: 0;
+			padding-left: 0;
+			width: 90%;
+
+			#migrated & {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.template__content .responsivecolumns,
+.template__content .responsivecolumns section {
+	.widget {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.template__content,
+.template__content section {
 	.widget[data-name="gallery"],
 	.widget[data-widget-type="gallery"],
 	.widget[data-name="responsiveslideshow"],
@@ -72,9 +115,10 @@ section.template {
 	.widget[data-name="youtube"],
 	.widget[data-name="blogpostlist"],
 	.widget[data-name="blogpost"],
-	.widget[data-name="line"] {
+	.widget[data-name="ecomproductslist"],
+	.widget[data-name="ecomfeaturedproducts"] {
 		padding: 0;
-		width: auto;
+		max-width: @layout-max-width;
 		
 		> * {
 			max-width: none;
@@ -98,35 +142,12 @@ section.template {
 				content: none;
 			}
 		}
-	}
 	
-	.responsivecolumns {
-		.widget[data-name="gallery"],
-		.widget[data-widget-type="gallery"],
-		.widget[data-name="responsiveslideshow"],
-		.widget[data-name="map"],
-		.widget[data-name="youtube"],
-		.widget[data-name="blogpostlist"],
-		.widget[data-name="blogpost"],
-		.widget[data-name="line"] {
+		.responsivecolumns & {
 			&:before, &:after {
 				content: none;
 			}
 		}
-	}
-}
-
-// Responsive Columns
-
-.responsivecolumns {
-	.columns-three-left, 
-	.columns-three-middle, 
-	.columns-three-right,
-	.columns-four-first, 
-	.columns-four-second, 
-	.columns-four-third, 
-	.columns-four-fourth {
-		margin-top: 1em;
 	}
 }
 
@@ -139,34 +160,29 @@ section.template {
 			padding-bottom: 2em;
 		}
 	}
-
-	hr,
-	.line {
-		line-height: 0;
-		font-size: 0;
-	}
-
-	hr,
-	hr.line__rule {
-		height: 1px;
-		border: none;
-		background-color: @color__p--text;
-	}
 }
 
-// Widget Animations
+hr,
+.line {
+	line-height: 0;
+	font-size: 0;
+}
 
-.template__content >,
-.template__content section > {
-	form,
-	.widget[data-name="gallery"] li.gallery-item,
-	.widget[data-name="responsiveslideshow"],
-	.widget[data-name="map"],
-	.widget[data-name="youtube"],
-	.widget[data-name="blogpostlist"] .post-article,
-	.widget[data-name="ecomproductslist"] li.product-item,
-	.widget[data-name="ecomfeaturedproducts"] li.product-item {
-		opacity: 0;
-		.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0.25s forwards);
+hr,
+hr.line__rule {
+	height: 1px;
+	border: none;
+	background-color: @color__p--text;
+
+	.style--dark & {
+		background-color: @color__p--text;
+	}
+
+	.style--light & {
+		background-color: @color--dark;
+	}
+
+	.style--accent & {
+		background-color: @contrast--accent;
 	}
 }

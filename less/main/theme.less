@@ -121,16 +121,17 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	.footer {
 		&--container {
 			max-width: @layout-max-width;
-			margin: 0 auto;
+			margin-left: auto;
+			margin-right: auto;
 			padding: 0;
 			
 			@media @desktop {
 				width: 90%;
 			}
 
-			@media @desktop-narrow {
+			@media @tablet {
 				width: auto;
-				padding: 1em 2.5em;
+				padding: 1em;
 			}
 
 			@media @mobile {
@@ -163,6 +164,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 			
 			.social-list {
 				margin: 0 -0.25em;
+
+				@media @tablet-horizontal {
+					text-align: center;
+				}
 			}
 			
 			.social-item {
@@ -186,7 +191,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .gdpr-footer {
     background-color: transparent;
-	max-width: @layout-max-width;
 	margin: -0.5em auto 0;
 	padding: 0.5em 0;
 	text-align: right;

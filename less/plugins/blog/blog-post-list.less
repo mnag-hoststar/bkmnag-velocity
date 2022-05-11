@@ -24,7 +24,7 @@
     .align-content(center, center);
 	position: relative;
 	border: 1px solid transparent;
-	background-color: @color__container--background;
+	background-color: lighten(@color__container--background, 5%);
 	margin: 0;
 	width: 100%/3;
 	min-height: @layout-max-width/3;
@@ -32,6 +32,18 @@
 	.transition(all 0.25s ease-in-out);
 	.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0s forwards);
 	.clearfix();
+
+	.style--dark & {
+		background-color: lighten(@color__container--background, 5%);
+	}
+
+	.style--light & {
+		background: darken(@color--light, 5%);
+	}
+
+	.style--accent & {
+		background: darken(@color--accent, 5%);
+	}
 	
 	&:last-child {
 		margin: 0;
@@ -123,7 +135,7 @@
 	margin: 0;
 	padding: 0 1.5em 2em;
 	color: inherit;
-	background-color: @color__blogpostlist-article--background;
+	background-color: transparent;
 	.transition(all 0.25s ease-in-out);
 	
 	.blogpostlist__post-article:hover & {
@@ -157,6 +169,18 @@
 
 a.blogpostlist__title-link {
 	color: @color__blogpostlist-title--text;
+
+	.style--dark & {
+		color: @color__blogpostlist-title--text;
+	}
+
+	.style--light & {
+		color: @color--dark;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
 }
 
 // Post Excerpt
@@ -186,9 +210,21 @@ a.blogpostlist__read-more {
 	.flex-grow(2);
 	position: relative;
 	padding: 2.5em 1.5em 2em;
-	background-color: @color__blogpostlist-article--background;
+	background-color: transparent;
 	color: @color__blogpostlist-title--text;
 	.transition(all 0.25s ease-in-out);
+
+	.style--dark & {
+		color: @color__blogpostlist-title--text;
+	}
+
+	.style--light & {
+		color: @color--dark;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
 	
 	.blogpostlist__post-article:hover & {
 		padding-top: 3em;
@@ -222,6 +258,18 @@ a.blogpostlist__read-more {
 		width: 1px;
 		background-color: fade(@color__blogpostlist-title--text, 75%);
 		.transition(all 0.25s ease-in-out);
+
+		.style--dark & {
+			background-color: fade(@color__blogpostlist-title--text, 75%);
+		}
+	
+		.style--light & {
+			color: fade(@color--dark, 75%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 75%);
+		}
 			
 		.blogpostlist__post-article:hover & {
 			top: 5em;

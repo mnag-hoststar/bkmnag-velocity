@@ -207,7 +207,6 @@
             "color__gallery-description--text": "@color-swatch4"
         },
         "slideshow": {
-            "color__slideshow--background": "@color__container--background",
             "color__slideshow-caption--background": "fade(@color-swatch1, 40%)",
             "color__slideshow-title--text": "@color-swatch4",
             "color__slideshow-description--text": "@color-swatch4",
@@ -235,7 +234,7 @@
             "color__feature-button--background--hover": "@color__button--background--hover"
         },
         "blog": {
-			"color__blogpostlist-article--background": "fade(@color-swatch4, 50%)",
+			"color__blogpostlist-article--background": "lighten(@color-swatch4, 5%)",
             "color__blogpostlist-title--text": "@color-swatch1",
             "color__blogpost--background": "@color__container--background",
             "color__blogpost-article--background": "fade(@color-swatch4, 50%)",

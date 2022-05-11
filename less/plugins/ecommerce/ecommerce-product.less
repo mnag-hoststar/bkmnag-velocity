@@ -10,6 +10,8 @@
 		
 		.ecomproduct {
 			max-width: @layout-max-width;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }
@@ -80,7 +82,8 @@
 	.display-flex(flex);
 	.flex-wrap(wrap);
 	text-align: center;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0;
 	max-width: 980px;
 	font-size: 0;
@@ -117,81 +120,86 @@
 			width: 100%/2;
 		}
 
-		.responsivecolumns & {
-			padding-bottom: 100%/2;
-			width: 100%/2;
-		}
-
 		&:nth-child(12n+1) {
 			.animation-delay(0.7s);
 			width: 100%/2;
-			.responsivecolumns & {width: 100%/2;}
+			@media @tablet {width: 100%/2;}
 		}
 		
 		&:nth-child(12n+2) {
 			.animation-delay(0.4s);
 			width: 100%*2/3;
-			.responsivecolumns & {width: 100%*2/3;}
+			@media @tablet {width: 100%*2/3;}
 		}
 
 		&:nth-child(12n+3) {
 			.animation-delay(0.5s);
 			width: 100%/3;
-			.responsivecolumns & {width: 100%/3;}
+			@media @tablet {width: 100%/3;}
 		}
 
 		&:nth-child(12n+4) {
 			.animation-delay(0.6s);
 			width: 100%/3;
-			.responsivecolumns & {width: 100%/3;}
+			@media @tablet {width: 100%/3;}
 		}
 
 		&:nth-child(12n+5) {
 			.animation-delay(0.7s);
 			width: 100%*2/3;
-			.responsivecolumns & {width: 100%*2/3;}
+			@media @tablet {width: 100%*2/3;}
 		}
 
 		&:nth-child(12n+6) {
 			.animation-delay(0.4s);
 			width: 100%/2;
-			.responsivecolumns & {width: 100%/2;}
+			@media @tablet {width: 100%/2;}
 		}
 
 		&:nth-child(12n+7) {
 			.animation-delay(0.5s);
 			width: 100%/2;
-			.responsivecolumns & {width: 100%/2;}
+			@media @tablet {width: 100%/2;}
 		}
 
 		&:nth-child(12n+8) {
 			.animation-delay(0.6s);
 			width: 100%/3;
-			.responsivecolumns & {width: 100%/3;}
+			@media @tablet {width: 100%/3;}
 		}
 
 		&:nth-child(12n+9) {
 			.animation-delay(0.7s);
 			width: 100%*2/3;
-			.responsivecolumns & {width: 100%*2/3;}
+			@media @tablet {width: 100%*2/3;}
 		}
 
 		&:nth-child(12n+10) {
 			.animation-delay(0.4s);
 			width: 100%*2/3;
-			.responsivecolumns & {width: 100%*2/3;}
+			@media @tablet {width: 100%*2/3;}
 		}
 
 		&:nth-child(12n+11) {
 			.animation-delay(0.5s);
 			width: 100%/3;
-			.responsivecolumns & {width: 100%/3;}
+			@media @tablet {width: 100%/3;}
 		}
 
 		&:nth-child(12n) {
 			.animation-delay(0.6s);
 			width: 100%/2;
-			.responsivecolumns & {width: 100%/2;}
+			@media @tablet {width: 100%/2;}
+		}
+
+		@media @mobile {
+			padding-bottom: 100%;
+			width: 100%;
+		}
+
+		.responsivecolumns & {
+			padding-bottom: 100%;
+			width: 100%;
 		}
     }
 
@@ -266,22 +274,6 @@
 			}
 		}
 	}
-
-	td {
-		border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
-
-		@media @mobile {
-			&:last-child {
-				border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
-			}
-		}
-
-		.responsivecolumns & {
-			&:last-child {
-				border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 25%);
-			}
-		}
-	}
 	
 	blockquote {
 		border: 1px solid fade(@color__ecomproductslist-label--text, 25%);
@@ -289,21 +281,19 @@
 }
 
 // Product Buttons
-
-button.ecomproduct__button,
+.form-group button.ecomproduct__button,
 a.ecomproduct__button {
-	.link-button;
-	
+	width: 350px;
+
 	@media @tablet {
 		float: none;
 		display: block;
-		margin-top: 1em;
-		width: 100%;
+		margin-bottom: 1em;
 		text-align: center;
 	}
 
-	@media @mobile-small {
-		padding: 0;
+	@media @mobile {
+		width: 100%;
 	}
 	
 	&.icon:before {
@@ -314,10 +304,6 @@ a.ecomproduct__button {
 		@media @tablet {
 			float: none;
 		}
-	}
-	
-	.form-group & {
-		min-width: auto;
 	}
 }
 
@@ -341,13 +327,20 @@ a.ecomproduct__button {
 
     .form-group {
         display: inline-block;
-        min-width: 100px;
+        width: 50%;
         margin: 0 0.6em 0 0;
 		
 		@media @tablet {
 			float: none;
+			width: auto;
 			margin: 0;
 			width: 100%;
+		}
+
+		button {
+			float: none;
+			white-space: nowrap;
+			margin-bottom: 1em;
 		}
     }
 }
@@ -376,8 +369,6 @@ a.ecomproduct__button {
     }
 	
 	.product-tags {
-		border-top: 1px solid fade(@color__ecomproductslist-label--text, 20%);
-		border-bottom: 1px solid fade(@color__ecomproductslist-label--text, 20%);
 		padding: 0 0 1.25em;
 	}
 }

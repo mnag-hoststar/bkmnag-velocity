@@ -28,6 +28,18 @@
 		min-height: 100px;
 		max-height: 100%;
 		padding-bottom: 60%;
+
+		@media @tablet {
+			padding-bottom: 100%;
+		}
+
+		@media @tablet {
+			padding-bottom: 150%;
+		}
+	
+		.responsivecolumns & {
+			padding-bottom: 150%;
+		}
 		
 		.template__home & {
 			padding-bottom: 90vh;
@@ -35,8 +47,20 @@
 	}
 
 	&__slides-list {
-		background-color: @color__slideshow--background;
+		background-color: lighten(@color__container--background, 5%);
 		margin-bottom: 8px;
+
+		.style--dark & {
+			background-color: lighten(@color__container--background, 5%);
+		}
+	
+		.style--light & {
+			background: darken(@color--light, 5%);
+		}
+	
+		.style--accent & {
+			background: darken(@color--accent, 5%);
+		}
 	}
 
 	&__slide-item {
@@ -64,25 +88,10 @@
 			bottom: 0;
 			background-size: cover;
 			background-position: center;
+			background-color: transparent;
 			height: 100%;
 			width: 100%;
 			min-height: 0;
-			
-			&:after {
-				z-index: 20;
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background-size: cover;
-				background-position: center;
-				background-color: @color__slideshow-caption--background;
-				height: 100%;
-				width: 100%;
-				min-height: 0;
-			}
 		}
 	}
 
@@ -149,13 +158,10 @@
 .responsiveslideshow__image-description {
 	left: -0.05em;
 	width: 90%;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	max-width: @layout-max-width;
 	opacity: 0;
-
-	@media @tablet {
-		max-width: @layout-width-tablet;
-	}
 }
 
 .responsiveslideshow__image-title {
@@ -173,6 +179,12 @@
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__slideshow-title--text;
 	left: -0.08em;
+
+	.style--dark &,
+	.style--light &,
+	.style--accent & {
+		color: @color__slideshow-title--text;
+	}
 	
 	.template__home & {
 		padding: 1em 0 0;
@@ -227,6 +239,12 @@
 	line-height: unit(@font__h4--line-height*0.75*0.08, vw);
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__slideshow-description--text;
+
+	.style--dark &,
+	.style--light &,
+	.style--accent & {
+		color: @color__slideshow-description--text;
+	}
 	
 	@media @desktop-wide {
 		font-size: @font__h4--font-size;
@@ -318,6 +336,8 @@
 	
 		&:hover {
 			opacity: 1;
+			background-color: transparent;
+			border-color: transparent;
 		}
 		
 		&:before,
@@ -433,15 +453,11 @@
 		}
 
 		@media @tablet {
-			padding: 1em;
-		}
-
-		@media @mobile {
-			padding: 0.5em;
+			padding: 1.5em;
 		}
 
 		.responsivecolumns & {
-			padding: 0.5em;
+			padding: 1.5em;
 		}
 	}
 }

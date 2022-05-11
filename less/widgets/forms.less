@@ -37,6 +37,18 @@
 	margin: 0 0 0.3em;
 	line-height: 1.5em;
 	color: @color__form-label--text;
+
+    .style--dark & {
+		color: @color__form-label--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
 }
 
 // Text Inputs
@@ -49,7 +61,7 @@ input[type="password"],
 textarea,
 select {
 	.paragraph;
-	height: 50px;
+	height: 50px !important;
 }
 
 input[type="search"],
@@ -65,9 +77,14 @@ textarea {
     .border-radius(0);
     .appearance(none);
 
-	.style--light & {
+    .style--dark & {
         background-color: @color__form--background;
         border-color: fade(@color__form--border, 75%);
+    }
+
+	.style--light & {
+        background-color: fade(@color--dark, 5%);
+        border-color: fade(@color--dark, 75%);
     }
 
     .style--accent & {
@@ -75,24 +92,19 @@ textarea {
         border-color: fade(@contrast--accent, 75%);
     }
 
-    .style--dark & {
-        background-color: fade(@contrast--dark, 5%);
-        border-color: fade(@contrast--dark, 75%);
-    }
-
 	&:hover {
     	border-color: @color__form--border;
 
-    	.style--light & {
+	    .style--dark & {
 			border-color: @color__form--border;
+	    }
+
+    	.style--light & {
+	        border-color: @color--dark;
 	    }
 
 	    .style--accent & {
 	        border-color: @contrast--accent;
-	    }
-
-	    .style--dark & {
-	        border-color: @contrast--dark;
 	    }
 	}
 	
@@ -102,16 +114,16 @@ textarea {
     	border-color: @color__form--border;
 		.box-shadow(none);
 
-		.style--light & {
+	    .style--dark & {
 			border-color: @color__form--border;
+	    }
+
+		.style--light & {
+	        border-color: @color--dark;
 	    }
 
 	    .style--accent & {
 	        border-color: @contrast--accent;
-	    }
-
-	    .style--dark & {
-	        border-color: @contrast--dark;
 	    }
 	}
 }
@@ -120,13 +132,18 @@ textarea {
 
 .select-wrap {
     position: relative;
-    border: 1px solid fade(@color__form--border, 75%);
 	background-color: @color-text--lightest;
+    border: 1px solid fade(@color__form--border, 75%);
 	.transition(all 0.25s ease-in-out);
 
-	.style--light & {
+    .style--dark & {
         background-color: @color-text--lightest;
         border-color: fade(@color__form--border, 75%);
+    }
+
+	.style--light & {
+        background-color: fade(@color--dark, 5%);
+        border-color: fade(@color--dark, 75%);
     }
 
     .style--accent & {
@@ -134,27 +151,54 @@ textarea {
         border-color: fade(@contrast--accent, 75%);
     }
 
-    .style--dark & {
-        background-color: fade(@contrast--dark, 5%);
-        border-color: fade(@contrast--dark, 75%);
-    }
+	.responsivecolumns & {
+		.style--dark & {
+			background-color: fade(@color--dark, 5%);
+			border-color: fade(@color--dark, 75%);
+		}
+
+		.style--light & {
+			background-color: @color-text--lightest;
+			border-color: fade(@color__form--border, 75%);
+		}
+
+		.style--accent & {
+			background-color: fade(@contrast--accent, 5%);
+			border-color: fade(@contrast--accent, 75%);
+		}
+	}
 
     &:hover,
 	&:focus,
 	&:hover:focus {
 		border-color: @color__form--border;
 
-		.style--light & {
+	    .style--dark & {
 			border-color: @color__form--border;
+	    }
+
+		.style--light & {
+	        border-color: @color--dark;
 	    }
 
 	    .style--accent & {
 	        border-color: @contrast--accent;
 	    }
 
-	    .style--dark & {
-	        border-color: @contrast--dark;
-	    }
+		.responsivecolumns & {
+			.style--dark & {
+				border-color: @color--dark;
+			}
+	
+			.style--light & {
+				border-color: @color__form--border;
+			}
+	
+			.style--accent & {
+				border-color: @contrast--accent;
+			}
+
+		}
     }
 
     @media @mobile {
@@ -179,32 +223,33 @@ textarea {
 		text-align: right;
 		.transition(all 0.25s ease-in-out);
 
+	    .style--dark & {
+			background-color: @color__button--background;
+	    }
+
 		.style--light & {
 			background-color: @color__button--background;
 	    }
 
 	    .style--accent & {
-	        background-color: @color--light;
-	    }
-
-	    .style--dark & {
-	        background-color: @color--accent;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTkgMTMuMTVsNyA3IDctNyIvPjwvc3ZnPg==");
+	        background-color: @color--dark;
 	    }
     }
 	
 	&:hover:after {
 		background-color: @color__button--background--hover;
 
+	    .style--dark & {
+			background-color: @color__button--background--hover;
+	    }
+
 		.style--light & {
 			background-color: @color__button--background--hover;
 	    }
 
 	    .style--accent & {
-	        background-color: @color--light;
-	    }
-
-	    .style--dark & {
-	        background-color: @color--light;
+	    	background-color: darken(@color--dark, 5%);
 	    }
 	}
 }
@@ -246,65 +291,65 @@ textarea {
 ::-webkit-input-placeholder {
    	color: @color-text--light;
 
-   	.style--light & {
+	.style--dark & {
 		color: @color-text--light;
+	}
+
+   	.style--light & {
+		color: fade(@color--dark, 90%);
     }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
     }
 }
 
 :-moz-placeholder {
    	color: @color-text--light;
 
-   	.style--light & {
+	.style--dark & {
 		color: @color-text--light;
-    }
+	}
 
-    .style--accent & {
-        color: fade(@contrast--accent, 90%);
-    }
+	.style--light & {
+		color: fade(@color--dark, 90%);
+	}
 
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
-    }
+	.style--accent & {
+		color: fade(@contrast--accent, 90%);
+	}
 }
 
 ::-moz-placeholder {
    	color: @color-text--light;
 
-  	.style--light & {
+	.style--dark & {
 		color: @color-text--light;
-    }
+	}
 
-    .style--accent & {
-        color: fade(@contrast--accent, 90%);
-    }
+	.style--light & {
+		color: fade(@color--dark, 90%);
+	}
 
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
-    }
+	.style--accent & {
+		color: fade(@contrast--accent, 90%);
+	}
 }
 
 :-ms-input-placeholder {
    	color: @color-text--light;
 
-  	.style--light & {
+	.style--dark & {
 		color: @color-text--light;
-    }
+	}
 
-    .style--accent & {
-        color: fade(@contrast--accent, 90%);
-    }
+	.style--light & {
+		color: fade(@color--dark, 90%);
+	}
 
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
-    }
+	.style--accent & {
+		color: fade(@contrast--accent, 90%);
+	}
 }
 
 input:focus {
@@ -366,16 +411,16 @@ input:focus {
 				border: 1px solid @color__form--border;
 				.transition(all 0.25s ease-in-out);
 
-				.style--light & {
+			    .style--dark & {
 			        border-color: @color__form--border;
+			    }
+
+				.style--light & {
+			        border-color: @color--dark;
 			    }
 
 			    .style--accent & {
 			        border-color: @contrast--accent;
-			    }
-
-			    .style--dark & {
-			        border-color: @contrast--dark;
 			    }
 			}
 
@@ -401,7 +446,6 @@ input:focus {
 				.transform-scale(1);
 				word-break: break-word;
 				min-height: @font__p--line-height;
-				width: 100%;
 				
 				&:before,
 				&:after {
@@ -422,19 +466,19 @@ input:focus {
 					border: 1px solid fade(@color__form--border, 75%);
 					.border-radius(0);
 
-					.style--light & {
+				    .style--dark & {
 						background-color: @color__form--background;
 				        border-color: fade(@color__form--border, 75%);
+				    }
+
+					.style--light & {
+				        background-color: fade(@color--dark, 5%);
+				        border-color: fade(@color--dark, 75%);
 				    }
 
 				    .style--accent & {
 				        background-color: fade(@contrast--accent, 5%);
 				        border-color: fade(@contrast--accent, 75%);
-				    }
-
-				    .style--dark & {
-				        background-color: fade(@contrast--dark, 5%);
-				        border-color: fade(@contrast--dark, 75%);
 				    }
 				}
 
@@ -446,23 +490,23 @@ input:focus {
     				width: 1.5em;
 					.transition(opacity 0.1s);
 					line-height: 1.5em;
-					color: @color__button--text;
+					color: @color__container--background;
 					background-color: @color__button--background;
 					.transform-scale(0.4);
 
-					.style--light & {
-						color: @color__button--text;
+				    .style--dark & {
+						color: @color__container--background;
 						background-color: @color__button--background;
 				    }
 
-				    .style--accent & {
-						color: @contrast--dark;
-				    	background-color: @color--dark;
+					.style--light & {
+						color: @color--light;
+						background-color: @color--dark;
 				    }
 
-				    .style--dark & {
-						color: @contrast--accent;
-				    	background-color: @color--accent;
+				    .style--accent & {
+						color: @color--accent;
+				    	background-color: @contrast--accent;
 				    }
 				}
 			}
@@ -485,31 +529,31 @@ input:focus {
 			text-decoration: none;
 			border-bottom: 2px solid @color-highlight;
 
+		    .style--dark & {
+		        border-color: @color-highlight;
+		    }
+
 			.style--light & {
 		        border-color: @color-highlight;
 		    }
 
 		    .style--accent & {
-		        border-color: @contrast--accent;
-		    }
-
-		    .style--dark & {
-		        border-color: @color--accent;
+		        border-color: @color--dark;
 		    }
 
 			&:hover, &:active, &:visited {
 				border-bottom: 5px solid @color-highlight;
+
+			    .style--dark & {
+					border-color: @color-highlight;
+			    }
 
 				.style--light & {
 			        border-color: @color-highlight;
 			    }
 
 			    .style--accent & {
-			        border-color: @contrast--accent;
-			    }
-
-			    .style--dark & {
-			        border-color: @color--accent;
+					border-color: @color--dark;
 			    }
 			}
 		}
@@ -543,7 +587,7 @@ input:focus {
 .form-group {
 	.button {
 		white-space: nowrap;
-		min-width: 320px;
+		min-width: 100px;
 		float: right;
 
 		@media @mobile {
@@ -561,88 +605,83 @@ input:focus {
 // Sign Up Form
 
 .signupform {
+	.template__content section > .widget & {
+		padding: 1em 0;
+	}
+
 	.form-body {
-		display: table;
-		width: 100%;
-		margin-bottom: 1em;
-
-		@media @tablet-horizontal {
-			display: block;
-		}
-
-		.responsivecolumns & {
-			display: block;
-		}
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.form-group {
-		display: table-cell;
-		vertical-align: middle;
+		&:first-child {
+			flex-grow: 1;
+			margin-right: 0.5em;
 
-		@media @tablet {
-			display: block;
-		}
+			@media @mobile {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1em;
+			}
 
-		.responsivecolumns & {
-			display: block;
+			.responsivecolumns & {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1em;
+			}
 		}
 		
 		&:first-child {
-			width: 100%;
-			padding-right: 0.5em;
-
-			@media @tablet {
-				display: block;
-				margin-bottom: 0.5em;
-				padding-right: 0;
-				width: 100%;
-				height: auto;
-			}
-
-			@media @mobile {
-				margin-bottom: 1em;
-			}
-
-			.responsivecolumns & {
-				display: block;
-				margin-bottom: 1em;
-				padding-right: 0;
-				width: 100%;
-				height: auto;
-			}
-		}
-		
-		.button {
-			white-space: nowrap;
-			min-width: 280px;
-
 			@media @mobile {
 				min-width: 100%;
-			}
-
-			.responsivecolumns & {
-				min-width: 100%;
-			}
-			
-			.template__footer & {
-				min-width: 200px;
-
-				@media @tablet-horizontal {
-					min-width: 280px;
-				}
-
-				@media @mobile {
-					min-width: 100%;
-				}
-
-				.responsivecolumns & {
-					min-width: 100%;
-				}
 			}
 		}
 	}
 
 	label {
 		display: none;
+	}
+}
+
+// User Registration
+
+.userregistration form {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+}
+
+// Highlighted Text
+
+::-moz-selection {
+    background: @color-text--light;
+
+	.style--dark & {
+		background: @color-text--light;
+	}
+
+	.style--light & {
+		border-color: @color--dark;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+}
+
+::selection {
+    background: @color-text--light;
+
+	.style--dark & {
+		background: @color-text--light;
+	}
+
+	.style--light & {
+		border-color: @color--dark;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
 	}
 }

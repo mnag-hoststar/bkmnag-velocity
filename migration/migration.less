@@ -7,31 +7,97 @@
 // -------------------------------------------
 
 
+#migrated {
 
-// Template styling resets
-// ------------------------------------
+	// Interface
+	// ------------------------------------
 
-.template__header,
-.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+	.top-level-overlay button.top-level-overlay__delete-button,
+	.row-overlay__delete-button,
+	.top-level-overlay button.top-level-overlay__arrangement-button--up,
+	.row-overlay__arrangement-button--up,
+	.top-level-overlay button.top-level-overlay__arrangement-button--down,
+	.row-overlay__arrangement-button--down,
+	.row-overlay__edit-button {
+		background: #fff !important;
+	}
 
-	#migrated.edit & {
-			@media only screen and (min-width: 930px) {
-			margin-left: auto;
-			margin-right: auto;
-			width: ~"calc(100% - 200px)";
+	// Template styling resets
+	// ------------------------------------
+
+	.template__content > .widget,
+	.template__content section > .widget {
+		max-width: none;
+		padding: 0;
+		margin-bottom: 0;
+	}
+
+	.template__content > .widget[data-widget-type="pagetitle"] .pagetitle {
+		max-width: 940px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 1em;
+
+		@media @desktop {
+			max-width: 90%;
+			padding: 0;
+
+			#migrated & {
+				width: auto;
+			}
 		}
 	}
 
-	#migrated.row-editing & {
-		display: none;
+	.template__content section .widget[data-name="responsivecolumns"] {
+		max-width: 940px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+
+		.responsivecolumns {
+			padding: 0 1em;
+	
+			@media @desktop {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 90%;
+				padding: 0;
+
+				#migrated & {
+					width: auto;
+				}
+			}
+		}
 	}
-}
 
+	.template__header,
+	.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+		#migrated.edit & {
+				@media only screen and (min-width: 930px) {
+				margin-left: auto;
+				margin-right: auto;
+				width: ~"calc(100% - 200px)";
+			}
+		}
 
-// Row improvments
-// ------------------------------------
+		#migrated.row-editing & {
+			display: none;
+		}
+	}
 
-#migrated {
+    &.edit {
+        @media only screen and (min-width: 930px) {
+            .template__header,
+			.template__home .widget[data-widget-type="responsiveslideshow"] + .template__header {
+				margin: 0 auto;
+				width: ~"calc(100% - 200px)"; 
+            }
+        }
+    }
+
+	// Row improvments
+	// ------------------------------------
+
 	.row--layout-gallery-rounded [data-name="gallery"] .gallery__image-link {
 		border-radius: 0;
 	}
@@ -40,14 +106,18 @@
 	.row--layout-text-14a .widget__content li:before {
 		display: none;
 	}
-}
 
+	// Re-add the reset styles
+	// ------------------------------------
 
-// Re-add the reset styles
-// ------------------------------------
+	[data-name="row"] .row:not(.row--width-no-padding) .row__container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: none;
 
-#migrated [data-name="row"] .row:not(.row--width-no-padding) .row__container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1600px;
+		.template__content > .widget,
+		.template__content section > .widget {
+			max-width: none;
+		}
+	}
 }

@@ -250,38 +250,18 @@
 // Widget Mixins
 
 .widget-styles {
-	width: 90%;
-	max-width: @layout-max-width;
-	margin: 0 auto;
-	padding: 1em;
+	margin-left: auto;
+	margin-right: auto;
 	background: @color__container--background;
+	max-width: @layout-max-width;
 
-	@media @desktop-narrow {
-		width: auto;
-		padding: 1em 1.5em;
-	}
-
-	@media @tablet-horizontal {
-		width: auto;
-		padding: 1em 2.5em;
-	}
-
-	@media @mobile {
-		padding: 1em 2em;
-	}
-		
-	> * {
-		margin: 0 auto;
-		max-width: 940px;
+	@media @desktop {
+		width: 90%;
 	}
 }
 
 .widget-content-styles {
 	padding: 1px 1em;
-
-	@media @desktop-narrow {
-		padding: 1em 1.5em;
-	}
 
 	@media @tablet-horizontal {
 		width: auto;

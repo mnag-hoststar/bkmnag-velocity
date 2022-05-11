@@ -42,16 +42,16 @@ h1, .heading--1 {
 	.make-line-height-smaller(@font__h1--line-height);
 	.make-line-height-a-lot-smaller(@font__h1--line-height);
 
+    .style--dark & {
+        color: @color__h1--text;
+    }
+
 	.style--light & {
         color: @color__h1--text;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @color--accent;
     }
 	
 	@media @mobile {
@@ -93,16 +93,16 @@ h2, .heading--2 {
 	.make-line-height-smaller(@font__h2--line-height);
 	.make-line-height-a-lot-smaller(@font__h2--line-height);
 
-	.style--light & {
+    .style--dark & {
         color: @color__h2--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
@@ -122,16 +122,16 @@ h3, .heading--3 {
 	.make-line-height-smaller(@font__h3--line-height);
 	.make-line-height-a-lot-smaller(@font__h3--line-height);
 
-	.style--light & {
+    .style--dark & {
         color: @color__h3--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
@@ -151,16 +151,16 @@ h4, .heading--4 {
 	.make-line-height-smaller(@font__h4--line-height);
 	.make-line-height-a-lot-smaller(@font__h4--line-height);
 
-	.style--light & {
+    .style--dark & {
         color: @color__h4--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
@@ -181,16 +181,16 @@ h5, .heading--5 {
 	.make-line-height-smaller(@font__p--line-height*0.9);
 	.make-line-height-a-lot-smaller(@font__p--line-height*0.9);
 
-	.style--light & {
+    .style--dark & {
         color: @color__h4--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
@@ -211,16 +211,16 @@ h6, .heading--6 {
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 
-	.style--light & {
+    .style--dark & {
         color: @color__h4--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
     }
 
     .style--accent & {
         color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
@@ -243,16 +243,16 @@ p, .paragraph, ul, ol, li {
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 
-    .style--light & {
+    .style--dark & {
         color: @color__p--text;
     }
 
-    .style--accent & {
-        color: fade(@contrast--accent, 90%);
+    .style--light & {
+        color: @color--dark;
     }
 
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
+    .style--accent & {
+        color: @contrast--accent;
     }
 }
 
@@ -261,31 +261,20 @@ p, .paragraph, ul, ol, li {
 .widget .content,
 .widget .content.in-editing,
 .widget .embed .embed-content {
-	font-size: @font__p--font-size !important;
-	line-height: @font__p--line-height !important;
-
-	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
-	.make-font-smaller(@font__p--font-size, ~"!important");
-	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
-	
-	.make-line-height-a-little-smaller(@font__p--line-height, ~"!important");
-	.make-line-height-smaller(@font__p--line-height, ~"!important");
-	.make-line-height-a-lot-smaller(@font__p--line-height, ~"!important");
-
 	&, p, span, small, pre, code,
 	table, th, td {
 		color: @color__p--text;
 	
-		.style--light & {
+		.style--dark & {
 			color: @color__p--text;
+		}
+	
+		.style--light & {
+			color: @color--dark;
 		}
 	
 		.style--accent & {
 			color: @contrast--accent;
-		}
-	
-		.style--dark & {
-			color: @contrast--dark;
 		}
 	}
 }
@@ -300,16 +289,16 @@ u {
 	text-decoration: none;
 	border-bottom: 1px solid @color-text--light;
 
-	.style--light & {
+    .style--dark & {
         border-color: @color-text--light;
+    }
+
+	.style--light & {
+        border-color: fade(@color--dark, 50%);
     }
 
     .style--accent & {
         border-color: fade(@contrast--accent, 50%);
-    }
-
-    .style--dark & {
-        border-color: fade(@contrast--dark, 50%);
     }
 }
 
@@ -322,16 +311,16 @@ label,
 	color: @color-text--faded;
     word-break: break-word;
 
-	.style--light & {
+    .style--dark & {
         color: @color-text--faded;
+    }
+
+	.style--light & {
+        color: fade(@color--dark, 90%);
     }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
     }
 }
 
@@ -359,9 +348,21 @@ a.vglnk,
 	border-bottom: 2px solid @color-highlight;
 	.transition(all 0.25s ease-in-out 0s);
 
+    .style--dark & {
+        border-color: @color-highlight;
+    }
+
+	.style--light & {
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+		border-color: @color--light;
+    }
+
     &:hover, &:active, &:visited {
 		text-decoration: none;
-		border-bottom: 5px solid @color-highlight;
+		border-bottom-width: 5px;
     }
 }
 
@@ -380,10 +381,26 @@ a[class] {
 	}
 }
 
+[data-name="row"] [data-name^="content"] a:not(.contentgroup__link) {
+	text-decoration: none;
+}
+
 // Small
 
 small {
 	color: @color__p--text;
+
+    .style--dark & {
+		color: @color__p--text;
+    }
+
+	.style--light & {
+        color: @color--dark;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
 }
 
 // Preformatted Text and Code
@@ -394,39 +411,39 @@ pre, code {
 	padding: 1em 1.5em;
 	border: none;
 	.border-radius(0);
-	background-color: transparent;
-	border: 1px solid @color-text--light;
+	background-color: @color__form--background;
+    border: none;
 	overflow: auto;
 	line-height: 1.4em;
 	font-family: monospace;
+	font-size: bkscale(@font__p--font-size, 0.8);
+
+    .style--dark & {
+        background-color: @color__form--background;
+    }
 
 	.style--light & {
-		background-color: darken(@color-swatch1, 10%);
-	}
+        background-color: fade(@color--dark, 5%);
+    }
 
-	.style--accent & {
-		background-color: fade(@contrast--accent, 10%);
-	}
-
-	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
-	}
-	font-size: bkscale(@font__p--font-size, 0.8);
+    .style--accent & {
+        background-color: fade(@contrast--accent, 5%);
+    }
 }
 
 code {
 	border-left: 2px solid @color-highlight;
 
-	.style--light & {
+	.style--dark & {
 		border-color: @color-highlight;
 	}
 
-	.style--accent & {
-		border-color: @contrast--accent;
+	.style--light & {
+		border-color: @color--accent;
 	}
 
-	.style--dark & {
-		border-color: @contrast--dark;
+	.style--accent & {
+		border-color: @color--dark;
 	}
 }
 
@@ -452,16 +469,16 @@ ul, ol {
 			content: "\2014";
 			color: @color-text--faded;
 
-			.style--light & {
+		    .style--dark & {
 		        color: @color-text--faded;
+		    }
+
+			.style--light & {
+		        color: fade(@color--dark, 50%);
 		    }
 
 		    .style--accent & {
 		        color: fade(@contrast--accent, 50%);
-		    }
-
-		    .style--dark & {
-		        color: fade(@contrast--dark, 50%);
 		    }
 		}
 	}
@@ -479,16 +496,16 @@ ol {
 			padding: 0 0.4em 0 0;
 			color: @color-text--faded;
 
-			.style--light & {
+		    .style--dark & {
 		        color: @color-text--faded;
+		    }
+
+			.style--light & {
+		        color: fade(@color--dark, 50%);
 		    }
 
 		    .style--accent & {
 		        color: fade(@contrast--accent, 50%);
-		    }
-
-		    .style--dark & {
-		        color: fade(@contrast--dark, 50%);
 		    }
 		}
 	}
@@ -518,19 +535,19 @@ blockquote {
 	.make-line-height-smaller(@font__h3--line-height);
 	.make-line-height-a-lot-smaller(@font__h3--line-height);
 
-	.style--light & {
+	.style--dark & {
 		color: @color__h3--text;
 		border-color: @color-text--light;
+	}
+
+	.style--light & {
+		color: @color--dark;
+		border-color: fade(@color--dark, 50%);
 	}
 
 	.style--accent & {
 		color: @contrast--accent;
 		border-color: fade(@contrast--accent, 50%);
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
-		border-color: fade(@contrast--dark, 50%);
 	}
 	
 	@media @tablet {
@@ -549,22 +566,4 @@ blockquote {
 		width: auto;
 		max-width: none;
 	}
-	
-	.columns-four-first &,
-	.columns-four-second &,
-	.columns-four-third &,
-	.columns-four-fourth & {
-		padding-right: 0;
-    	padding-left: 0;
-	}
-}
-
-// Highlighted Text
-
-::-moz-selection {
-    background: @color-text--light;
-}
-
-::selection {
-    background: @color-text--light;
 }

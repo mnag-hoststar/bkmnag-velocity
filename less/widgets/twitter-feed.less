@@ -30,16 +30,16 @@
 	.item--margin-size--2to1-cols();
 	.clearfix();
 
-	.style--light & {
+    .style--dark & {
         border-color: @color-text--light;
+    }
+
+	.style--light & {
+        border-color: fade(@color--dark, 75%);
     }
 
     .style--accent & {
         border-color: fade(@contrast--accent, 75%);
-    }
-
-    .style--dark & {
-        border-color: fade(@contrast--dark, 75%);
     }
 	
     @media @mobile {
@@ -111,21 +111,24 @@ a.twitter__account-link {
 
 .tweet-metadata {
 	position: relative;
+	display: block;
 	margin-top: 2em;
-	padding-top: 1.5em;
+	padding-top: 1em;
 	line-height: 1.4em !important;
+	border-color: @color-text--light;
+
+    .style--dark & {
+        border-color: @color-text--light;
+    }
 
 	.style--light & {
-        border-color: @color-text--light;
+        border-color: fade(@color--dark, 75%);
     }
 
     .style--accent & {
         border-color: fade(@contrast--accent, 75%);
     }
 
-    .style--dark & {
-        border-color: fade(@contrast--dark, 75%);
-    }
 	&:before {
 		content: '';
 		position: absolute;
@@ -133,6 +136,18 @@ a.twitter__account-link {
 		left: -20px;
 		right: -20px;
 		border-top: 1px solid @color-text--light;
+
+		.style--dark & {
+			border-color: @color-text--light;
+		}
+	
+		.style--light & {
+			border-color: fade(@color--dark, 75%);
+		}
+	
+		.style--accent & {
+			border-color: fade(@contrast--accent, 75%);
+		}
 	}
 	
 	// Twitter link at the end.
@@ -141,22 +156,23 @@ a.twitter__account-link {
 		display: block;
 		font-size: 0.8em;
 		.timestamp-styles;
+		margin-bottom: 0.25em;
 	}
 	
 	.via, a {
 		color: fade(@color__p--text, 50%);
 		line-height: 1em;
 
-		.style--light & {
+	    .style--dark & {
 	        color: fade(@color__p--text, 50%);
+	    }
+
+		.style--light & {
+	        color: fade(@color--dark, 50%);
 	    }
 
 	    .style--accent & {
 	        color: fade(@contrast--accent, 50%);
-	    }
-
-	    .style--dark & {
-	        color: fade(@contrast--dark, 50%);
 	    }
 	}
 }

@@ -51,7 +51,7 @@ a.tag-link,
 .ecombasket .icon--basket .ecombasket__item-count {
 	display: inline-block;
 	background: lighten(desaturate(@color__button--background, 100%), 10%);
-	margin: 0.4em;
+	margin: 0.4em 0.8em 0.4em 0;
 	padding: 0.4em 0.6em;
 	line-height: 1em;
 	letter-spacing: 1px;
@@ -65,34 +65,38 @@ a.tag-link,
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
 
+	@media @tablet {
+		margin: 0.4em;
+	}
+
+    .style--dark & {
+        background: lighten(desaturate(@color__button--background, 100%), 10%);
+        color: @color__button--text;
+    }
+
 	.style--light & {
         background: lighten(desaturate(@color__button--background, 100%), 10%);
         color: @color__button--text;
     }
 
     .style--accent & {
-        background: darken(@color--accent, 20%);
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        background: lighten(@color--dark, 20%);
-        color: @contrast--dark;
+        background: lighten(desaturate(@color--dark, 100%), 10%);
+        color: @color__button--text;
     }
 	
 	&:hover {
 		background: desaturate(@color__button--background--hover, 100%);
+
+	    .style--dark & {
+	        background: desaturate(@color__button--background--hover, 100%);
+	    }
 
 		.style--light & {
 	        background: desaturate(@color__button--background--hover, 100%);
 	    }
 
 	    .style--accent & {
-	        background: darken(@color--accent, 10%);
-	    }
-
-	    .style--dark & {
-	        background: lighten(@color--dark, 10%);
+	        background: desaturate(@color--dark, 100%);
 	    }
 	}
 }
@@ -104,7 +108,8 @@ a.tag-link,
 	.pagination-list {
 		.display-flex(flex);
 		max-width: @layout-max-width;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 		padding: 2em 0;
 	}
 
@@ -141,14 +146,16 @@ a.tag-link,
 	.post-pagination {
 		width: 90%;
 		max-width: @layout-max-width;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 		padding: 0;
 	}
 	
 	.pagination-list {
 		.justify-content(space-between);
 		.box-sizing(content-box);
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 		padding: 0;
 		max-width: 980px;
 	}

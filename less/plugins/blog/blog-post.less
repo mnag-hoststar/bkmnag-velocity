@@ -31,7 +31,8 @@
 		.paragraph;
 		position: relative;
 		background-color: transparent;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 		padding: 0;
 		color: inherit;
 		.animation(fadeInUp 1s cubic-bezier(.70,0,0,1) 0s forwards);
@@ -48,6 +49,18 @@
 			right: 0;
 			bottom: 0;
 			background-color: @color__blogpost-article--background;
+
+			.style--dark & {
+				background-color: @color__blogpost-article--background;
+			}
+		
+			.style--light & {
+				background: darken(@color--light, 5%);
+			}
+		
+			.style--accent & {
+				background: darken(@color--accent, 5%);
+			}
 
 			@media @mobile {
 				top: -6px;
@@ -82,6 +95,22 @@
 	}
 }
 
+.blogpost__post-body {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: @layout-max-width-text;
+	padding: 0 1em;
+
+	@media @desktop {
+		max-width: 90%;
+		padding: 0;
+
+		#migrated & {
+			width: auto;
+		}
+	}
+}
+
 // Post Header, Content, and Footer
 
 .blogpost__post-content,
@@ -92,7 +121,7 @@
 .blogpost__post-content {
 	position: relative;
 	padding-bottom: 0;
-	background-color: @color__blogpost--background;
+	background-color: transparent;
 	padding-bottom: 5em !important;
 	
 	&:after {
@@ -104,6 +133,18 @@
 		height: 6em;
 		width: 1px;
 		background-color: fade(@color__blogpost-title--text, 75%);
+
+		.style--dark & {
+			background-color: fade(@color__blogpost-title--text, 75%);
+		}
+	
+		.style--light & {
+			background: fade(@color--dark, 75%);
+		}
+	
+		.style--accent & {
+			background: fade(@contrast--accent, 75%);
+		}
 	}
 	
 	ul {
@@ -143,6 +184,18 @@
 	padding-left: 2em;
 	hyphens: none;
 
+	.style--dark & {
+		color: @color__blogpost-title--text;
+	}
+
+	.style--light & {
+		color: @color--dark;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
 	@media @desktop {
 		margin-top: 10px;
 	}
@@ -167,6 +220,18 @@
 		margin-left: -1px;
 		width: 1px;
 		background-color: fade(@color__blogpost-title--text, 75%);
+
+		.style--dark & {
+			background-color: fade(@color__blogpost-title--text, 75%);
+		}
+	
+		.style--light & {
+			background: fade(@color--dark, 75%);
+		}
+	
+		.style--accent & {
+			background: fade(@contrast--accent, 75%);
+		}
 	}
 	
 	.blogpost__post-image ~ .blogpost__post-content & {
@@ -226,6 +291,18 @@
 		right: 0;
 		max-width: none;
 		color: @color__blogpost-title--text;
+
+		.style--dark & {
+			color: @color__blogpost-title--text;
+		}
+	
+		.style--light & {
+			color: @color--dark;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
 		
 		.blogpost__post-image ~ & {
 			top: 500px;

@@ -8,7 +8,8 @@ a.button,
 a.link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
-a.ecomproduct__button {
+a.ecomproduct__button,
+.userregistration button {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -31,6 +32,12 @@ a.ecomproduct__button {
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
 
+    .style--dark & {
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+        color: @color__button--text;
+    }
+
 	.style--light & {
 		background-color: @color__button--background;
 		border-color: @color__button--border;
@@ -43,12 +50,6 @@ a.ecomproduct__button {
         color: @contrast--dark;
     }
 
-    .style--dark & {
-    	background-color: @color--accent;
-    	border-color: @color--accent;
-        color: @contrast--accent;
-    }
-
     @media @tablet {
 		line-height: 1.5em;
     }
@@ -59,12 +60,23 @@ a.ecomproduct__button {
 		min-width: auto;
     }
 	
+	.responsivecolumns & {
+		width: 100%;
+		min-width: auto;
+	}
+	
     &:hover,
 	&:focus,
 	&:active {
         background-color: @color__button--background--hover;
 		border-color: @color__button--background--hover;
     	color: @color__button--text--hover;
+
+	    .style--dark & {
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
+	    }
 
     	.style--light & {
 			background-color: @color__button--background--hover;
@@ -73,27 +85,26 @@ a.ecomproduct__button {
 	    }
 
 	    .style--accent & {
-	    	background-color: @color--dark;
-	    	border-color: @color--dark;
+	    	background-color: darken(@color--dark, 5%);
+	    	border-color: darken(@color--dark, 5%);
 	        color: @contrast--dark;
-	    }
-
-	    .style--dark & {
-	    	background-color: @color--light;
-	    	border-color: @color--light;
-	        color: @contrast--light;
 	    }
     }
 	
-	.responsivecolumns .columns-three-left &,
-	.responsivecolumns .columns-three-middle &,
-	.responsivecolumns .columns-three-right &,
-	.responsivecolumns .columns-four-first &,
-	.responsivecolumns .columns-four-second &,
-	.responsivecolumns .columns-four-third &,
-	.responsivecolumns .columns-four-fourth & {
-		width: 100%;
-		min-width: auto;
+	span {
+		color: @color__button--text;
+	
+		.style--dark & {
+			color: @color__button--text;
+		} 
+	
+		.style--light & {
+			color: @color__button--text;
+		}
+	
+		.style--accent & {
+			color: @contrast--dark;
+		}
 	}
 }
 
@@ -108,9 +119,10 @@ a.link-button,
 	&:before,
 	&:after {
 		margin: 0;
-		font-size: 1.5em;
+		font-size: 1em;
 		line-height: 1em;
 		font-weight: 400;
+		float: none;
 	}
 	&:before {
 		margin-right: 0.5em;
@@ -155,7 +167,6 @@ a.link-button,
 	.button {
 		&:before {
 			margin: -0.05em 0.5em 0 0;
-			float: left;
 		}
 	}
 }
@@ -241,6 +252,12 @@ a.link-button,
 	color: @color__button--text;
 	.transition(all 0.5s ease);
 
+    .style--dark & {
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+		color: @color__button--text;
+    }
+
 	.style--light & {
 		background-color: @color__button--background;
 		border-color: @color__button--border;
@@ -252,63 +269,56 @@ a.link-button,
     	border-color: @color--dark;
         color: @contrast--dark;
     }
-
-    .style--dark & {
-    	background-color: @color--accent;
-    	border-color: @color--accent;
-        color: @contrast--accent;
-    }
 	
 	&:hover {
 		text-decoration: none;
 		background-color: @color__button--background--hover;
 		border-color: @color__button--background--hover;
 		color: @color__button--text--hover;
-		.transition(all 0.5s ease);
 
-		.style--light & {
+	    .style--dark & {
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
+	    }
+
+    	.style--light & {
 			background-color: @color__button--background--hover;
 			border-color: @color__button--background--hover;
 			color: @color__button--text--hover;
 	    }
 
 	    .style--accent & {
-	    	background-color: @color--dark;
-	    	border-color: @color--dark;
+	    	background-color: darken(@color--dark, 5%);
+	    	border-color: darken(@color--dark, 5%);
 	        color: @contrast--dark;
-	    }
-
-	    .style--dark & {
-	    	background-color: @color--light;
-	    	border-color: @color--light;
-	        color: @contrast--light;
 	    }
 	}
 
 	// Icon
 
 	&:before {
-		margin: 0 auto;
+		margin: 0;
 		padding: 0;
-		font-size: 1.2em;
+		font-size: 1em;
 		display: block;
 	}
 }
 
 .widget button.btn span {
-	color: @font-swatch7-color;
+	color: @color__button--text;
+
+	.style--dark & {
+		color: @color__button--text;
+	} 
 
 	.style--light & {
-		color: @font-swatch7-color;
+		color: @color__button--text;
 	}
 
 	.style--accent & {
 		color: @contrast--dark;
 	}
-
-	.style--dark & {
-		color: @contrast--accent;
-	} 
 }
 
 // The name of the button is not displayed.

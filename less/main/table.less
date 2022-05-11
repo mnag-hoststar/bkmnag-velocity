@@ -2,14 +2,15 @@
 
 table {
 	.paragraph;
-	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 0 0 1em;
 	color: inherit;
 		
-	@media @mobile {
+	@media @tablet {
 		display: block;
 		border-top: 1px solid;
 		border-bottom: 1px solid;
@@ -76,22 +77,30 @@ td {
 	padding: 1em 0.5em;
 	line-height: 1.5em;
 
-	.style--light & {
+	.style--dark & {
 		border-bottom-color: @color-text--light;
+	}
+
+	.style--light & {
+		border-bottom-color: fade(@color--dark, 50%);
 	}
 
 	.style--accent & {
 		border-bottom-color: fade(@contrast--accent, 50%);
 	}
-
-	.style--dark & {
-		border-bottom-color: fade(@contrast--dark, 50%);
-	}
 		
+	@media @tablet {
+		tr:last-child & {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	
 	@media @mobile {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;
+		width: auto !important;
 		
 		&:first-child {
 			padding-top: 1em;
@@ -100,17 +109,17 @@ td {
 		&:last-child {
 			border-bottom: 1px solid @color-text--light;
 			padding-bottom: 1em;
+		
+			.style--dark & {
+				border-bottom-color: @color-text--light;
+			}
 
 			.style--light & {
-				border-bottom-color: @color-text--light;
+				border-bottom-color: fade(@color--dark, 50%);
 			}
 		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 50%);
-			}
-		
-			.style--dark & {
-				border-bottom-color: fade(@contrast--dark, 50%);
 			}
 		}
 		
@@ -132,18 +141,23 @@ td {
 		&:last-child {
 			border-bottom: 1px solid @color-text--light;
 			padding-bottom: 1em;
+		
+			.style--dark & {
+				border-bottom-color: @color-text--light;
+			}
 
 			.style--light & {
-				border-bottom-color: @color-text--light;
+				border-bottom-color: fade(@color--dark, 50%);
 			}
 		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 50%);
 			}
+		}
 		
-			.style--dark & {
-				border-bottom-color: fade(@contrast--dark, 50%);
-			}
+		tr:last-child & {
+			border-bottom: none;
+			padding-bottom: 0;
 		}
 		
 		tr:last-child &:last-child {

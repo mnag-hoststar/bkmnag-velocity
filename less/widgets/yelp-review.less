@@ -18,16 +18,16 @@
 		font-size: 0.7em;
 		color: fade(@color__p--text, 50%);
 
-		.style--light & {
+	    .style--dark & {
 			color: fade(@color__p--text, 50%);
 	    }
 
-	    .style--accent & {
-	        color: darken(@color--accent, 20%);
+		.style--light & {
+	        color: fade(@color--dark, 50%);
 	    }
 
-	    .style--dark & {
-	        color: darken(@color--accent, 20%);
+	    .style--accent & {
+	        color: fade(@contrast--accent, 50%);
 	    }
 	}
 	
