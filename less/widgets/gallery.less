@@ -215,11 +215,14 @@
 		// Image Title
 
 		.gallery__image-title {
-			.heading--4;
+			line-height: @font__h4--line-height;
+			letter-spacing: @font__h4--letter-spacing;
+			font-family: @font__h4--font-family;
+			font-family: @font__h3--font-family;
+			font-size: @font__h4--font-size;
+			color: @color__gallery-title--text;
 			padding-bottom: 0.25em;
 			text-transform: none;
-			font-family: @font__h3--font-family;
-			color: @color__gallery-title--text;
 			.transition(transform 0.25s ease-in-out 0.25s, opacity 0.25s ease-in-out 0.25s;);
 
 			@media @mobile {
@@ -228,7 +231,9 @@
 		}
 
 		.gallery__image-description {
-			.paragraph;
+			letter-spacing: @font__p--letter-spacing;
+			font-family: @font__p--font-family;
+			font-weight: @font__p--font-weight;
 			line-height: 1.4em !important;
 			font-size: 0.8em;
 			color: @color__gallery-description--text;

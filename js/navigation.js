@@ -30,7 +30,7 @@ $(document).ready(function(){
     
     $(".navigation-item").click(function() {
         $(this).siblings(".navigation-item").removeClass("folder-open open");
-    });
+	});
 	
 	// ------------------------------
 	// Header size changes when it's not at the top of the page.
@@ -96,13 +96,5 @@ $(document).ready(function(){
 		$(window).resize(function() {
 			contentFromTopDistance();
 		});
-    });
-	
-	// ------------------------------
-    // Hides other submenus when a main menu point with a submenu is clicked.
-	// ------------------------------
-    
-    $(".navigation-item").click(function(){
-        $(this).siblings(".navigation-item").removeClass("folder-open open");
     });
 });

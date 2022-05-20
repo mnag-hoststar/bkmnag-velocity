@@ -6,12 +6,11 @@
 //  existing templates in BK10
 // -------------------------------------------
 
-
 #migrated {
 
 	// Interface
 	// ------------------------------------
-
+	
 	.top-level-overlay button.top-level-overlay__delete-button,
 	.row-overlay__delete-button,
 	.top-level-overlay button.top-level-overlay__arrangement-button--up,
@@ -21,13 +20,34 @@
 	.row-overlay__edit-button {
 		background: #fff !important;
 	}
-
+	
 	ol li.row-template-preview__template-list-item:before {
 		content: none;
+	}
+	
+	// Basekit Elements
+
+	.top-level-overlay button.top-level-overlay__delete-button,
+	.row-overlay__delete-button,
+	.top-level-overlay .top-level-overlay__arrangement-button-group,
+	.row-overlay__arrangement-button-group, .row-overlay__edit-button,
+	.row-overlay__edit-button {
+		min-height: 32px !important;
+	}
+
+	.is-dropdown-open .row-overlay__edit-button, .is-setting-open .row-overlay__edit-button {
+		min-height: 40px !important;
 	}
 
 	// Template styling resets
 	// ------------------------------------
+    
+    &.edit .template__header {
+        @media only screen and (min-width: 930px) {
+            left: 100px;
+            right: 100px;
+        }
+    }
 
 	.template__content > .widget,
 	.template__content section > .widget {
@@ -102,14 +122,37 @@
 	// Row improvments
 	// ------------------------------------
 
+	.row--layout-gallery-rounded [data-name="gallery"] .gallery-list .gallery-item.gallery__gallery-item {
+		border-radius: 80px !important;
+	}
+
 	.row--layout-gallery-rounded [data-name="gallery"] .gallery__image-link {
-		border-radius: 0;
+		border-radius: 0 !important;
 	}
 
 	.row--layout-pricing-1a .widget__content li:before,
 	.row--layout-text-14a .widget__content li:before {
 		display: none;
 	}
+
+	.bk-message.bk-message--empty {
+		&.profile__bk-message,
+		&.socialicons__bk-message,
+		&.disqus__bk-message {
+			background-color: transparent !important;
+		}
+	}
+
+    // Pricing Table
+	// ------------------------------------
+	
+    .row--layout-pricing-1a .column ul li {
+        padding-left: 2.5em;
+    
+        &:before {
+            content: none;
+        }
+    }
 
 	// Re-add the reset styles
 	// ------------------------------------

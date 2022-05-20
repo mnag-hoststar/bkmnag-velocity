@@ -29,7 +29,7 @@
 		max-height: 100%;
 		padding-bottom: 60%;
 
-		@media @tablet {
+		@media @desktop {
 			padding-bottom: 100%;
 		}
 
@@ -196,23 +196,21 @@
 	
 	@media @desktop-wide {
 		font-size: @font__h1--font-size*1.5;
-		font-size: unit(@font__h1--font-size*1.5*0.08, vw);
 		line-height: @font__h1--line-height*1.5;
-		line-height: unit(@font__h1--line-height*1.5*0.08, vw);
 	}
 	
 	@media @desktop {
 		font-size: @font__h1--font-size*1.75;
-		font-size: unit(@font__h1--font-size*1.75*0.08, vw);
+		font-size: unit(@font__h1--font-size*1.5*0.08, vw);
 		line-height: @font__h1--line-height*1.75;
-		line-height: unit(@font__h1--line-height*1.75*0.08, vw);
+		line-height: unit(@font__h1--line-height*1.5*0.08, vw);
 	}
 	
 	@media @tablet {
 		font-size: @font__h1--font-size*2;
-		font-size: unit(@font__h1--font-size*2*0.08, vw);
+		font-size: unit(@font__h1--font-size*1.25*0.08, vw);
 		line-height: @font__h1--line-height*2;
-		line-height: unit(@font__h1--line-height*2*0.08, vw);
+		line-height: unit(@font__h1--line-height*1.25*0.08, vw);
 	}
 	
     @media @mobile {
@@ -248,16 +246,7 @@
 	
 	@media @desktop-wide {
 		font-size: @font__h4--font-size;
-		font-size: unit(@font__h4--font-size*0.08, vw);
 		line-height: @font__h4--line-height;
-		line-height: unit(@font__h4--line-height*0.08, vw);
-	}
-	
-	@media @desktop {
-		font-size: @font__h4--font-size*1.25;
-		font-size: unit(@font__h4--font-size*1.25*0.08, vw);
-		line-height: @font__h4--line-height*1.25;
-		line-height: unit(@font__h4--line-height*1.25*0.08, vw);
 	}
 	
 	@media @tablet-horizontal {
@@ -265,10 +254,10 @@
 	}
 	
 	@media @tablet {
-		font-size: @font__h4--font-size*1.5;
-		font-size: unit(@font__h4--font-size*1.5*0.08, vw);
-		line-height: @font__h4--line-height*1.5;
-		line-height: unit(@font__h4--line-height*1.5*0.08, vw);
+		font-size: @font__h4--font-size*1.25;
+		font-size: unit(@font__h4--font-size*1.25*0.08, vw);
+		line-height: @font__h4--line-height*1.25;
+		line-height: unit(@font__h4--line-height*1.25*0.08, vw);
 	}
 	
     @media @mobile {
@@ -334,7 +323,8 @@
 		.box-shadow(none);
 		.transition (all 0.5s ease);
 	
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity: 1;
 			background-color: transparent;
 			border-color: transparent;
