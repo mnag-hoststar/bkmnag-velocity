@@ -75,12 +75,12 @@ a.tag-link,
     }
 
 	.style--light & {
-        background: lighten(desaturate(@color__button--background, 100%), 10%);
+        background: fade(desaturate(@color--dark, 100%), 10%);
         color: @color__button--text;
     }
 
     .style--accent & {
-        background: lighten(desaturate(@color--dark, 100%), 10%);
+        background: fade(desaturate(@color--dark, 100%), 10%);
         color: @color__button--text;
     }
 	
@@ -92,11 +92,11 @@ a.tag-link,
 	    }
 
 		.style--light & {
-	        background: desaturate(@color__button--background--hover, 100%);
+	        background: fade(desaturate(@color--dark, 100%), 20%);
 	    }
 
 	    .style--accent & {
-	        background: desaturate(@color--dark, 100%);
+			background: fade(desaturate(@color--dark, 100%), 20%);
 	    }
 	}
 }

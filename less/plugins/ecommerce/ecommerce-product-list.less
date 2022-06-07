@@ -178,6 +178,44 @@
 				}
 			}
 		}
+		
+		.input--search {
+			background-color: fade(@color__ecomproductslist-product-title--text, 5%);
+			border: 1px solid @color__ecomproductslist-product-title--text;
+			color: @color__ecomproductslist-product-title--text;
+	
+			.style--dark & {
+				background-color: @color-text--lightest;
+				border-color: fade(@color__form--border, 75%);
+			}
+		
+			.style--light & {
+				background-color: fade(@color--dark, 10%);
+				border-color: fade(@color--dark, 75%);
+			}
+		
+			.style--accent & {
+				background-color: fade(@contrast--accent, 10%);
+				border-color: fade(@contrast--accent, 75%);
+			}
+		
+			.responsivecolumns & {
+				.style--dark & {
+					background-color: @color-text--lightest;
+					border-color: fade(@color__form--border, 75%);
+				}
+			
+				.style--light & {
+					background-color: fade(@color--dark, 10%);
+					border-color: fade(@color--dark, 75%);
+				}
+			
+				.style--accent & {
+					background-color: fade(@contrast--accent, 10%);
+					border-color: fade(@contrast--accent, 75%);
+				}
+			}
+		}
 	}
 }
 
@@ -221,6 +259,7 @@
 		padding: 0 0.5em;
 		min-width: 100%/3;
 		width: 100%/3;
+		flex-grow: 1;
 
 		@media @tablet {
 			width: 100%;
@@ -238,17 +277,38 @@
 		.select-wrap {
 			margin-top: 0;
 			max-width: none;
+			background-color: fade(@color__ecomproductslist-product-title--text, 10%);
+			border: 1px solid @color__ecomproductslist-product-title--text;
 
-			@media @tablet-horizontal {
-				.select.medium;
+			.style--dark & {
+				background-color: @color-text--lightest;
+				border-color: fade(@color__form--border, 75%);
+			}
+		
+			.style--light & {
+				background-color: fade(@color--dark, 10%);
+				border-color: fade(@color--dark, 75%);
+			}
+		
+			.style--accent & {
+				background-color: fade(@contrast--accent, 10%);
+				border-color: fade(@contrast--accent, 75%);
 			}
 
-			@media @mobile {
-				.select.small;
-			}
+			select {
+				color: @color__ecomproductslist-product-title--text;
 
-			.responsivecolumns & {
-				.select.small;
+				.style--dark & {
+					color: @color__p--text;
+				}
+			
+				.style--light & {
+					color: @color--dark;
+				}
+			
+				.style--accent & {
+					color: @contrast--accent;
+				}
 			}
 		}
 	}

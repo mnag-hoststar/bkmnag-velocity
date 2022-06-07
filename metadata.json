@@ -185,7 +185,7 @@
 			"color__navigation-item--background--hover": "@color-swatch7"
         },
         "form": {
-			"color__form--background": "fade(@color__h2--text, 5%)",
+			"color__form--background": "fade(@color__h2--text, 10%)",
             "color__form--border": "@color__h2--text",
             "color__form-label--text": "@color__h2--text"
         },

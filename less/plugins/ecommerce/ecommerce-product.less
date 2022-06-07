@@ -315,6 +315,39 @@ a.ecomproduct__button {
     .select-wrap {
         max-width: 100%;
 		margin-top: 0;
+		background-color: fade(@color__ecomproductslist-product-title--text, 5%);
+		border: 1px solid @color__ecomproductslist-product-title--text;
+
+		.style--dark & {
+			background-color: @color-text--lightest;
+			border-color: fade(@color__form--border, 75%);
+		}
+	
+		.style--light & {
+			background-color: fade(@color--dark, 10%);
+			border-color: fade(@color--dark, 75%);
+		}
+	
+		.style--accent & {
+			background-color: fade(@contrast--accent, 10%);
+			border-color: fade(@contrast--accent, 75%);
+		}
+
+		select {
+			color: @color__ecomproductslist-product-title--text;
+
+			.style--dark & {
+				color: @color__p--text;
+			}
+		
+			.style--light & {
+				color: @color--dark;
+			}
+		
+			.style--accent & {
+				color: @contrast--accent;
+			}
+		}
     }
 
     .legend {

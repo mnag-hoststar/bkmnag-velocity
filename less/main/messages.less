@@ -79,55 +79,56 @@
 		.border-radius(50%);
 		color: @color-swatch1;
     }
-}
 
-// Error
-
-.message--error {
-	background-color: @message-color--error;
-
-	&:before {
-		content: "\f12a";
+	// Information
+	
+	&,
+	&.message--information {
+		background-color: @message-color--information;
+	
+		&:before {
+			content: "\f129";
+		}
 	}
-}
-
-// Warning
-
-.message--warning {
-	background-color: @message-color--warning;
-
-	&:before {
-		content: "\f071";
+	
+	// Error
+	
+	&.message--error {
+		background-color: @message-color--error;
+	
+		&:before {
+			content: "\f12a";
+		}
 	}
-}
-
-// Information
-
-.message--information {
-	background-color: @message-color--information;
-
-	&:before {
-		content: "\f129";
+	
+	// Warning
+	
+	&.message--warning {
+		background-color: @message-color--warning;
+	
+		&:before {
+			content: "\f071";
+		}
 	}
-}
-
-// Success
-
-.message--success {
-	background-color: @message-color--success;
-
-	&:before {
-		content: "\f00c";
+	
+	// Success
+	
+	&.message--success {
+		background-color: @message-color--success;
+	
+		&:before {
+			content: "\f00c";
+		}
 	}
-}
-
-// Not Found
-
-.message--not-found {
-	background-color: @message-color--not-found;
-
-	&:before {
-		content: "\f002";
+	
+	// Not Found
+	
+	&.message--not-found {
+		background-color: @message-color--not-found;
+	
+		&:before {
+			content: "\f002";
+		}
 	}
 }
 
