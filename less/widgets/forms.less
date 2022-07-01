@@ -136,12 +136,12 @@ textarea {
 
 .select-wrap {
     position: relative;
-	background-color: @color-text--lightest;
+	background-color: @color-text--lighter;
     border: 1px solid fade(@color__form--border, 75%);
 	.transition(all 0.25s ease-in-out);
 
     .style--dark & {
-        background-color: @color-text--lightest;
+        background-color: @color-text--lighter;
         border-color: fade(@color__form--border, 75%);
     }
 
@@ -157,7 +157,7 @@ textarea {
 
 	.responsivecolumns & {
 		.style--dark & {
-			background-color: @color-text--lightest;
+			background-color: @color-text--lighter;
 			border-color: fade(@color__form--border, 75%);
 		}
 	
@@ -641,22 +641,20 @@ input:focus {
 	.form-body {
 		display: flex;
 		flex-wrap: wrap;
+		gap: 0.5em;
 	}
 
 	.form-group {
 		&:first-child {
 			flex-grow: 1;
-			margin-right: 0.5em;
 
 			@media @mobile {
 				width: 100%;
-				margin-right: 0;
 				margin-bottom: 1em;
 			}
 
 			.responsivecolumns & {
 				width: 100%;
-				margin-right: 0;
 				margin-bottom: 1em;
 			}
 		}
