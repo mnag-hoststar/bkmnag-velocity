@@ -39,17 +39,19 @@
 }
 
 .tag-list,
-.tag-item,
-.dietary-list {
-	margin: 0;
-	line-height: 1em;
+.tag-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    line-height: 1em;
 }
 
 a.category-link,
 a.tag-link,
-.dietary-item,
 .ecombasket .icon--basket .ecombasket__item-count {
 	display: inline-block;
+	line-height: 1.4em;
 	background: lighten(desaturate(@color__button--background, 100%), 10%);
 	margin: 0.4em 0.8em 0.4em 0;
 	padding: 0.4em 0.6em;
@@ -60,6 +62,7 @@ a.tag-link,
 	font-weight:@font__button--font-weight;
 	color: @color__button--text;
 	.transition (all 0.25s ease-in-out);
+	word-break: break-word;
 	
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
