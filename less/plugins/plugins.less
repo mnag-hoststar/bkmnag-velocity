@@ -106,41 +106,56 @@ a.tag-link,
 
 // Paginatinon
 
-.ecomproductslist,
-.blogpostlist {
-	.pagination-list {
-		.display-flex(flex);
-		max-width: @layout-max-width;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 2em 0;
-	}
+.listing-pagination {
+    .pagination-list {
+        margin-left: 0;
+		text-align: center;
 
-	.pagination-item {
-		margin: 0;
-		padding: 2em 0;
-	}
+        .pagination-item {
+            margin: 0.25em;
+            padding: 0;
 
-	a.button--pagination {
-		.link-button;
-		padding: 0.5em 1em;
-		
-		&.icon--previous:before {
-			content: "\f053";
-		}
-		
-		&.icon--next:after {
-			content: "\f054";
-		}
-		
-		&:before {
-			margin: 0 0.5em 0 0;
-		}
-		
-		&:after {
-			margin: 0 0 0 0.5em;
-		}
-	}
+            .responsivecolumns & {
+                margin: 0.25em 0.1em;
+            }
+
+            @media @mobile {
+                margin: 0.25em 0.1em;
+            }
+
+            &, &:hover {
+                border: none;
+                background: none;
+            }
+
+            a.button {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+				min-height: 32px;
+                letter-spacing: 0;
+                line-height: 30px;
+				border-color: @color__button--background;
+				background-color: @color__button--background;
+                font-size: 14px;
+                
+                &:hover {
+                    border-color: @color__button--background--hover;
+                    background-color: @color__button--background--hover;
+                }
+
+                &:before,
+                &:after {
+                    content: none;
+                }
+            }
+
+            &.current a.button {
+				border-color: @color__button--background--hover;
+				background-color: @color__button--background--hover;
+            }
+        }
+    }
 }
 
 // Styles only for the Blog Post List.
@@ -151,10 +166,11 @@ a.tag-link,
 		max-width: @layout-max-width;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0;
+		padding: 2em 0;
 	}
 	
 	.pagination-list {
+		display: flex;
 		.justify-content(space-between);
 		.box-sizing(content-box);
 		margin-left: auto;
@@ -170,7 +186,8 @@ a.tag-link,
 	}
 
 	a.button--pagination {
-		&:before {
+		&.button--previous:before {
+			content: "\f053";
 			font-size: 1em;
 			
 			@media @mobile {
@@ -178,7 +195,8 @@ a.tag-link,
 			}
 		}
 		
-		&:after {
+		&.button--next:after {
+			content: "\f054";
 			font-size: 1em;
 			
 			@media @mobile {
