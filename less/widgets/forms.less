@@ -16,6 +16,14 @@
 		.form-group {
 			margin-bottom: 1em;
 
+			@media @mobile {
+				width: 100%;
+			}
+
+			.responsivecolumns & {
+				width: 100%;
+			}
+
 			&:last-of-type,
 			&.js-recaptcha {
 				margin-bottom: 0;
